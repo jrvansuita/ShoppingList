@@ -1,0 +1,29 @@
+<resources>
+
+    <string name="default_digitis">1234567890.,</string>
+    <string name="id_shopping_list">idLista</string>
+        
+    
+    <string name="user_preference_show_quantity">UserPreferenceShowQuantity</string>
+    <string name="user_preference_show_unit_value">UserPreferenceShowUnitValue</string>
+    <string name="user_preference_show_check_box">UserPreferenceShowCheckBox</string>
+    <string name="user_preference_ordenation_checked_list">UserPreferenceOrdenationCheckedList</string>
+    <string name="user_preference_ordenation_alphabetical_list">UserPreferenceOrdenationAlphabeticalList</string>
+    <string name="user_preference_about_app">UserPreferenceAboutApp</string>
+    
+
+    
+    <string name="my_email">vansuita.jr@gmail.com</string>
+    
+    <string-array name="ordenation_style_list_values">
+        <item>""</item>
+        <item>"ASC"</item>
+        <item>"DESC"</item>        
+    </string-array>
+    
+    
+ <!--   <string name="pollfish_api_key">432b8cc4-dfac-4a32-8bb0-d346d9b58d6b</string>
+    <string name="google_adsence_id">ca-app-pub-7819301718588435/5949601500</string>-->
+
+    
+</resources>

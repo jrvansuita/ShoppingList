@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  320dp: a typical phone screen (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc).
+  480dp: a tweener tablet like the Streak (480x800 mdpi).
+  600dp: a 7” tablet (600x1024 mdpi).
+  720dp: a 10” tablet (720x1280 mdpi, 800x1280 mdpi, etc).
+  
+  Reduzir -20% se baseando em 600dp.
+-->
+
+<resources>
+
+    <dimen name="nine_hundred_dps">572dp</dimen>
+    <dimen name="eight_hundred_dps">512dp</dimen>
+    <dimen name="five_hundred_eighty_dps">371.2dp</dimen>
+    <dimen name="five_hundred_twenty_dps">332.8dp</dimen>
+    <dimen name="four_hundred_dps">256dp</dimen>
+    <dimen name="three_hundred_dps">192dp</dimen>
+    <dimen name="one_hundred_ninety_dps">121.6dp</dimen>
+    <dimen name="two_hundred_dps">128dp</dimen>
+    <dimen name="one_hundred_thirty_dps">83.2dp</dimen>
+    <dimen name="one_hundred_dps">64dp</dimen>
+    <dimen name="ninety_dps">57.6dp</dimen>
+    <dimen name="eighty_dps">51.2dp</dimen>
+    <dimen name="seventy_five_dps">48dp</dimen>
+    <dimen name="sixty_five_dps">41.6dp</dimen>
+    <dimen name="sixty_dps">38.4dp</dimen>
+    <dimen name="fifty_five_dps">35.2dp</dimen>
+    <dimen name="fifty_dps">32dp</dimen>
+    <dimen name="fourty_five_dps">28.8dp</dimen>
+    <dimen name="fourty_two_dps">26.8dp</dimen>
+    <dimen name="fourty_dps">25.6dp</dimen>
+    <dimen name="thirty_six_dps">23.2dp</dimen>
+    <dimen name="thirty_five_dps">22.4dp</dimen>
+    <dimen name="thirty_one_dps">19.84dp</dimen>
+    <dimen name="thirty_dps">19.2dp</dimen>
+    <dimen name="twenty_eight_dps">17.92dp</dimen>
+    <dimen name="twenty_seven_dps">17.28dp</dimen>
+    <dimen name="twenty_five_dps">16dp</dimen>
+    <dimen name="twenty_three_dps">14.72dp</dimen>
+    <dimen name="twenty_dps">12.8dp</dimen>
+    <dimen name="eighteen_dps">11.52dp</dimen>
+    <dimen name="fifteen_dps">9.6dp</dimen>
+    <dimen name="thirteen_dps">8.32dp</dimen>
+    <dimen name="ten_dps">6.4dp</dimen>
+    <dimen name="eight_dps">5.12dp</dimen>
+    <dimen name="five_dps">3.2dp</dimen>
+    <dimen name="three_dps">1.92dp</dimen>
+    <dimen name="two_dps">1.28dp</dimen>
+    <dimen name="one_dps">0.64dp</dimen>
+
+</resources>

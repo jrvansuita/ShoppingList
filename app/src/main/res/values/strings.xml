@@ -1,0 +1,100 @@
+<resources>
+
+    <string name="app_name">Shopping List</string>
+    <string name="share_title">Shopping list : </string>
+        <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add_list">Add item</string>
+    <string name="new_list">New list</string>
+    <string name="hint_desc">Add an item</string>
+    <string name="save">Save?</string>
+    <string name="schedule">Schedule</string>
+    <string name="untitled">Untitled</string>
+    <string name="no_description">No description</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Software update</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_new">New shopping list</string>
+    <string name="delete_all">Delete all</string>
+    <string name="xml_import">Import shopping list</string>
+    <string name="select_a_date">Select a date</string>    
+    <string name="barcode_scan">Barcode scan</string>
+    <string name="delete_selecteds">Delete checked</string>
+    <string name="duplicate">Duplicate</string>
+
+    <string name="select_all">Check all</string>
+    <string name="desselect_all">Uncheck all</string>
+    <string name="delete_question">Excluir?</string>
+    <string name="want_delete_list">Do you want to delete the list</string>
+    <string name="want_delete_item">Do you want to delete the item</string>
+    <string name="want_delete_all_list">Do you want to delete all the shopping lists?</string>
+    <string name="want_delete_all_items">Do you want to delete all the items of this shopping lists?</string>
+    <string name="want_delete_all_selected_itens">Do you want to delete all the checked items of this shopping lists?</string>
+    <string name="info_desc">Enter the item description.</string>
+    <string name="time">Time:</string>
+    <string name="new_notification_seted">A new notification will be shown on </string>
+    <string name="notification_arrived">Time to go shopping!</string>
+    <string name="item_already_inserted">Item is already on the shopping list!</string>
+    <string name="no_connection">No internet connection   =(</string>
+    <string name="settings">Settings</string>
+    <string name="options">Options</string>
+    <string name="rename">Rename</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="order">Ordination</string>
+    <string name="share_via_text">Share via text</string>
+    <string name="title_rename">Rename shopping list</string>
+    <string name="share_via">Share via</string>
+    <string name="no_item_added">No item was added</string>
+    <string name="no_list_added">Add a new list</string>    
+    <string name="invalid_importable_xml">This is a invalid file</string>
+    <string name="total">Total</string>
+    <string name="description_title">Item description</string>
+    <string name="quantity_title">Quant.</string>
+    <string name="unit_value_title">Price</string>
+    <string name="visualization_style">Visualization style</string>
+    <string name="show_quantity_summary">Show information about item quantity</string>
+    <string name="show_check_box_summary">Show checkboxes in the shopping list</string>
+    <string name="show_check_boxe_title">Show checkboxes </string>
+    <string name="show_quantity_title">Show quantities</string>
+    <string name="show_unit_value_summary">Show information about item price</string>
+    <string name="show_unit_value_title">Show prices</string>
+    <string name="quant_items">%d Item(s)</string>
+    <string name="ordenation_style">Ordination style</string>
+    <string name="ordenation_checked_style_title">Default style ordering of checked items</string>
+    <string name="ordenation_alphabetical_style_title">Default alphabetical style ordering of items</string>
+    <string name="default_option">Current option is : </string>
+    <string name="about_app_install_date">Installation date :</string>
+    <string name="date">Date:</string>
+    <string name="about_app_update_date">Last update :</string>
+    <string name="about_app">About this app</string>
+    <string name="about_app_version">App version :</string>
+    <string name="about_app_code">Version code :</string>
+    <string name="about_android_version">Android version :</string>
+    <string name="schedule_notification">Schedule a notification for:</string>
+    <string name="about">About</string>    
+    <string name="about_app_contact_me">Contact me : </string>
+    <string name="about_app_description">This is an experimental app developed by Júnior Vansuita. Do not pay for this app.</string>
+    
+    <string name="about_pollfish">About PollFish</string>
+     <string name="pollfish">PollFish</string>
+    <string name="pollfish_title">Survey Serving Technology</string>
+    
+     <string name="pollfish_text">This app uses Pollfish SDK. Pollfish is an on-line survey platform, through which, anyone may conduct surveys. Pollfish collaborates with Developers of applications for smartphones in order to have access to users of such applications and address survey questionnaires to them. When a user connects to this app, Pollfish detects whether the user has enabled his Device’s interest-based-ads settings (Advertising ID for Android/Advertising Identifier for iOS). If not, Pollfish does not proceed to any action and cannot offer any survey to the user or collect any of his/her Data. If the user has enabled such settings, a specific set of user’s device data and response meta-data is automatically sent to Pollfish servers. These data will be associated with your answers to the questionnaires. By downloading the application you accept this privacy policy document and you hereby give your consent for the processing by Pollfish of the aforementioned data. Furthermore, you are informed that you may disable Pollfish operation at any time by (a) enabling the “opt out of interest-based advertising” in your device Settings area or by (b) using the Pollfish “opt out section” available on Pollfish website . We invite you to check the respondent’s terms of use, if you wish to have more detailed view of the way Pollfish works.</string>
+     <string name="pollfish_finish">APPLE, GOOGLE AND AMAZON ARE NOT A SPONSOR NOR ARE INVOLVED IN ANY WAY IN THE DRAWS. NO APPLE PRODUCTS ARE BEING USED AS PRIZES.</string>
+
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Natural ordination</item>
+        <item>Checked down</item>
+        <item>Checked up</item>
+    </string-array>
+
+
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Natural ordination</item>
+        <item>Ascending Alphabetical Order</item>
+        <item>Reverse Alphabetical Order</item>
+    </string-array>
+
+
+</resources>

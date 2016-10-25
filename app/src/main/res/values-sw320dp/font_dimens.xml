@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  320dp: a typical phone screen (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc).
+  480dp: a tweener tablet like the Streak (480x800 mdpi).
+  600dp: a 7” tablet (600x1024 mdpi).
+  720dp: a 10” tablet (720x1280 mdpi, 800x1280 mdpi, etc).
+  
+ Reduzir -20% se baseando em 480dp.
+-->
+
+<resources>
+
+    <dimen name="grand_lord_font_size">28.16sp</dimen>
+    <dimen name="master_big_font">23sp</dimen>
+    
+    <dimen name="plus_big_font">16.38sp</dimen>
+    <dimen name="extra_big_font">11.84sp</dimen>
+    <dimen name="big_font">10.24sp</dimen>
+    <dimen name="plus_medium_font">9.21sp</dimen>
+    <dimen name="extra_medium_font">8.7sp</dimen>
+    <dimen name="medium_font">8.19sp</dimen>
+    <dimen name="extra_small_font">7.68sp</dimen>
+    <dimen name="small_font">7.16sp</dimen>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  320dp: a typical phone screen (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc).
+  480dp: a tweener tablet like the Streak (480x800 mdpi).
+  600dp: a 7” tablet (600x1024 mdpi).
+  720dp: a 10” tablet (720x1280 mdpi, 800x1280 mdpi, etc).
+  
+  Reduzir -20% se baseando em 720dp.
+-->
+
+<resources>
+
+    <integer name="two_hundred">160</integer>
+    <integer name="one_hundred_sixty">128</integer>
+
+</resources>

@@ -1,0 +1,1109 @@
+[
+    {
+        "outputFile": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 61,
+                    "endOffset": 112
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 282,
+                        "endColumn": 61,
+                        "endOffset": 339
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 117,
+                    "endColumn": 67,
+                    "endOffset": 180
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 344,
+                        "endColumn": 67,
+                        "endOffset": 407
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 185,
+                    "endColumn": 68,
+                    "endOffset": 249
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 412,
+                        "endColumn": 68,
+                        "endOffset": 476
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 254,
+                    "endColumn": 64,
+                    "endOffset": 314
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 481,
+                        "endColumn": 64,
+                        "endOffset": 541
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 319,
+                    "endColumn": 65,
+                    "endOffset": 380
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 546,
+                        "endColumn": 65,
+                        "endOffset": 607
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 385,
+                    "endColumn": 61,
+                    "endOffset": 442
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 612,
+                        "endColumn": 61,
+                        "endOffset": 669
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 447,
+                    "endColumn": 58,
+                    "endOffset": 501
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 900,
+                        "endColumn": 58,
+                        "endOffset": 954
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 506,
+                    "endColumn": 39,
+                    "endOffset": 541
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 552,
+                        "endColumn": 39,
+                        "endOffset": 587
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 546,
+                    "endColumn": 41,
+                    "endOffset": 583
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 1895,
+                        "endColumn": 41,
+                        "endOffset": 1932
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 588,
+                    "endColumn": 49,
+                    "endOffset": 633
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 391,
+                        "endColumn": 49,
+                        "endOffset": 436
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 638,
+                    "endColumn": 45,
+                    "endOffset": 679
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 41,
+                        "startColumn": 4,
+                        "startOffset": 1722,
+                        "endColumn": 45,
+                        "endOffset": 1763
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 684,
+                    "endColumn": 41,
+                    "endOffset": 721
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 899,
+                        "endColumn": 41,
+                        "endOffset": 936
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 726,
+                    "endColumn": 47,
+                    "endOffset": 769
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 503,
+                        "endColumn": 47,
+                        "endOffset": 546
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 774,
+                    "endColumn": 50,
+                    "endOffset": 820
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 644,
+                        "endColumn": 50,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 825,
+                    "endColumn": 47,
+                    "endOffset": 868
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 742,
+                        "endColumn": 47,
+                        "endOffset": 785
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 873,
+                    "endColumn": 42,
+                    "endOffset": 911
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 1768,
+                        "endColumn": 42,
+                        "endOffset": 1806
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 916,
+                    "endColumn": 40,
+                    "endOffset": 952
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1122,
+                        "endColumn": 40,
+                        "endOffset": 1158
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 957,
+                    "endColumn": 45,
+                    "endOffset": 998
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1076,
+                        "endColumn": 45,
+                        "endOffset": 1117
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1003,
+                    "endColumn": 38,
+                    "endOffset": 1037
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 1937,
+                        "endColumn": 38,
+                        "endOffset": 1971
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1042,
+                    "endColumn": 55,
+                    "endOffset": 1093
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 441,
+                        "endColumn": 55,
+                        "endOffset": 492
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1098,
+                    "endColumn": 55,
+                    "endOffset": 1149
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 497,
+                        "endColumn": 55,
+                        "endOffset": 548
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1154,
+                    "endColumn": 48,
+                    "endOffset": 1198
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 553,
+                        "endColumn": 48,
+                        "endOffset": 597
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1203,
+                    "endColumn": 41,
+                    "endOffset": 1240
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 1258,
+                        "endColumn": 41,
+                        "endOffset": 1295
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1245,
+                    "endColumn": 46,
+                    "endOffset": 1287
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1163,
+                        "endColumn": 46,
+                        "endOffset": 1205
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1292,
+                    "endColumn": 47,
+                    "endOffset": 1335
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1210,
+                        "endColumn": 47,
+                        "endOffset": 1253
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1340,
+                    "endColumn": 51,
+                    "endOffset": 1387
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 354,
+                        "endColumn": 51,
+                        "endOffset": 401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1392,
+                    "endColumn": 46,
+                    "endOffset": 1434
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 407,
+                        "endColumn": 46,
+                        "endOffset": 449
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1439,
+                    "endColumn": 44,
+                    "endOffset": 1479
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 696,
+                        "endColumn": 44,
+                        "endOffset": 736
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 1484,
+                    "endColumn": 48,
+                    "endOffset": 1528
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 341,
+                        "endColumn": 48,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 1533,
+                    "endColumn": 41,
+                    "endOffset": 1570
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 857,
+                        "endColumn": 41,
+                        "endOffset": 894
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1575,
+                    "endColumn": 39,
+                    "endOffset": 1610
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 2058,
+                        "endColumn": 39,
+                        "endOffset": 2093
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 1615,
+                    "endColumn": 46,
+                    "endOffset": 1657
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 810,
+                        "endColumn": 46,
+                        "endOffset": 852
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 1662,
+                    "endColumn": 54,
+                    "endOffset": 1712
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 652,
+                        "endColumn": 54,
+                        "endOffset": 702
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1717,
+                    "endColumn": 54,
+                    "endOffset": 1767
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 755,
+                        "endColumn": 54,
+                        "endOffset": 805
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 1772,
+                    "endColumn": 46,
+                    "endOffset": 1814
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 455,
+                        "endColumn": 46,
+                        "endOffset": 497
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 1819,
+                    "endColumn": 49,
+                    "endOffset": 1864
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 593,
+                        "endColumn": 49,
+                        "endOffset": 638
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 1869,
+                    "endColumn": 47,
+                    "endOffset": 1912
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 941,
+                        "endColumn": 47,
+                        "endOffset": 984
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 1917,
+                    "endColumn": 40,
+                    "endOffset": 1953
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1035,
+                        "endColumn": 40,
+                        "endOffset": 1071
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 1958,
+                    "endColumn": 45,
+                    "endOffset": 1999
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 989,
+                        "endColumn": 45,
+                        "endOffset": 1030
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 2004,
+                    "endColumn": 43,
+                    "endOffset": 2043
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/font_dimens.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 791,
+                        "endColumn": 43,
+                        "endOffset": 830
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2048,
+                    "endColumn": 37,
+                    "endOffset": 2081
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 1857,
+                        "endColumn": 37,
+                        "endOffset": 1890
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 2086,
+                    "endColumn": 45,
+                    "endOffset": 2127
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 1811,
+                        "endColumn": 45,
+                        "endOffset": 1852
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 2132,
+                    "endColumn": 41,
+                    "endOffset": 2169
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 1441,
+                        "endColumn": 41,
+                        "endOffset": 1478
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 2174,
+                    "endColumn": 46,
+                    "endOffset": 2216
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 1346,
+                        "endColumn": 46,
+                        "endOffset": 1388
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2221,
+                    "endColumn": 47,
+                    "endOffset": 2264
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 4,
+                        "startOffset": 1393,
+                        "endColumn": 47,
+                        "endOffset": 1436
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 2269,
+                    "endColumn": 45,
+                    "endOffset": 2310
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1300,
+                        "endColumn": 45,
+                        "endOffset": 1341
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 2315,
+                    "endColumn": 41,
+                    "endOffset": 2352
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 4,
+                        "startOffset": 1976,
+                        "endColumn": 41,
+                        "endOffset": 2013
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 2357,
+                    "endColumn": 49,
+                    "endOffset": 2402
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 602,
+                        "endColumn": 49,
+                        "endOffset": 647
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 2407,
+                    "endColumn": 41,
+                    "endOffset": 2444
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 1680,
+                        "endColumn": 41,
+                        "endOffset": 1717
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 2449,
+                    "endColumn": 49,
+                    "endOffset": 2494
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 36,
+                        "startColumn": 4,
+                        "startOffset": 1483,
+                        "endColumn": 49,
+                        "endOffset": 1528
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 2499,
+                    "endColumn": 46,
+                    "endOffset": 2541
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 1583,
+                        "endColumn": 46,
+                        "endOffset": 1625
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 2546,
+                    "endColumn": 49,
+                    "endOffset": 2591
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 37,
+                        "startColumn": 4,
+                        "startOffset": 1533,
+                        "endColumn": 49,
+                        "endOffset": 1578
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 2596,
+                    "endColumn": 49,
+                    "endOffset": 2641
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 1630,
+                        "endColumn": 49,
+                        "endOffset": 1675
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 2646,
+                    "endColumn": 39,
+                    "endOffset": 2681
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 4,
+                        "startOffset": 2018,
+                        "endColumn": 39,
+                        "endOffset": 2053
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 2686,
+                    "endColumn": 47,
+                    "endOffset": 2729
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/dimens.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 707,
+                        "endColumn": 47,
+                        "endOffset": 750
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 2734,
+                    "endColumn": 54,
+                    "endOffset": 2784
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values-sw600dp/values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1185,
+                        "endColumn": 54,
+                        "endOffset": 1235
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 2789,
+                    "endColumn": 51,
+                    "endOffset": 2836
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/integer.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 388,
+                        "endColumn": 51,
+                        "endOffset": 435
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 2841,
+                    "endColumn": 45,
+                    "endOffset": 2882
+                },
+                "from": {
+                    "file": "/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/res/values-sw600dp/integer.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 342,
+                        "endColumn": 45,
+                        "endOffset": 383
+                    }
+                }
+            }
+        ]
+    }
+]

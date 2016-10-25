@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header_list_view_id"
+    style="@style/matchWrap"
+    android:background="@drawable/custom_blanck_backgroud"
+    android:padding="@dimen/twenty_dps">
+
+        <TextView
+            android:layout_toStartOf="@+id/header_quantity_collumn"
+            android:layout_toLeftOf="@+id/header_quantity_collumn"
+            android:layout_width="match_parent"
+            android:id="@+id/header_description_collumn"
+            style="@style/mediumFont"
+            android:text="@string/description_title" />
+
+        <TextView
+            android:layout_toStartOf="@+id/header_unit_value_collumn"
+            android:layout_toLeftOf="@+id/header_unit_value_collumn"
+            android:id="@+id/header_quantity_collumn"
+            style="@style/mediumFont"
+            android:paddingStart="@dimen/twenty_dps"
+            android:paddingEnd="@dimen/fourty_dps"
+            android:paddingLeft="@dimen/twenty_dps"
+            android:paddingRight="@dimen/fourty_dps"
+            android:text="@string/quantity_title"
+            tools:targetApi="jelly_bean_mr1" />
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/header_unit_value_collumn"
+            style="@style/mediumFont"
+            android:gravity="center_vertical"
+            android:text="@string/unit_value_title" />
+
+</RelativeLayout>

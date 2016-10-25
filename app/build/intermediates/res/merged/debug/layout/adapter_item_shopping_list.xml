@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/matchWrap"
+    android:shrinkColumns="1"
+    android:stretchColumns="1" >
+
+    <TextView
+        android:id="@+id/idItemShoppingList"
+        android:visibility="gone" />
+
+    <TableRow
+        style="@style/matchWrap"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="10dp" >
+
+        <CheckBox
+            android:id="@+id/checkedItemShoppingList"
+            style="@style/wrapWrap"
+            android:layout_gravity="center_vertical"
+            android:focusable="false" />
+
+        <TextView
+            android:id="@+id/descriptionItemShoppingList"
+            style="@style/mediumFont"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="start" />
+
+        <TextView
+            android:id="@+id/qtItemShoppingList"
+            style="@style/mediumFont"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="36"
+            android:gravity="end|center_vertical" />
+
+        <TextView
+            android:id="@+id/unitValueItemShoppingList"
+            style="@style/mediumFont"
+            android:text="R$ 89,00"
+            android:layout_width="70dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="end|center_vertical" />
+    </TableRow>
+
+
+
+    <TextView
+        android:id="@+id/totalItemShoppingList"
+        style="@style/mediumFont"
+        android:layout_marginBottom="10dp"
+        android:textSize="@dimen/extra_big_font"
+        android:text="R$ 890,00"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:gravity="end|center_vertical" />
+</TableLayout>

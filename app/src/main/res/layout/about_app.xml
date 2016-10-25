@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/customViewStyles"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        style="@style/matchWrap"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/about_bt_icon_shopping_list"
+            style="@style/wrapWrap"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:adjustViewBounds="true"
+            android:background="@color/gray_backgourd"
+            android:contentDescription="@string/app_name"
+            android:maxWidth="95dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_launcher" />
+
+        <LinearLayout
+            style="@style/wrapWrap"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/wrapWrap"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:ems="30"
+                android:text="@string/app_name"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/about_tv_version_code"
+                style="@style/wrapWrap"
+                android:text="@string/about_app_code"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/about_tv_version_app"
+                style="@style/wrapWrap"
+                android:text="@string/about_app_version"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/about_tv_version_android"
+        style="@style/wrapWrap"
+        android:text="@string/about_android_version"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/about_tv_install_date"
+        style="@style/wrapWrap"
+        android:text="@string/about_app_install_date"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/about_tv_update_date"
+        style="@style/wrapWrap"
+        android:text="@string/about_app_update_date"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/about_tv_description"
+        style="@style/wrapWrap"
+        android:layout_marginTop="10dp"
+        android:text="@string/about_app_description"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        style="@style/wrapWrap"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/wrapWrap"            
+            android:text="@string/about_app_contact_me"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/about_tv_contact"
+            android:text="@string/no_description"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:textColorLink="@color/azul"
+            android:autoLink="email"
+            android:linksClickable="true"            
+            style="@style/wrapWrap" />
+    </LinearLayout>
+
+</LinearLayout>

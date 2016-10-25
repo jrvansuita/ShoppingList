@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Defini 40% de alpha para todos os selectores de evento pressed.
+  Todas as cores definidas aqui devem ter também a sua versão alpha pressed (# 66 + FFFFFF).
+  
+  100% — FF    95% — F2    90% — E6
+  85% — D9     80% — CC    75% — BF
+  70% — B3     65% — A6    60% — 99
+  55% — 8C     50% — 80    45% — 73
+  40% — 66     35% — 59    30% — 4D
+  25% — 40     20% — 33    15% — 26
+  10% — 1A     5% — 0D     0% — 00
+    
+ -->
+
+<resources>
+    
+    <color name="black_royal">#262732</color>
+    <color name="black_royal_alpha">#66262732</color>
+    
+    <color name="black_writing">#10121F</color>
+    <color name="black_writing_alpha">#6610121F</color>
+    
+
+    <color name="black_brake">#DADADA</color>
+    <color name="black_brake_alpha">#66DADADA</color>
+    
+    <color name="gray">#E6E6E8</color>
+    <color name="gray_alpha">#66E6E6E8</color>
+    
+    <color name="white_overshadowed">#F2F2F3</color>
+    <color name="white_overshadowed_alpha">#66F2F2F3</color>    
+    
+    <color name="white_over">#DEDEE1</color>
+    <color name="white_over_alpha">#66DEDEE1</color>
+    
+    <color name="blue_marine_dark">#1A1A24</color>
+    <color name="blue_marine_dark_alpha">#661A1A24</color>
+    
+    <color name="blue_marine_light">#323340</color>
+    <color name="blue_marine_light_alpha">#66323340</color>
+    
+    <color name="blue_royal">#747EFF</color>
+    <color name="blue_royal_alpha">#66747EFF</color>
+    
+    <color name="blue_very_weak">#D6DBEA</color>
+    <color name="blue_very_alpha">#66D6DBEA</color>    
+        
+    <color name="purple_blue">#33B5E5</color>
+    <color name="purple_blue_alpha">#6633B5E5</color>
+    
+    <color name="green">#80CA80</color>
+    <color name="green_alpha">#6680CA80</color>
+    
+    <color name="red">#E68176</color>
+    <color name="red_alpha">#66E68176</color>    
+    
+    <color name="yellow">#CCCC66</color>
+    <color name="yellow_alpha">#66CCCC66</color>
+    
+    <color name="yellow_weak">#f6ffce</color>
+    <color name="yellow_weak_alpha">#66F6FFCE</color>
+        
+    <color name="white_heavy">#CBCCD1</color>
+    <color name="white_heavy_alpha">#CBCCD1</color>    
+    
+    
+    <color name="gray_inactive">#D6D6D6</color>    
+    <color name="azul">#0000ff</color>    
+    <color name="gray_backgourd">#ECECEC</color>    
+    
+</resources>

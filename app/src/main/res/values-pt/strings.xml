@@ -1,0 +1,95 @@
+<resources>
+
+    <string name="app_name">Listas de Compras</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="share_title">Listas de compras : </string>
+    <string name="new_list">Nova lista</string>
+    <string name="add_list">Adicionar item</string>
+    <string name="hint_desc">Insira um item</string>
+    <string name="save">Salvar?</string>
+    <string name="schedule">Agendar</string>
+    <string name="untitled">Sem título</string>
+    <string name="no_description">Sem descrição</string>
+    <string name="mask_unti_value">R$</string>
+    <string name="update">Atualização do aplicativo</string>
+    <string name="barcode_scan">Cod. Barras</string>
+    <string name="title_new">Nova lista de compras</string>
+    <string name="xml_import">Importar lista de compras</string>
+    <string name="select_a_date">Selecione uma data</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete_selecteds">Excluir marc.</string>
+    <string name="duplicate">Duplicar</string>
+    <string name="delete_all">Excluir todos</string>
+    <string name="select_all">Marcar todos</string>
+    <string name="desselect_all">Desmarcar todos</string>
+    <string name="delete_question">Excluir?</string>
+    <string name="want_delete_list">Deseja excluir a lista</string>
+    <string name="date">Data:</string>
+    <string name="want_delete_item">Deseja excluir o item</string>
+    <string name="want_delete_all_list">Deseja excluir todas as listas de compras?</string>
+    <string name="want_delete_all_items">Deseja excluir todos os itens desta listas de compras?</string>
+    <string name="want_delete_all_selected_itens">Deseja excluir todos os itens marcados desta listas de compras?</string>
+    <string name="info_desc">Informe a descrição do item.</string>
+    <string name="item_already_inserted">Item já consta na lista de compras!</string>
+    <string name="no_connection">Sem conexão com a Internet   =(</string>
+    <string name="new_notification_seted">Uma nova notificação será exibida em </string>
+    <string name="settings">Configurações</string>
+    <string name="time">Horário:</string>
+    <string name="schedule_notification">Agende uma notificação para:</string>
+    <string name="notification_arrived">Hora de ir as compras!</string>
+    <string name="options">Opções</string>
+    <string name="rename">Renomear</string>
+    <string name="delete">Excluir</string>
+    <string name="share">Compartilhar</string>
+    <string name="share_via_text">Compartilhar via texto</string>
+    <string name="title_rename">Renomerar lista de compras</string>
+    <string name="order">Ordenação</string>
+    <string name="share_via">Compartilhar via</string>
+    <string name="no_item_added">Nenhum item foi inserido</string>
+    <string name="no_list_added">Adicione uma nova lista</string>    
+    <string name="invalid_importable_xml">Este arquivo não é válido</string>
+    <string name="total">Total</string>
+    <string name="description_title">Descrição</string>
+    <string name="quantity_title">Quant.</string>
+    <string name="unit_value_title">Preço</string>
+    <string name="visualization_style">Estilo de visualização</string>
+    <string name="show_quantity_summary">Mostrar informações sobre quantidade por item</string>
+    <string name="show_quantity_title">Mostrar quantidades</string>
+    <string name="show_unit_value_summary">Mostrar informações sobre valor por item</string>    
+    <string name="show_unit_value_title">Mostrar valores</string>
+    <string name="show_check_box_summary">Mostrar o marcador nos itens da lista de compras</string>
+    <string name="show_check_boxe_title">Mostrar marcadores</string>
+    <string name="ordenation_style">Estilo de ordernação</string>
+    <string name="about_app">Sobre o aplicativo</string>
+    <string name="ordenation_checked_style_title">Ordernação marcados</string>
+    <string name="ordenation_alphabetical_style_title">Ordenação alfabética</string>
+    <string name="default_option">A opção atual é :</string>
+    <string name="about_app_version">Versão do app :</string>
+    <string name="about_app_code">Código da versão :</string>
+    <string name="about_app_install_date">Data de instalação :</string>
+    <string name="quant_items">%d Item(s)</string>
+    <string name="about_app_update_date">Data da última atualização :</string>
+    <string name="about_android_version">Versão do Android :</string>    
+    <string name="about">Sobre</string>    
+    <string name="about_app_contact_me">Contato : </string>
+    <string name="about_app_description">Este é um aplicativo experimental desenvolvido por Júnior Vansuita. Não pague por este aplicativo.</string>
+
+     <string name="about_pollfish">Sobre o PollFish</string>
+
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Ordem natural</item>
+        <item>Marcados abaixo</item>
+        <item>Marcados acima</item>
+    </string-array>
+
+
+
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Ordem natural</item>
+        <item>Ordem alfabética crescente</item>
+        <item>Ordem alfabética decrescente</item>
+    </string-array>
+     
+    
+</resources>

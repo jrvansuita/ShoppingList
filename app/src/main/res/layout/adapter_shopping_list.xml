@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="1"
+    android:stretchColumns="1" >
+
+    <TextView
+        android:id="@+id/idShoppingList"
+        android:visibility="gone" />
+
+    <TableRow
+        android:layout_marginStart="@dimen/five_dps"
+        android:layout_marginLeft="@dimen/five_dps"
+        android:layout_marginBottom="@dimen/ten_dps"
+        android:layout_marginTop="@dimen/ten_dps" >
+
+        <ImageView
+            android:id="@+id/allItemsChecked"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:src="@drawable/btn_check_on_holo_dark"
+            style="@style/wrapMatch" />
+
+        <TextView
+            android:id="@+id/nameShoppingList"
+            style="@style/bigFont"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/ten_dps"
+            android:layout_marginLeft="@dimen/ten_dps"
+            android:gravity="center_vertical"
+            android:text="aoisjdoajds" />
+
+        <LinearLayout
+            android:id="@+id/view_date_shopping_list"
+            style="@style/wrapWrap"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/dateShoppingList"
+                style="@style/mediumFont"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                android:text="22/26/2015" />
+
+            <TextView
+                android:id="@+id/timeShoppingList"
+                style="@style/mediumFont"
+                android:layout_marginRight="25dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="25dp"
+                android:text="12:56" />
+        </LinearLayout>
+    </TableRow>
+
+</TableLayout>

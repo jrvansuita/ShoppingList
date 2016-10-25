@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/customViewStyles"
+    android:orientation="vertical"
+    android:shrinkColumns="0"
+    android:stretchColumns="0" >
+
+    <TableRow android:layout_marginBottom="5dp" >
+
+        <AutoCompleteTextView
+            android:id="@+id/edDescription"
+            style="@style/matchMatch"
+            android:capitalize="sentences"
+            android:inputType="textCapSentences"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_blanck_backgroud"
+            android:completionThreshold="1"
+            android:hint="@string/hint_desc"
+            android:imeOptions="actionNext"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textStyle="normal"
+            tools:targetApi="jelly_bean_mr1" />
+
+        <EditText
+            android:id="@+id/edQuantity"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/custom_blanck_backgroud"
+            android:digits="@string/default_digitis"
+            android:layout_marginEnd="5dp"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal|number"
+            android:maxLength="6"
+            android:padding="5dp"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/edUnitValue"
+            android:layout_width="wrap_content"
+            android:background="@drawable/custom_blanck_backgroud"
+            android:digits="@string/default_digitis"
+            android:imeOptions="actionGo"
+            android:inputType="numberDecimal|number"
+            android:maxLength="7"
+            android:padding="5dp"
+            android:singleLine="true" />
+    </TableRow>
+
+    <RelativeLayout style="@style/matchMatch" >
+
+        <RelativeLayout
+            android:id="@+id/footer_bar"
+            style="@style/customFooterBarStyles"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/totalFont"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="start"
+                android:text="@string/total" />
+
+
+            <TextView
+                android:id="@+id/footer_total_quant"
+                style="@style/totalFont"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_toStartOf="@+id/footer_total_sum"
+                android:layout_toLeftOf="@+id/footer_total_sum"
+                android:text="oijejf"
+                android:layout_gravity="end" />
+
+            <TextView
+                android:id="@+id/footer_total_sum"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                style="@style/totalFont"
+                android:text="asiaish"
+                android:layout_gravity="end" />
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/matchWrap"
+            android:layout_above="@id/footer_bar"
+            android:animateLayoutChanges="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp" >
+
+            <ListView
+                android:id="@+id/lvItemShoppingList"
+                style="@style/customListViewStyles"
+                android:background="@drawable/custom_list_view_backgroud" >
+            </ListView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</TableLayout>

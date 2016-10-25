@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    style="@style/matchWrap"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/schedule_notificatin_display_time"
+        style="@style/matchWrap"
+        android:clickable="true"        
+        android:padding="@dimen/thirty_dps"
+        android:textColor="@color/purple_blue_selector"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/schedule_notificatin_display_date"
+        style="@style/matchWrap"
+        android:clickable="true"
+        android:paddingBottom="@dimen/thirty_dps"
+        android:paddingLeft="@dimen/thirty_dps"
+        android:paddingRight="@dimen/thirty_dps"
+        android:textColor="@color/purple_blue_selector"
+        android:textSize="20sp" />
+
+    <View android:layout_height="@dimen/one_dps" android:layout_width="match_parent" android:background="@color/black_brake"/>
+    
+    <LinearLayout
+        style="@style/matchWrap"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/schedule_notificatin_cancel"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"            
+            android:layout_weight="1"            
+            android:background="@drawable/button_selector"
+            android:textSize="14sp"
+            android:text="@string/cancel" >
+        </Button>
+
+        <View android:layout_width="@dimen/one_dps" android:layout_height="match_parent" android:background="@color/black_brake"/>
+        
+        <Button            
+            android:id="@+id/schedule_notificatin_schedule"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="@drawable/button_selector"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:text="@string/schedule" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

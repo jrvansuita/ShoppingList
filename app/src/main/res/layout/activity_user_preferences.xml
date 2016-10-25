@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:title="@string/settings" >
+
+    <PreferenceCategory android:title="@string/visualization_style" >
+
+        <CheckBoxPreference
+            android:key="@string/user_preference_show_check_box"
+            android:summary="@string/show_check_box_summary"
+            android:title="@string/show_check_boxe_title" />
+
+        <CheckBoxPreference
+            android:key="@string/user_preference_show_quantity"
+            android:summary="@string/show_quantity_summary"
+            android:title="@string/show_quantity_title" />
+
+        <CheckBoxPreference
+            android:key="@string/user_preference_show_unit_value"
+            android:summary="@string/show_unit_value_summary"
+            android:title="@string/show_unit_value_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/ordenation_style" >
+
+        <ListPreference
+            android:defaultValue=""
+            android:entries="@array/ordenation_checked_style_list_array"
+            android:entryValues="@array/ordenation_style_list_values"
+            android:key="@string/user_preference_ordenation_checked_list"
+            android:title="@string/ordenation_checked_style_title" />
+
+        <ListPreference
+            android:defaultValue=""
+            android:entries="@array/ordenation_alphabetical_style_list_array"
+            android:entryValues="@array/ordenation_style_list_values"
+            android:key="@string/user_preference_ordenation_alphabetical_list"
+            android:title="@string/ordenation_alphabetical_style_title" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/about_app" >
+
+        <Preference
+            android:key="@string/user_preference_about_app"
+            android:title="@string/about" >
+        </Preference>
+        
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_done"
+        android:icon="@drawable/ic_action_accept"
+        android:showAsAction="ifRoom"
+        android:title="@string/add_list"
+        yourapp:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_cancel"
+        android:icon="@drawable/ic_action_cancel"
+        android:showAsAction="ifRoom"
+        android:title="@android:string/cancel"
+        android:visible="false"
+        yourapp:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/ic_action"
+        android:showAsAction="collapseActionView|ifRoom"
+        android:actionViewClass="android.widget.SearchView" />
+
+    <!-- Menu Options -->
+
+    <item
+        android:id="@+id/action_select_all"
+        android:showAsAction="never"
+        android:title="@string/select_all"/>
+    <item
+        android:id="@+id/action_delete_selecteds"
+        android:showAsAction="never"
+        android:title="@string/delete_selecteds"/>
+    <item
+        android:id="@+id/action_delete_all"
+        android:showAsAction="never"
+        android:title="@string/delete_all"/>
+    <item
+        android:id="@+id/action_barcode_scan"
+        android:showAsAction="never"
+        android:title="@string/barcode_scan"/>
+    <item
+        android:id="@+id/action_share"
+        android:showAsAction="never"
+        android:title="@string/share"/>
+    <item
+        android:id="@+id/action_settings"
+        android:showAsAction="never"
+        android:title="@string/settings"/>
+
+</menu>
