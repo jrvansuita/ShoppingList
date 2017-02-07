@@ -32,7 +32,7 @@ This's a shopping list app. The user can create shopping lists or to-do lists. A
  * Android SDK.
  * SQLite.
   
-# Features.
+# Features
  * Create a shopping list.
  * Create items for the shopping lists.
  * Mark itens as done.
