@@ -31,6 +31,8 @@ This's a shopping list app. The user can create shopping lists or to-do lists. A
 # Techonologies
  * Android SDK.
  * SQLite.
+ * ~~PollFish library.~~
+ * ~~Google Play Services.~~
   
 # Features
  * Create a shopping list.
