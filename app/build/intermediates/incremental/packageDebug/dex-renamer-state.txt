@@ -1,4 +1,7 @@
-#Tue Oct 25 14:13:34 BRST 2016
-base.0=/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
-renamed.0=classes.dex
-file.0=/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+#Mon Feb 06 20:31:16 EST 2017
+base.0=/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7ec9df56c62d6da9151460d7b14b0bd548a3c671
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_30cc87d7cf35fabfde7cd057b3e180135efd44dc/classes.dex
+base.1=/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_30cc87d7cf35fabfde7cd057b3e180135efd44dc
+file.0=/Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7ec9df56c62d6da9151460d7b14b0bd548a3c671/classes.dex
