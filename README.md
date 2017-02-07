@@ -39,7 +39,9 @@ This's a shopping list app. The user can create shopping lists or to-do lists. A
  * Set prices and quantities.
  * Share the shopping lists as text.
  * Share the shopping lists as file.
- * Importing shopping lists files.
+ * Exporting/Importing shopping lists as files.
+ * Scheduling future shops.
+ * Barcode scanner.
  
  
   
