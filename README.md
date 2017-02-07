@@ -42,7 +42,8 @@ This's a shopping list app. The user can create shopping lists or to-do lists. A
  * Exporting/Importing shopping lists as files.
  * Scheduling future shops.
  * Barcode scanner.
- 
+ * ~~[PollFish](https://www.pollfish.com) ads integration.~~
+ * ~~[Google AdMob](https://www.google.com/admob/) integration.~~
  
   
 # 
