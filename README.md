@@ -15,7 +15,8 @@ This's a shopping list app. The user can create shopping lists or to-do lists. A
 <!-- License -->
 <a target="_blank" href="/LICENSE.txt"><img src="http://img.shields.io/:License-MIT-yellow.svg" alt="MIT License" /></a><!-- Minimun Android Api -->
 <a target="_blank" href="https://developer.android.com/reference/android/os/Build.VERSION_CODES.html#HONEYCOMB_MR1"><img src="https://img.shields.io/badge/API-12%2B-blue.svg?style=flat" alt="API" /></a><!-- Apptize.io -->
-[![Appetize.io](https://img.shields.io/badge/Apptize.io-Run%20Now-brightgreen.svg?)](https://appetize.io/embed/w36bcv16f9p45r4pj3marmvueg?device=nexus7&scale=50&autoplay=true&orientation=portrait&deviceColor=black) <!-- Hits Count -->[![ghit.me](https://ghit.me/badge.svg?repo=jrvansuita/ShoppingList)](https://ghit.me/repo/jrvansuita/ShoppingList)<!--Open Source --> [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/jrvansuita)
+[![Appetize.io](https://img.shields.io/badge/Apptize.io-Run%20Now-brightgreen.svg?)](https://appetize.io/embed/w36bcv16f9p45r4pj3marmvueg?device=nexus7&scale=50&autoplay=true&orientation=portrait&deviceColor=black) <!-- Hits Count -->
+[![Download](https://img.shields.io/badge/APK-Download-blue.svg)](http://apk-dl.com/dl/br.com.activity) [![ghit.me](https://ghit.me/badge.svg?repo=jrvansuita/ShoppingList)](https://ghit.me/repo/jrvansuita/ShoppingList)<!--Open Source --> [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/jrvansuita)
 
 
 # Screenshots
