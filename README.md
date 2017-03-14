@@ -19,13 +19,7 @@ This's a shopping list app. The user can create shopping lists or to-do lists. A
 
 
 # Screenshots
-<img src="images/screenshots/showing_lists.png" height='auto' width='210'/>
-<img src="images/screenshots/showing_item_prices.png" height='auto' width='210'/>
-<img src="images/screenshots/marking_item_as_done.png" height='auto' width='210'/>
-<img src="images/screenshots/list_marked_as_done.png" height='auto' width='210'/>
-<img src="images/screenshots/showing_menu.png" height='auto' width='210'/>
-<img src="images/screenshots/showing_settings.png" height='auto' width='210'/>
-<img src="images/screenshots/showing_about.png" height='auto' width='210'/>
+<img src="images/screenshots/showing_lists.png" height='auto' width='210'/> <img src="images/screenshots/showing_item_prices.png" height='auto' width='210'/> <img src="images/screenshots/marking_item_as_done.png" height='auto' width='210'/> <img src="images/screenshots/list_marked_as_done.png" height='auto' width='210'/> <img src="images/screenshots/showing_menu.png" height='auto' width='210'/> <img src="images/screenshots/showing_settings.png" height='auto' width='210'/> <img src="images/screenshots/showing_about.png" height='auto' width='210'/>
 
 
 # Techonologies
