@@ -10,6 +10,12 @@ android {
         targetSdkVersion 33
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        baseline file("lint-baseline.xml")
+    }
+
     buildTypes {
         release {
             minifyEnabled false

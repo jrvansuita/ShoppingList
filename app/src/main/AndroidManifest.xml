@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.activity"
-    android:versionCode="25"
-    android:versionName="1.2.3">
+    android:versionCode="26"
+    android:versionName="1.2.5">
 
     <!-- Não precisei colocar essa Tag de permissão para poder chamar o navegador -->
     <uses-permission android:name="android.permission.INTERNET" />
