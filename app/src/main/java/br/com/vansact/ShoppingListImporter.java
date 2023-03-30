@@ -67,7 +67,7 @@ public class ShoppingListImporter extends Activity {
 	
 	@Override
 	protected void onRestart() {
-		android.support.v4.app.NavUtils.navigateUpFromSameTask(this);
+		androidx.core.app.NavUtils.navigateUpFromSameTask(this);
 		super.onRestart();
 	}
 	

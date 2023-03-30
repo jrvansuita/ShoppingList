@@ -54,21 +54,7 @@ public class MainApp extends Activity implements OnItemClickListener, OnItemLong
 
         lvShoppingList.setAdapter(adapter);
 
-        //loadAdViewGoogleAdSence();
     }
-
-   /* private void loadAdViewGoogleAdSence() {
-        // Criar o adView.
-        adView = new AdView(this);
-        adView.setAdUnitId(getString(R.string.google_adsence_id));
-        adView.setAdSize(AdSize.BANNER);
-
-        ((FrameLayout)findViewById(R.id.ads_holder)).addView(adView);
-
-        // Iniciar uma solicitação genérica.
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
-    }*/
 
     @Override
     protected void onResume() {
@@ -78,16 +64,8 @@ public class MainApp extends Activity implements OnItemClickListener, OnItemLong
         refreshListView();
         super.onResume();
 
-		/*//Initializing the pollfish monetarization
-        PollFish.init(this, getString(R.string.pollfish_api_key), Position.BOTTOM_LEFT, 30);
-        adView.resume();*/
     }
 
-  /*  @Override
-    public void onPause() {
-        adView.pause();
-        super.onPause();
-    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -204,6 +182,5 @@ public class MainApp extends Activity implements OnItemClickListener, OnItemLong
 
         }
     }
-
 
 }

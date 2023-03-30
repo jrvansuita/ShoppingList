@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 33
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "br.com.activity"
-        minSdkVersion 12
-        targetSdkVersion 19
+        minSdkVersion 14
+        targetSdkVersion 33
     }
 
     buildTypes {
@@ -16,10 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.1.0'
-    //compile 'com.google.android.gms:play-services:+'
-    //compile files('libs/pollfish.jar')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 }

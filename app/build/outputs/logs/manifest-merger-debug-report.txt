@@ -1,143 +1,315 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/juniorvansuita/.gradle/caches/transforms-3/9277255be7da98765501f28d37189425/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/juniorvansuita/.gradle/caches/transforms-3/2c34d89be55d96ef3f1b41d9ccaab59b/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/juniorvansuita/.gradle/caches/transforms-3/f66f39fe36d7081014381c6276888825/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9ba72de9367ebc8c541e9909de0940b2/transformed/jetified-activity-1.6.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/ea29efcb837ef7fa36fd690b9cf6bcb8/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/dca55cfad684721a6040342c417cdc80/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/205a8f5c289efa1a0bf26b6340504991/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/cdc30d8505ba0339a95be9904100005b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/80b9c029a7c6e6ae521be475c321bdcd/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/429a082bfd61287a04c31da1a7624d2e/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/916e2d853fadd41fc5769e1e917ab133/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/eca9765659ab1642c2a5f79b5a6a114a/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/89b9a7990b45046608c94d2477ebe2b4/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/e9a77869fbf28f5da1f5c56f187041a8/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/e2aa8d864efd8506845ad0c221ccfda4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/e5991f1465ef8f989701b0bd368822b6/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/0afc8c71281554e0e9db7902e697fa1e/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/a3571bac0f3503b1e9aceef14ebab20b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/aeb373d0e5fe42d143a4e6382a16715f/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/450ed043ec4200b382f49ad8ee1cfe8f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/c28acc82fa03c99ee3ff9f3bb4367574/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/2fca04d5d8a6c2d26b06679c04cd24fe/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/a8a801b13ee580155f693ccbb37dcb05/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/ed2ea885f1ad7e41d1f405d5b2ee5020/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/juniorvansuita/.gradle/caches/transforms-3/fa8bbb344b2d7858efdd7d39bb3d41a2/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:1-122:12
 	package
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:2:5-30
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:3:5-30
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:4:5-32
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
-	android:versionCode
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:3:5-29
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:5:5-32
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:2:5-51
 	xmlns:android
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:11-69
-uses-sdk
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:6:5-8:41
-MERGED from [com.android.support:appcompat-v7:19.1.0] /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/AndroidManifest.xml:18:5-42
-	android:targetSdkVersion
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:8:9-38
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
-	android:minSdkVersion
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:7:9-35
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:1:11-69
+	android:versionCode
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:4:5-29
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:11:5-67
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:11:22-64
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:14:5-79
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:14:22-76
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:11:22-76
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:13:22-74
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:16:5-81
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:16:22-78
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:14:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:17:5-80
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:15:5-80
 	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:17:22-77
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:15:22-77
 application
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:27:5-120:19
-MERGED from [com.android.support:appcompat-v7:19.1.0] /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/AndroidManifest.xml:19:5-20
-	android:label
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:31:9-41
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:25:5-120:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/a3571bac0f3503b1e9aceef14ebab20b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/a3571bac0f3503b1e9aceef14ebab20b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/450ed043ec4200b382f49ad8ee1cfe8f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/450ed043ec4200b382f49ad8ee1cfe8f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:28:9-35
-	android:allowBackup
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:29:9-35
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:29:9-35
+	android:label
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:28:9-41
 	android:icon
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:30:9-45
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:27:9-45
+	android:allowBackup
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:26:9-35
 	android:theme
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:32:9-40
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:30:9-40
 activity#br.com.vansact.MainApp
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:36:9-45:20
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:32:9-41:20
 	android:label
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:39:13-45
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:38:13-50
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:40:13-44:29
-action#android.intent.action.MAIN
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:41:17-69
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:41:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:43:17-77
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:43:27-74
-activity#br.com.vansact.AddItemShoppingList
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:46:9-55:20
-	android:label
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:48:13-46
-	android:parentActivityName
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:49:13-64
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:47:13-62
-meta-data#android.support.PARENT_ACTIVITY
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:52:13-54:58
-	android:value
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:54:17-55
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:53:17-63
-activity#br.com.vansact.ShoppingListImporter
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:58:9-91:20
-	android:label
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:60:13-47
-	android:parentActivityName
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:61:13-64
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:59:13-63
-intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:69:13-76:29
-action#android.intent.action.VIEW
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:70:17-69
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:70:25-66
-category#android.intent.category.DEFAULT
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:72:17-76
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:72:27-73
-category#android.intent.category.BROWSABLE
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:73:17-78
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:73:27-75
-data
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:75:17-69
-	android:mimeType
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:75:23-66
-intent-filter#android.intent.action.EDIT+android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:79:13-90:29
-action#android.intent.action.EDIT
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:81:17-69
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:81:25-66
-activity#br.com.vansprefs.UserPreferences
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:94:9-105:20
-	android:label
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:96:13-46
-	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:95:13-60
-receiver#br.com.vansschedule.AlarmeNotificationShoppingList
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:107:9-115:20
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:35:13-45
 	android:exported
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:109:13-37
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:34:13-36
 	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:108:13-78
-intent-filter#AlarmeNotificationShoppingList+android.intent.category.DEFAULT
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:110:13-114:29
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:33:13-50
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:36:13-40:29
+action#android.intent.action.MAIN
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:39:27-74
+activity#br.com.vansact.AddItemShoppingList
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:42:9-52:20
+	android:parentActivityName
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:45:13-64
+	android:label
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:44:13-46
+	tools:targetApi
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:46:13-41
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:43:13-62
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:49:13-51:58
+	android:value
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:51:17-55
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:50:17-63
+activity#br.com.vansact.ShoppingListImporter
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:55:9-95:20
+	android:parentActivityName
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:58:13-64
+	android:label
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:57:13-47
+	android:exported
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:60:13-36
+	tools:targetApi
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:59:13-41
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:56:13-63
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:mimeType:application/octet-stream+data:pathPattern:.*\\..*\\..*\\.slx+data:pathPattern:.*\\..*\\.slx+data:pathPattern:.*\\.slx+data:scheme:content+data:scheme:file
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:68:13-80:29
+	android:label
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:70:17-49
+	tools:ignore
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:68:28-58
+	android:priority
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:71:17-38
+	android:icon
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:69:17-53
+action#android.intent.action.VIEW
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:72:17-69
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:72:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:73:17-76
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:73:27-73
+data
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:74:17-47
+	android:host
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:91:23-39
+	android:scheme
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:74:23-44
+	android:pathPattern
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:77:23-53
+	android:mimeType
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:76:23-66
+intent-filter#action:name:android.intent.action.EDIT+action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:*+data:mimeType:*/*+data:pathPattern:.*\\.slx+data:scheme:file
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:83:13-94:29
+action#android.intent.action.EDIT
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:85:17-69
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:85:25-66
+category#android.intent.category.BROWSABLE
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:87:17-78
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:87:27-75
+activity#br.com.vansprefs.UserPreferences
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:98:9-109:20
+	android:label
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:100:13-46
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:99:13-60
+receiver#br.com.vansschedule.AlarmeNotificationShoppingList
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:111:9-119:20
+	android:exported
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:113:13-37
+	android:name
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:112:13-78
+intent-filter#action:name:AlarmeNotificationShoppingList+category:name:android.intent.category.DEFAULT
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:114:13-118:29
 action#AlarmeNotificationShoppingList
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:111:17-73
+ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:115:17-73
 	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:111:25-70
-activity#com.google.android.gms.ads.AdActivity
-ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:118:9-119:124
-	android:configChanges
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:119:13-122
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:115:25-70
+uses-sdk
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/juniorvansuita/.gradle/caches/transforms-3/9277255be7da98765501f28d37189425/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/juniorvansuita/.gradle/caches/transforms-3/9277255be7da98765501f28d37189425/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/juniorvansuita/.gradle/caches/transforms-3/2c34d89be55d96ef3f1b41d9ccaab59b/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/juniorvansuita/.gradle/caches/transforms-3/2c34d89be55d96ef3f1b41d9ccaab59b/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/juniorvansuita/.gradle/caches/transforms-3/f66f39fe36d7081014381c6276888825/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/juniorvansuita/.gradle/caches/transforms-3/f66f39fe36d7081014381c6276888825/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9ba72de9367ebc8c541e9909de0940b2/transformed/jetified-activity-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9ba72de9367ebc8c541e9909de0940b2/transformed/jetified-activity-1.6.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/ea29efcb837ef7fa36fd690b9cf6bcb8/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/ea29efcb837ef7fa36fd690b9cf6bcb8/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/dca55cfad684721a6040342c417cdc80/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/dca55cfad684721a6040342c417cdc80/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/205a8f5c289efa1a0bf26b6340504991/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/205a8f5c289efa1a0bf26b6340504991/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/cdc30d8505ba0339a95be9904100005b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/cdc30d8505ba0339a95be9904100005b/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/80b9c029a7c6e6ae521be475c321bdcd/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/80b9c029a7c6e6ae521be475c321bdcd/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/429a082bfd61287a04c31da1a7624d2e/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/429a082bfd61287a04c31da1a7624d2e/transformed/lifecycle-viewmodel-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/916e2d853fadd41fc5769e1e917ab133/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/916e2d853fadd41fc5769e1e917ab133/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/eca9765659ab1642c2a5f79b5a6a114a/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/eca9765659ab1642c2a5f79b5a6a114a/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/89b9a7990b45046608c94d2477ebe2b4/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/89b9a7990b45046608c94d2477ebe2b4/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/e9a77869fbf28f5da1f5c56f187041a8/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/e9a77869fbf28f5da1f5c56f187041a8/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/e2aa8d864efd8506845ad0c221ccfda4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/e2aa8d864efd8506845ad0c221ccfda4/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/e5991f1465ef8f989701b0bd368822b6/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/e5991f1465ef8f989701b0bd368822b6/transformed/lifecycle-runtime-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/0afc8c71281554e0e9db7902e697fa1e/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/0afc8c71281554e0e9db7902e697fa1e/transformed/jetified-savedstate-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/a3571bac0f3503b1e9aceef14ebab20b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/a3571bac0f3503b1e9aceef14ebab20b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/aeb373d0e5fe42d143a4e6382a16715f/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/aeb373d0e5fe42d143a4e6382a16715f/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/450ed043ec4200b382f49ad8ee1cfe8f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/450ed043ec4200b382f49ad8ee1cfe8f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/c28acc82fa03c99ee3ff9f3bb4367574/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/c28acc82fa03c99ee3ff9f3bb4367574/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/2fca04d5d8a6c2d26b06679c04cd24fe/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/juniorvansuita/.gradle/caches/transforms-3/2fca04d5d8a6c2d26b06679c04cd24fe/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/a8a801b13ee580155f693ccbb37dcb05/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/juniorvansuita/.gradle/caches/transforms-3/a8a801b13ee580155f693ccbb37dcb05/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/ed2ea885f1ad7e41d1f405d5b2ee5020/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/juniorvansuita/.gradle/caches/transforms-3/ed2ea885f1ad7e41d1f405d5b2ee5020/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/juniorvansuita/.gradle/caches/transforms-3/fa8bbb344b2d7858efdd7d39bb3d41a2/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/juniorvansuita/.gradle/caches/transforms-3/fa8bbb344b2d7858efdd7d39bb3d41a2/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		ADDED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/juniorvansuita/StudioProjects/ShoppingList/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/a3571bac0f3503b1e9aceef14ebab20b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/juniorvansuita/.gradle/caches/transforms-3/a3571bac0f3503b1e9aceef14ebab20b/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from /Users/jrvansuita/AndroidStudioProjects/ShoppingList/app/src/main/AndroidManifest.xml:118:19-71
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/juniorvansuita/.gradle/caches/transforms-3/78710139f5ea939858cb22461abae633/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+permission#br.com.activity.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+uses-permission#br.com.activity.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] /Users/juniorvansuita/.gradle/caches/transforms-3/9a7bbc8e0d5f2badf125f9b8c441e340/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] /Users/juniorvansuita/.gradle/caches/transforms-3/1a8ad325ebe733f2682bfa69e9659ba3/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78

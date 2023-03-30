@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.support.v4.widget.CursorAdapter;
+import androidx.cursoradapter.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +17,6 @@ import br.com.dao.ItemShoppingListDAO;
 import br.com.dao.ShoppingListDAO;
 import br.com.vansexception.VansException;
 import br.com.vansformat.CustomDateFormat;
-import br.com.vansprefs.UserPreferences;
 
 public class ShoppingListCursorAdapter extends CursorAdapter {
 	private Context context;

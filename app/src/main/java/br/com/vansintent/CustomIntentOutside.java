@@ -2,8 +2,6 @@ package br.com.vansintent;
 
 import java.io.File;
 
-import org.apache.http.protocol.HTTP;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -34,7 +32,7 @@ public class CustomIntentOutside {
 
 	public static void shareShoppingListFile(Context context, String title, File file) {
 		Intent i = new Intent(android.content.Intent.ACTION_SEND);
-		i.setType(HTTP.OCTET_STREAM_TYPE);
+		i.setType("application/octet-stream");
 
 		i.putExtra(android.content.Intent.EXTRA_TEXT, title);
 		i.putExtra(android.content.Intent.EXTRA_STREAM, Uri.fromFile(file));
@@ -47,7 +45,7 @@ public class CustomIntentOutside {
 		String title = context.getString(R.string.share_title) + " " + shoppingList.getName() + " \n";
 
 		Intent i = new Intent(android.content.Intent.ACTION_SEND);
-		i.setType(HTTP.PLAIN_TEXT_TYPE);
+		i.setType("text/plain");
 		// i.putExtra(android.content.Intent.EXTRA_SUBJECT, title);
 		i.putExtra(android.content.Intent.EXTRA_TEXT, title + ItemShoppingListDAO.toString(context, idShoppingList));
 		context.startActivity(Intent.createChooser(i, context.getString(R.string.share_via)));
