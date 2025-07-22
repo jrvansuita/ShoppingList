@@ -6,6 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -44,16 +48,36 @@ public class AddItemShoppingList extends Activity implements OnItemClickListener
 	private ItemShoppingListCursorAdapter adapter;
 	private ShoppingList shoppingList;
 	private static final int BARCODE_SCANNER_REQUEST_CODE = 2;
-	private View headerView;
-	private ListView lvItensShoppingList;
-	private AutoCompleteTextView edDescription;
+    private AutoCompleteTextView edDescription;
 	private EditText edQuantity;
 	private EditText edUnitValue;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
+		getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
+
+		getWindow().getDecorView().setSystemUiVisibility(
+				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+						| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+						| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+		);
+
 		setContentView(R.layout.activity_add_item_shopping_list);
+
+		View rootView = findViewById(android.R.id.content);
+
+		ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
+            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(
+                    systemInsets.left,
+                    systemInsets.top,
+                    systemInsets.right,
+                    systemInsets.bottom
+            );
+            return WindowInsetsCompat.CONSUMED;
+        });
 
 		try {
 			shoppingList = ShoppingListDAO.select(this, getIntent().getExtras().getInt((getString(R.string.id_shopping_list))));
@@ -64,28 +88,28 @@ public class AddItemShoppingList extends Activity implements OnItemClickListener
 
 		this.setTitle(shoppingList.getName());
 
-		lvItensShoppingList = (ListView) findViewById(R.id.lvItemShoppingList);
+        ListView lvItensShoppingList =  findViewById(R.id.lvItemShoppingList);
 		lvItensShoppingList.setOnItemClickListener(this);
 		lvItensShoppingList.setOnItemLongClickListener(this);
 
-		headerView = (View) getLayoutInflater().inflate(R.layout.header_list_view_item_shopping_list, null);
+        View headerView = (View) getLayoutInflater().inflate(R.layout.header_list_view_item_shopping_list, null);
 		lvItensShoppingList.addHeaderView(headerView, null, false);
 
 		adapter = new ItemShoppingListCursorAdapter(this, shoppingList.getId());
 		lvItensShoppingList.setAdapter(adapter);
 
-		edUnitValue = (EditText) findViewById(R.id.edUnitValue);
+		edUnitValue = findViewById(R.id.edUnitValue);
 		edUnitValue.setVisibility(UserPreferences.getShowUnitValue(this) ? View.VISIBLE : View.GONE);
 		edUnitValue.setOnKeyListener(this);
 		edUnitValue.addTextChangedListener(new CustomEditTextWatcher(edUnitValue, 5));
 		edUnitValue.setOnFocusChangeListener(this);
 
-		edQuantity = (EditText) findViewById(R.id.edQuantity);
+		edQuantity = findViewById(R.id.edQuantity);
 		edQuantity.addTextChangedListener(new CustomEditTextWatcher(edQuantity, 4));
 		edQuantity.setVisibility(UserPreferences.getShowQuantity(this) ? View.VISIBLE : View.GONE);
 		edQuantity.setOnFocusChangeListener(this);
 
-		edDescription = (AutoCompleteTextView) findViewById(R.id.edDescription);
+		edDescription = findViewById(R.id.edDescription);
 		edDescription.setOnItemClickListener(this);
 		edDescription.addTextChangedListener(new CustomEditTextWatcher(edDescription, -1));
 
@@ -326,7 +350,7 @@ public class AddItemShoppingList extends Activity implements OnItemClickListener
 			adb.setPositiveButton(R.string.yes, new AlertDialog.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					try {
-						ItemShoppingListDAO.deleteAllLista(AddItemShoppingList.this, shoppingList.getId(), onlyCheckeds);
+						ItemShoppingListDAO.deleteAllList(AddItemShoppingList.this, shoppingList.getId(), onlyCheckeds);
 						cancelEditing();
 					} catch (VansException e) {
 						e.printStackTrace();
@@ -377,7 +401,7 @@ public class AddItemShoppingList extends Activity implements OnItemClickListener
 				return true;
 
 			case R.id.action_select_all:
-				ItemShoppingListDAO.checkAllItens(this, shoppingList.getId(), !allItensAlreadyChecked());
+				ItemShoppingListDAO.checkAllItems(this, shoppingList.getId(), !allItensAlreadyChecked());
 				cancelEditing();
 				return true;
 

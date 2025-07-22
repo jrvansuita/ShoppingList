@@ -1,34 +1,39 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion "30.0.3"
+    namespace 'br.com.activity'
+    compileSdk 35
 
     defaultConfig {
         applicationId "br.com.activity"
-        minSdkVersion 14
-        targetSdkVersion 33
-    }
-
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-        baseline file("lint-baseline.xml")
+        minSdk 21
+        targetSdk 35
+        versionCode 26
+        versionName "1.2.5"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+        baseline = file("lint-baseline.xml")
     }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.1.21"
 }

@@ -79,9 +79,9 @@ public class ShoppingListXmlImporter {
 								}
 
 								if (getTableName(tableNode).equalsIgnoreCase(ShoppingListDAO.TABLE_NAME)) {
-									shoppingList = ShoppingListDAO.insert(context, db, shoppingList);
+									shoppingList = ShoppingListDAO.insert(context, shoppingList);
 								} else if (getTableName(tableNode).equalsIgnoreCase(ItemShoppingListDAO.TABLE_NAME)) {
-									ItemShoppingListDAO.insert(context, db, itemShoppingList);
+									ItemShoppingListDAO.insert(context, itemShoppingList);
 								}
 
 							} else {

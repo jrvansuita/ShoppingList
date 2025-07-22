@@ -16,7 +16,7 @@ import br.com.activity.R;
 import br.com.vansintent.CustomIntentOutside;
 
 public class CustomDialogAboutApp extends Dialog implements android.view.View.OnClickListener {
-	private Context context;
+	private final Context context;
 
 	public CustomDialogAboutApp(Context context) throws NameNotFoundException {
 		super(context);
@@ -45,12 +45,8 @@ public class CustomDialogAboutApp extends Dialog implements android.view.View.On
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.about_bt_icon_shopping_list:
-              CustomIntentOutside.UpdateApp(context);
-			break;
+		if (v.getId() == R.id.about_bt_icon_shopping_list) {
+			CustomIntentOutside.UpdateApp(context);
 		}
-
 	}
-
 }

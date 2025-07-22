@@ -1,26 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="br.com.activity"
-    android:versionCode="26"
-    android:versionName="1.2.5">
+    package="br.com.activity">
 
-    <!-- Não precisei colocar essa Tag de permissão para poder chamar o navegador -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- Essa permissão é necessária para poder verificar o estado a conxão com internet -->
-    <!-- Se não colocar essa permissão, o aplicativo para -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- Para salvar xml database -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!-- This is for pollfish -->
-    <!--
-        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    -->
+    <!-- As permissões de armazenamento foram depreciadas a partir do Android 11 (API 30).
+         Use o SAF (Storage Access Framework) ou MediaStore. -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -31,44 +24,30 @@
 
         <activity
             android:name="br.com.vansact.MainApp"
-            android:exported="true"
-            android:label="@string/app_name">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="br.com.vansact.AddItemShoppingList"
+            android:exported="true"
             android:label="@string/title_new"
             android:parentActivityName="br.com.vansact.MainApp"
-            tools:targetApi="jelly_bean">
+            />
 
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.vansact.MainApp" />
-        </activity>
-
-        <!-- This is my shopping list importer activity -->
         <activity
             android:name="br.com.vansact.ShoppingListImporter"
             android:label="@string/xml_import"
             android:parentActivityName="br.com.vansact.MainApp"
-            tools:targetApi="jelly_bean"
             android:exported="true">
 
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.vansact.MainApp" />
-
-            <!-- For Dropbox, Gmail and Drive -->
             <intent-filter tools:ignore="AppLinkUrlError"
                 android:icon="@drawable/ic_launcher"
                 android:label="@string/app_name"
-                android:priority="50" >
+                android:priority="50">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="file" />
@@ -79,14 +58,11 @@
                 <data android:pathPattern=".*\\..*\\..*\\.slx" />
             </intent-filter>
 
-            <!-- Handle intent from a file browser app -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.EDIT" />
-
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:scheme="file" />
                 <data android:host="*" />
                 <data android:mimeType="*/*" />
@@ -94,29 +70,18 @@
             </intent-filter>
         </activity>
 
-        <!-- Activity for the configuration screen -->
         <activity
             android:name="br.com.vansprefs.UserPreferences"
-            android:label="@string/title_new">
-
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <!--
-                 <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.vansact.MainApp" />
-
-            -->
-        </activity>
+            android:label="@string/title_new" />
 
         <receiver
-            android:name="br.com.vansschedule.AlarmeNotificationShoppingList"
+            android:name="br.com.vansschedule.AlarmNotificationShoppingList"
             android:exported="false">
             <intent-filter>
                 <action android:name="AlarmeNotificationShoppingList" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-    </application>
 
+    </application>
 </manifest>

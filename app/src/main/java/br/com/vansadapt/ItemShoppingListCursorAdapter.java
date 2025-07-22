@@ -40,7 +40,7 @@ public class ItemShoppingListCursorAdapter extends CursorAdapter {
         try {
             Cursor c = getCursor();
             c.moveToPosition(position);
-            return ItemShoppingListDAO.returnClassInstace(context, c);
+            return ItemShoppingListDAO.returnClassInstance(context, c);
         } catch (Exception e) {
             return null;
         }

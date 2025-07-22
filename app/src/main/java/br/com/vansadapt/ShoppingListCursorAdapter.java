@@ -31,7 +31,7 @@ public class ShoppingListCursorAdapter extends CursorAdapter {
 		try {
 			Cursor c = getCursor();
 			c.moveToPosition(position);
-			return ShoppingListDAO.returnClassInstace(context, c);
+			return ShoppingListDAO.returnClassInstance(context, c);
 		} catch (Exception e) {
 			return null;
 		}

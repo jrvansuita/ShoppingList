@@ -19,6 +19,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 import br.com.activity.R;
 import br.com.bean.ShoppingList;
 import br.com.dao.ShoppingListDAO;
@@ -39,7 +43,30 @@ public class MainApp extends Activity implements OnItemClickListener, OnItemLong
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
+        getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
+
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+        );
+
         setContentView(R.layout.activity_main_app);
+
+        View rootView = findViewById(android.R.id.content);
+
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
+            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(
+                    systemInsets.left,
+                    systemInsets.top,
+                    systemInsets.right,
+                    systemInsets.bottom
+            );
+            return WindowInsetsCompat.CONSUMED;
+        });
+
 
         adapter = new ShoppingListCursorAdapter(this);
         lvShoppingList = (ListView) findViewById(R.id.lvShoppingList);
