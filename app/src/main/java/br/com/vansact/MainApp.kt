@@ -1,213 +1,182 @@
-package br.com.vansact;
+package br.com.vansact
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnDismissListener;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.app.Activity
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.ListView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import br.com.activity.R
+import br.com.bean.ShoppingList
+import br.com.dao.ShoppingListDAO
+import br.com.vansadapt.ShoppingListCursorAdapter
+import br.com.vansdialog.CustomDialogShoppingListOptions
+import br.com.vansexception.VansException
+import br.com.vansintent.CustomIntentOutside
+import br.com.vansprefs.UserPreferences
 
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+class MainApp : Activity(),
+    AdapterView.OnItemClickListener,
+    AdapterView.OnItemLongClickListener,
+    DialogInterface.OnDismissListener,
+    View.OnClickListener {
 
-import br.com.activity.R;
-import br.com.bean.ShoppingList;
-import br.com.dao.ShoppingListDAO;
-import br.com.vansadapt.ShoppingListCursorAdapter;
-import br.com.vansdialog.CustomDialogShoppingListOptions;
-import br.com.vansexception.VansException;
-import br.com.vansintent.CustomIntentOutside;
-import br.com.vansprefs.UserPreferences;
+    private lateinit var adapter: ShoppingListCursorAdapter
+    private lateinit var lvShoppingList: ListView
+    private lateinit var headerView: View
 
-public class MainApp extends Activity implements OnItemClickListener, OnItemLongClickListener, OnDismissListener, OnClickListener {
-    private ShoppingListCursorAdapter adapter;
-    private ListView lvShoppingList;
-    private View headerView;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+        // Modern way to handle edge-to-edge and transparent system bars
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.setBackgroundDrawableResource(android.R.color.transparent)
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            isAppearanceLightStatusBars = true
+            isAppearanceLightNavigationBars = true
+        }
 
-    //private AdView adView;
+        setContentView(R.layout.activity_main_app)
+        applyWindowInsets()
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
-        getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
-
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-        );
-
-        setContentView(R.layout.activity_main_app);
-
-        View rootView = findViewById(android.R.id.content);
-
-        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
-            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(
-                    systemInsets.left,
-                    systemInsets.top,
-                    systemInsets.right,
-                    systemInsets.bottom
-            );
-            return WindowInsetsCompat.CONSUMED;
-        });
-
-
-        adapter = new ShoppingListCursorAdapter(this);
-        lvShoppingList = (ListView) findViewById(R.id.lvShoppingList);
-
-        headerView = getLayoutInflater().inflate(R.layout.adapter_shopping_list, null);
-        ((TextView) headerView.findViewById(R.id.nameShoppingList)).setText(R.string.no_list_added);
-        (headerView.findViewById(R.id.view_date_shopping_list)).setVisibility(View.INVISIBLE);
-        headerView.setBackgroundResource(R.drawable.custom_blanck_backgroud);
-        headerView.setOnClickListener(this);
-
-        ((LinearLayout) findViewById(R.id.activity_main_app_id)).addView(headerView);
-
-        lvShoppingList.setAdapter(adapter);
-
+        adapter = ShoppingListCursorAdapter(this)
+        lvShoppingList = findViewById(R.id.lvShoppingList)
+        headerView = layoutInflater.inflate(R.layout.adapter_shopping_list, null).apply {
+            findViewById<TextView>(R.id.nameShoppingList).setText(R.string.no_list_added)
+            findViewById<View>(R.id.view_date_shopping_list).visibility = View.INVISIBLE
+            setBackgroundResource(R.drawable.custom_blanck_backgroud)
+            setOnClickListener(this@MainApp)
+        }
+        findViewById<LinearLayout>(R.id.activity_main_app_id).addView(headerView)
+        lvShoppingList.adapter = adapter
     }
 
-    @Override
-    protected void onResume() {
-        lvShoppingList.setOnItemClickListener(this);
-        lvShoppingList.setOnItemLongClickListener(this);
-
-        refreshListView();
-        super.onResume();
-
+    override fun onResume() {
+        super.onResume()
+        lvShoppingList.onItemClickListener = this
+        lvShoppingList.onItemLongClickListener = this
+        refreshListView()
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_app_menu, menu);
-        return true;
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_app_menu, menu)
+        return true
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.action_add -> {
+            addNew(); true
+        }
 
-            case R.id.action_add:
-                addNew();
-                return true;
+        R.id.action_delete_all -> {
+            confirmDeleteAll(); true
+        }
 
-            case R.id.action_delete_all:
-                deleteAll();
-                return true;
+        R.id.action_update -> {
+            CustomIntentOutside.UpdateApp(this); true
+        }
 
-            case R.id.action_update:
-                CustomIntentOutside.UpdateApp(this);
-                return true;
+        R.id.action_settings -> {
+            startActivity(Intent(this, UserPreferences::class.java)); true
+        }
 
-            case R.id.action_settings:
-                startActivity(new Intent(this, UserPreferences.class));
-                return true;
+        else -> super.onOptionsItemSelected(item)
+    }
 
-            default:
-                return super.onOptionsItemSelected(item);
+    private fun confirmDeleteAll() {
+        if (adapter.count == 0) return
+        AlertDialog.Builder(this)
+            .setTitle(R.string.delete_question)
+            .setMessage(getString(R.string.want_delete_all_list))
+            .setNegativeButton(R.string.no, null)
+            .setPositiveButton(R.string.yes) { _, _ -> deleteAllLists() }
+            .show()
+    }
+
+    private fun deleteAllLists() {
+        try {
+            ShoppingListDAO.deleteAll(this)
+            refreshListView()
+        } catch (e: VansException) {
+            showToast(e.message)
         }
     }
 
-    private void deleteAll() {
-        if (adapter.getCount() > 0) {
-            AlertDialog.Builder adb = new AlertDialog.Builder(this);
-            adb.setTitle(R.string.delete_question);
-            adb.setMessage(getString(R.string.want_delete_all_list));
-            adb.setNegativeButton(R.string.no, null);
-            adb.setPositiveButton(R.string.yes, new AlertDialog.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    try {
-                        ShoppingListDAO.deleteAll(MainApp.this);
-                        refreshListView();
-                    } catch (VansException e) {
-                        Toast.makeText(MainApp.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                        e.printStackTrace();
-                    }
-
-                }
-            });
-
-            adb.show();
-        }
-    }
-
-    private void addNew() {
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle(getString(R.string.save));
-        alert.setMessage(getString(R.string.title_new));
-
-        final EditText edName = new EditText(this);
-        alert.setView(edName);
-
-        alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                ShoppingList shoppingList = new ShoppingList(MainApp.this);
-                shoppingList.setName(MainApp.this, edName.getText().toString());
-
+    private fun addNew() {
+        val edName = EditText(this)
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.save))
+            .setMessage(getString(R.string.title_new))
+            .setView(edName)
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                val shoppingList = ShoppingList(this).apply { name = edName.text.toString() }
                 try {
-                    startActivity(new Intent(MainApp.this, AddItemShoppingList.class).putExtra(getString(R.string.id_shopping_list), ShoppingListDAO.insert(MainApp.this, shoppingList).getId()));
-                } catch (VansException e) {
-                    Toast.makeText(MainApp.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                    e.printStackTrace();
+                    val id =
+                        ShoppingListDAO.insert(this, shoppingList)?.id ?: return@setPositiveButton
+                    startActivity(
+                        Intent(this, AddItemShoppingList::class.java)
+                            .putExtra(getString(R.string.id_shopping_list), id)
+                    )
+                } catch (e: VansException) {
+                    showToast(e.message)
                 }
             }
-        });
-
-        alert.setNegativeButton(android.R.string.cancel, null);
-        alert.show();
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
     }
 
-    private void refreshListView() {
-        adapter.refreshCursorAdapter();
-        headerView.setVisibility(adapter.getCount() == 0 ? View.VISIBLE : View.GONE);
+    private fun refreshListView() {
+        adapter.refreshCursorAdapter()
+        headerView.visibility = if (adapter.count == 0) View.VISIBLE else View.GONE
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-        lvShoppingList.setOnItemClickListener(null);
-        startActivity(new Intent(this, AddItemShoppingList.class).putExtra(getString(R.string.id_shopping_list), adapter.getItem(arg2).getId()));
-
+    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        startActivity(
+            Intent(this, AddItemShoppingList::class.java)
+                .putExtra(getString(R.string.id_shopping_list), adapter.getItem(position).id)
+        )
     }
 
-    @Override
-    public boolean onItemLongClick(AdapterView<?> arg0, View arg1, final int arg2, long arg3) {
-        if (adapter.getItem(arg2) != null) {
-            CustomDialogShoppingListOptions c = new CustomDialogShoppingListOptions(this, adapter.getItem(arg2).getId());
-            c.setOnDismissListener(this);
-            c.show();
+    override fun onItemLongClick(
+        parent: AdapterView<*>?,
+        view: View?,
+        position: Int,
+        id: Long
+    ): Boolean {
+        CustomDialogShoppingListOptions(this, adapter.getItem(position).id).apply {
+            setOnDismissListener(this@MainApp)
+            show()
         }
-
-        return true;
+        return true
     }
 
-    @Override
-    public void onDismiss(DialogInterface dialog) {
-        refreshListView();
+    override fun onDismiss(dialog: DialogInterface?) = refreshListView()
+
+    override fun onClick(v: View?) {
+        if (adapter.count == 0) addNew()
     }
 
-    @Override
-    public void onClick(View v) {
-        if (adapter.getCount() == 0) {
-            addNew();
-
+    private fun applyWindowInsets() {
+        val rootView = findViewById<View>(android.R.id.content)
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, insets ->
+            val sys = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(sys.left, sys.top, sys.right, sys.bottom)
+            WindowInsetsCompat.CONSUMED
         }
     }
 
+    private fun showToast(msg: String?) =
+        Toast.makeText(this, msg ?: "", Toast.LENGTH_LONG).show()
 }

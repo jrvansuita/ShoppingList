@@ -29,8 +29,8 @@ import br.com.vansxmlhandler.ShoppingListXmlExporter;
 
 public class CustomDialogShoppingListOptions extends Dialog implements OnItemClickListener, android.content.DialogInterface.OnDismissListener {
 
-    private int idShoppingList;
-    private Context context;
+    private final int idShoppingList;
+    private final Context context;
 
     public CustomDialogShoppingListOptions(Context context, int idShoppingList) {
         super(context);
@@ -38,7 +38,7 @@ public class CustomDialogShoppingListOptions extends Dialog implements OnItemCli
         setCancelable(true);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        String[] options = { context.getString(R.string.rename), context.getString(R.string.duplicate), context.getString(R.string.delete), context.getString(R.string.schedule), context.getString(R.string.share), context.getString(R.string.share_via_text) };
+        String[] options = {context.getString(R.string.rename), context.getString(R.string.duplicate), context.getString(R.string.delete), context.getString(R.string.schedule), context.getString(R.string.share), context.getString(R.string.share_via_text)};
 
         OptionAdapter adapter = new OptionAdapter(context, options);
         ListView lv = new ListView(context);
@@ -95,7 +95,7 @@ public class CustomDialogShoppingListOptions extends Dialog implements OnItemCli
 
         ShoppingList newShop = ShoppingListDAO.insert(context, shop);
 
-        Cursor c = ItemShoppingListDAO.selectAll(context,null,  idShoppingList);
+        Cursor c = ItemShoppingListDAO.selectAll(context, null, idShoppingList);
 
         if (c != null) {
             while (c.moveToNext()) {
@@ -128,7 +128,7 @@ public class CustomDialogShoppingListOptions extends Dialog implements OnItemCli
             public void onClick(DialogInterface dialog, int whichButton) {
                 try {
                     ShoppingList shoppingList = ShoppingListDAO.select(context, idShoppingList);
-                    shoppingList.setName(context, edName.getText().toString());
+                    shoppingList.setName(edName.getText().toString());
                     ShoppingListDAO.update(context, shoppingList);
                 } catch (Exception e) {
                     e.printStackTrace();

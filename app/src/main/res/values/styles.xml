@@ -3,7 +3,11 @@
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">false</item>
     </style>
+
 
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:actionBarStyle">@style/ActionBarDark</item>

@@ -1,97 +1,75 @@
-package br.com.vansxmlhandler;
+package br.com.vansxmlhandler
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
+import android.content.Context
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
+import android.widget.Toast
+import br.com.dao.DataBaseDAO
+import br.com.dao.ItemShoppingListDAO
+import br.com.dao.ShoppingListDAO
+import br.com.vansexception.VansException
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.nio.ByteBuffer
 
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
-import br.com.dao.DataBaseDAO;
-import br.com.dao.ItemShoppingListDAO;
-import br.com.dao.ShoppingListDAO;
-import br.com.vansexception.VansException;
+class ShoppingListXmlExporter(private val context: Context) {
+    private val customXmlBuilder = CustomXmlBuilder().apply {
+        start(DataBaseDAO.DATABASE_NAME)
+    }
+    private val db: SQLiteDatabase = DataBaseDAO(context).writableDatabase
+    private var idShoppingList: Int = 0
 
-public class ShoppingListXmlExporter {
-	private CustomXmlBuilder customXmlBuilder;
-	private SQLiteDatabase db;
-	private Context context;
-	private int idShoppingList;
+    @Throws(VansException::class)
+    fun export(idShoppingList: Int): File? {
+        val fileName = ShoppingListDAO.select(context, idShoppingList)?.name ?: "null"
+        return try {
+            this.idShoppingList = idShoppingList
+            buildXmlTable(ShoppingListDAO.TABLE_NAME, ShoppingListDAO.FIELD_ID)
+            buildXmlTable(ItemShoppingListDAO.TABLE_NAME, ItemShoppingListDAO.FIELD_IDSHOPPINGLIST)
+            val xmlString = customXmlBuilder.end()
+            writeToFile(xmlString, fileName)
+        } catch (e: Exception) {
+            Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+            null
+        }
+    }
 
-	public ShoppingListXmlExporter(Context context) throws IOException {
-		this.customXmlBuilder = new CustomXmlBuilder();
-		this.customXmlBuilder.start(DataBaseDAO.DATABASE_NAME);
+    private fun buildXmlTable(tableName: String, filterFieldName: String) {
+        try {
+            customXmlBuilder.openTable(tableName)
+            val sql = "select * from $tableName where $filterFieldName = $idShoppingList"
+            val c: Cursor = db.rawQuery(sql, emptyArray())
+            if (c.moveToFirst()) {
+                val cols = c.columnCount
+                do {
+                    customXmlBuilder.openRow()
+                    for (i in 0 until cols) {
+                        customXmlBuilder.addColumn(c.getColumnName(i), c.getString(i))
+                    }
+                    customXmlBuilder.closeRow()
+                } while (c.moveToNext())
+            }
+            c.close()
+            customXmlBuilder.closeTable()
+        } catch (e: Exception) {
+            Toast.makeText(
+                context, "Error exporting table $tableName - ${e.message}", Toast.LENGTH_LONG
+            ).show()
+        }
+    }
 
-		this.db = new DataBaseDAO(context).getWritableDatabase();
-		this.context = context;
-	}
-
-	public File export(int idShoppingList) throws VansException {
-		String fileName = ShoppingListDAO.select(context, idShoppingList).getName();
-
-		try {
-			this.idShoppingList = idShoppingList;
-
-			buildXmlTable(ShoppingListDAO.TABLE_NAME, ShoppingListDAO.FIELD_ID);
-			buildXmlTable(ItemShoppingListDAO.TABLE_NAME, ItemShoppingListDAO.FIELD_IDSHOPPINGLIST);
-
-			String xmlString = customXmlBuilder.end();
-
-			return writeToFile(xmlString, fileName);
-		} catch (Exception e) {
-			Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
-			return null;
-		}
-	}
-
-	private void buildXmlTable(String tableName, String filterFielName) {
-		try {
-			customXmlBuilder.openTable(tableName);
-			String sql = "select * from " + tableName + " where " + filterFielName + " = " + idShoppingList;
-			Cursor c = db.rawQuery(sql, new String[0]);
-			if (c.moveToFirst()) {
-				int cols = c.getColumnCount();
-				do {
-					customXmlBuilder.openRow();
-					for (int i = 0; i < cols; i++) {
-						customXmlBuilder.addColumn(c.getColumnName(i), c.getString(i));
-					}
-					customXmlBuilder.closeRow();
-				} while (c.moveToNext());
-			}
-			c.close();
-
-			customXmlBuilder.closeTable();
-
-		} catch (Exception e) {
-			Toast.makeText(context, "Error exporting table " + tableName + " - " + e.getMessage(), Toast.LENGTH_LONG).show();
-		}
-
-	}
-
-	
-	private File writeToFile(final String xmlString, final String exportFileName) throws IOException {			
-		File outputDir = context.getExternalCacheDir(); // context being the Activity pointer
-		File file = File.createTempFile(exportFileName +"__" , ".slx", outputDir);
-		file.createNewFile();
-
-		ByteBuffer buff = ByteBuffer.wrap(xmlString.getBytes());
-		@SuppressWarnings("resource")
-		FileChannel channel = new FileOutputStream(file).getChannel();
-		try {
-			channel.write(buff);
-		} finally {
-			if (channel != null) {
-				channel.close();			
-			}
-		}
-		return file;
-	}
-
-	
-	
-
+    @Throws(IOException::class)
+    private fun writeToFile(xmlString: String, exportFileName: String): File {
+        val outputDir = context.externalCacheDir
+        val file = File.createTempFile("${exportFileName}__", ".slx", outputDir)
+        file.createNewFile()
+        val buff = ByteBuffer.wrap(xmlString.toByteArray())
+        FileOutputStream(file).channel.use { channel ->
+            channel.write(buff)
+        }
+        return file
+    }
 }
+
+

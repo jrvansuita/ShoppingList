@@ -1,200 +1,200 @@
-package br.com.vansxmlhandler;
+package br.com.vansxmlhandler
 
-import java.sql.Date;
-import java.text.ParseException;
+import android.app.Activity
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.widget.Toast
+import br.com.activity.R
+import br.com.bean.ItemShoppingList
+import br.com.bean.ShoppingList
+import br.com.dao.DataBaseDAO
+import br.com.dao.ItemShoppingListDAO
+import br.com.dao.ShoppingListDAO
+import br.com.vansformat.CustomFloatFormat
+import org.w3c.dom.DOMException
+import org.w3c.dom.Document
+import org.w3c.dom.Node
+import java.sql.Date
+import java.text.ParseException
 
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+class ShoppingListXmlImporter(
+    private val context: Context,
+    private val doc: Document
+) {
+    private var shoppingList: ShoppingList = ShoppingList(
+        0,
+        context.getString(R.string.untitled),
+        Date(System.currentTimeMillis())
+    )
+    private var itemShoppingList: ItemShoppingList = ItemShoppingList(
+        0,
+        0,
+        context.getString(R.string.no_description),
+        0f,
+        0f,
+        false
+    )
+    private var wasSucessful: Boolean = false
 
-import android.app.Activity;
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
-import br.com.activity.R;
-import br.com.bean.ItemShoppingList;
-import br.com.bean.ShoppingList;
-import br.com.dao.DataBaseDAO;
-import br.com.dao.ItemShoppingListDAO;
-import br.com.dao.ShoppingListDAO;
-import br.com.vansformat.CustomFloatFormat;
+    fun getImportedShoppingList(): ShoppingList = shoppingList
 
-public class ShoppingListXmlImporter {
-	private Document doc;
-	private Context context;
-	private ShoppingList shoppingList;
-	private ItemShoppingList itemShoppingList;
-	private boolean wasSucessful = false;
+    fun wasSucessful(): Boolean = wasSucessful
 
-	public ShoppingListXmlImporter(Context context, Document doc) {
-		this.context = context;
-		this.shoppingList = new ShoppingList(context);
-		this.itemShoppingList = new ItemShoppingList(context);
-		this.doc = doc;
-	}
+    @Throws(DOMException::class, ParseException::class)
+    fun importXml() {
+        wasSucessful = false
+        if (isImportableBase()) {
+            val tablesList = doc.documentElement.childNodes
+            val db: SQLiteDatabase = DataBaseDAO(context).writableDatabase
+            db.beginTransaction()
+            try {
+                for (i in 0 until tablesList.length) {
+                    val tableNode = tablesList.item(i)
+                    if (isImportableTable(tableNode)) {
+                        val rowsList = tableNode.childNodes
+                        for (j in 0 until rowsList.length) {
+                            val rowNode = rowsList.item(j)
+                            if (isImportableRow(rowNode)) {
+                                val colsList = rowNode.childNodes
+                                for (k in 0 until colsList.length) {
+                                    val colNode = colsList.item(k)
+                                    if (isImportableCol(colNode)) {
+                                        setColAttributesToTableClass(tableNode, colNode)
+                                    } else {
+                                        break
+                                    }
+                                }
+                                when (getTableName(tableNode)) {
+                                    ShoppingListDAO.TABLE_NAME -> {
+                                        shoppingList =
+                                            ShoppingListDAO.insert(context, shoppingList)!!
+                                    }
 
-	public ShoppingList getImportedShoppingList() {
-		return shoppingList;
-	}
+                                    ItemShoppingListDAO.TABLE_NAME -> {
+                                        ItemShoppingListDAO.insert(context, itemShoppingList)
+                                    }
+                                }
+                            } else {
+                                break
+                            }
+                        }
+                    } else {
+                        break
+                    }
+                }
+                db.setTransactionSuccessful()
+                wasSucessful = true
+            } catch (e: Exception) {
+                wasSucessful = false
+                doToast(e.message)
+            } finally {
+                db.endTransaction()
+                db.close()
+            }
+        }
+    }
 
-	public boolean wasSucessful() {
-		return wasSucessful;
-	}
+    @Throws(DOMException::class, ParseException::class)
+    private fun setColAttributesToTableClass(tableNode: Node, colNode: Node) {
+        when (getTableName(tableNode)) {
+            ShoppingListDAO.TABLE_NAME -> {
+                when (colNode.attributes.getNamedItem(CustomXmlBuilder.NAME).nodeValue) {
+                    ShoppingListDAO.FIELD_NAME -> shoppingList.name = colNode.textContent
+                    ShoppingListDAO.FIELD_DATELIST -> shoppingList.date =
+                        Date(colNode.textContent.toLong())
+                }
+            }
 
-	public void importXml() throws DOMException, ParseException {
-		wasSucessful = false;
-		if (isImportableBase()) {
-			NodeList tablesList = doc.getDocumentElement().getChildNodes();
-			
-			SQLiteDatabase db = new DataBaseDAO(context).getWritableDatabase(); 
-			db.beginTransaction();			
-			
-			try {				
-				
-				for (int i = 0; i < tablesList.getLength(); i++) {
+            ItemShoppingListDAO.TABLE_NAME -> {
+                when (colNode.attributes.getNamedItem(CustomXmlBuilder.NAME).nodeValue) {
+                    ItemShoppingListDAO.FIELD_IDSHOPPINGLIST -> itemShoppingList.idShoppingList =
+                        shoppingList.id
 
-					Node tableNode = tablesList.item(i);
+                    ItemShoppingListDAO.FIELD_CHECKED -> itemShoppingList.checked =
+                        colNode.textContent.toBoolean()
 
-					if (isImportableTable(tableNode)) {
-						NodeList rowsList = tableNode.getChildNodes();
+                    ItemShoppingListDAO.FIELD_DESCRIPTION -> itemShoppingList.description =
+                        colNode.textContent
 
-						for (int j = 0; j < rowsList.getLength(); j++) {
+                    ItemShoppingListDAO.FIELD_UNITVALUE -> itemShoppingList.unitValue =
+                        CustomFloatFormat.parseFloat(colNode.textContent)
 
-							Node rowNode = rowsList.item(j);
+                    ItemShoppingListDAO.FIELD_QUANTITY -> itemShoppingList.quantity =
+                        CustomFloatFormat.parseFloat(colNode.textContent)
+                }
+            }
+        }
+    }
 
-							if (isImportableRow(rowNode)) {
-								NodeList colsList = rowNode.getChildNodes();
+    private fun isImportableBase(): Boolean {
+        return try {
+            val dataBaseNode = doc.documentElement
+            isValidNode(
+                dataBaseNode.nodeName.equals(
+                    CustomXmlBuilder.DATA_BASE_NODO_NAME,
+                    ignoreCase = true
+                )
+                        && dataBaseNode.getAttribute(CustomXmlBuilder.NAME)
+                    .equals(DataBaseDAO.DATABASE_NAME, ignoreCase = true)
+                        && dataBaseNode.hasChildNodes()
+            )
+        } catch (e: Exception) {
+            doToast(e.message)
+            false
+        }
+    }
 
-								for (int k = 0; k < colsList.getLength(); k++) {
+    private fun isImportableTable(tableNode: Node): Boolean {
+        return try {
+            isValidNode(
+                tableNode.nodeName.equals(CustomXmlBuilder.TABLE_NODO_NAME, ignoreCase = true)
+                        && tableNode.hasChildNodes()
+                        && tableNode.hasAttributes()
+            )
+        } catch (e: Exception) {
+            doToast(e.message)
+            false
+        }
+    }
 
-									Node colNode = colsList.item(k);
+    private fun isImportableRow(rowNode: Node): Boolean {
+        return try {
+            isValidNode(
+                rowNode.nodeName.equals(CustomXmlBuilder.ROW_NODO_NAME, ignoreCase = true)
+                        && rowNode.hasChildNodes()
+                        && !rowNode.hasAttributes()
+            )
+        } catch (e: Exception) {
+            doToast(e.message)
+            false
+        }
+    }
 
-									if (isImportableCol(colNode)) {
-										setColAttributesToTableClass(tableNode, colNode);
-									} else {
-										break;
-									}
-								}
+    private fun isImportableCol(colNode: Node): Boolean {
+        return try {
+            isValidNode(
+                colNode.nodeName.equals(CustomXmlBuilder.COL_NODO_NAME, ignoreCase = true)
+                        && colNode.hasAttributes()
+            )
+        } catch (e: Exception) {
+            doToast(e.message)
+            false
+        }
+    }
 
-								if (getTableName(tableNode).equalsIgnoreCase(ShoppingListDAO.TABLE_NAME)) {
-									shoppingList = ShoppingListDAO.insert(context, shoppingList);
-								} else if (getTableName(tableNode).equalsIgnoreCase(ItemShoppingListDAO.TABLE_NAME)) {
-									ItemShoppingListDAO.insert(context, itemShoppingList);
-								}
+    private fun isValidNode(aValue: Boolean): Boolean {
+        if (!aValue) {
+            doToast(context.getString(R.string.invalid_importable_xml))
+        }
+        return aValue
+    }
 
-							} else {
-								break;
-							}
-						}
+    private fun getTableName(tableNode: Node): String =
+        tableNode.attributes.getNamedItem(CustomXmlBuilder.NAME).nodeValue
 
-					} else {
-						break;
-					}
-
-				}
-
-				db.setTransactionSuccessful();				
-				wasSucessful = true;
-			} catch (Exception e) {				
-				wasSucessful = false;
-				doToast(e.getMessage());
-			}
-			finally {
-				db.endTransaction();
-				db.close();
-			}
-		}
-	}
-
-	private void setColAttributesToTableClass(Node tableNode, Node colNode) throws DOMException, ParseException {
-
-		if (getTableName(tableNode).equalsIgnoreCase(ShoppingListDAO.TABLE_NAME)) {
-
-			if (colNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue().equalsIgnoreCase(ShoppingListDAO.FIELD_NAME)) {
-				shoppingList.setName(context, colNode.getTextContent());
-			}
-
-			if (colNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue().equalsIgnoreCase(ShoppingListDAO.FIELD_DATELIST)) {
-				shoppingList.setDate(new Date(Long.parseLong(colNode.getTextContent())));
-			}
-		} else if (getTableName(tableNode).equalsIgnoreCase(ItemShoppingListDAO.TABLE_NAME)) {
-
-			if (colNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue().equalsIgnoreCase(ItemShoppingListDAO.FIELD_IDSHOPPINGLIST)) {
-				itemShoppingList.setIdShoppingList(shoppingList.getId());
-			}
-
-			if (colNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue().equalsIgnoreCase(ItemShoppingListDAO.FIELD_CHECKED)) {
-				itemShoppingList.setChecked(Boolean.valueOf(colNode.getTextContent()));
-			}
-
-			if (colNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue().equalsIgnoreCase(ItemShoppingListDAO.FIELD_DESCRIPTION)) {
-				itemShoppingList.setDescription(colNode.getTextContent());
-			}
-
-			if (colNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue().equalsIgnoreCase(ItemShoppingListDAO.FIELD_UNITVALUE)) {
-				itemShoppingList.setUnitValue(CustomFloatFormat.parseFloat(colNode.getTextContent()));
-			}
-
-			if (colNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue().equalsIgnoreCase(ItemShoppingListDAO.FIELD_QUANTITY)) {
-				itemShoppingList.setQuantity(CustomFloatFormat.parseFloat(colNode.getTextContent()));
-			}
-		}
-	}
-
-	private boolean isImportableBase() {
-		try {
-			Element dataBaseNode = doc.getDocumentElement();
-
-			return isValidNode((dataBaseNode.getNodeName().equalsIgnoreCase(CustomXmlBuilder.DATA_BASE_NODO_NAME))
-					&& (dataBaseNode.getAttribute(CustomXmlBuilder.NAME).equalsIgnoreCase(DataBaseDAO.DATABASE_NAME)) && dataBaseNode.hasChildNodes());
-		} catch (Exception e) {
-			doToast(e.getMessage());
-			return false;
-		}
-	}
-
-	private boolean isImportableTable(Node tableNode) {
-		try {
-			return isValidNode(tableNode.getNodeName().equalsIgnoreCase(CustomXmlBuilder.TABLE_NODO_NAME) && tableNode.hasChildNodes() && tableNode.hasAttributes());
-		} catch (Exception e) {
-			doToast(e.getMessage());
-			return false;
-		}
-	}
-
-	private boolean isImportableRow(Node rowNode) {
-		try {
-			return isValidNode(rowNode.getNodeName().equalsIgnoreCase(CustomXmlBuilder.ROW_NODO_NAME) && rowNode.hasChildNodes() && (!rowNode.hasAttributes()));
-		} catch (Exception e) {
-			doToast(e.getMessage());
-			return false;
-		}
-	}
-
-	private boolean isImportableCol(Node colNode) {
-		try {
-			return isValidNode(colNode.getNodeName().equalsIgnoreCase(CustomXmlBuilder.COL_NODO_NAME) && colNode.hasAttributes());
-		} catch (Exception e) {
-			doToast(e.getMessage());
-			return false;
-		}
-	}
-
-	private boolean isValidNode(Boolean aValue) {
-		if (!aValue) {
-			doToast(context.getString(R.string.invalid_importable_xml));
-		}
-		return aValue;
-	}
-
-	private String getTableName(Node tableNode) {
-		return tableNode.getAttributes().getNamedItem(CustomXmlBuilder.NAME).getNodeValue();
-	}
-
-	private void doToast(String message) {
-		Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-		((Activity) context).finish();
-	}
+    private fun doToast(message: String?) {
+        Toast.makeText(context, message ?: "", Toast.LENGTH_LONG).show()
+        (context as? Activity)?.finish()
+    }
 }
+

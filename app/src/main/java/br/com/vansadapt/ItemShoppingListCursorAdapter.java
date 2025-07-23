@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import androidx.cursoradapter.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.cursoradapter.widget.CursorAdapter;
 
 import br.com.activity.R;
 import br.com.bean.ItemShoppingList;
@@ -23,10 +24,10 @@ import br.com.vansprefs.UserPreferences;
 
 public class ItemShoppingListCursorAdapter extends CursorAdapter {
 
-    private Context context;
-    private int idSelected;
-    private int idShoppingList;
     private final int INVALID_INDEX = 0;
+    private final Context context;
+    private int idSelected;
+    private final int idShoppingList;
 
     public ItemShoppingListCursorAdapter(Context context, int idShoppingList) {
         super(context, null, 0);
@@ -120,25 +121,25 @@ public class ItemShoppingListCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         ItemShoppingList itemShoppingList = getItem(cursor.getPosition());
 
-        TextView tvId = (TextView) view.findViewById(R.id.idItemShoppingList);
+        TextView tvId = view.findViewById(R.id.idItemShoppingList);
         tvId.setText(String.valueOf(itemShoppingList.getId()));
 
-        TextView tvDescription = (TextView) view.findViewById(R.id.descriptionItemShoppingList);
+        TextView tvDescription = view.findViewById(R.id.descriptionItemShoppingList);
         tvDescription.setText(itemShoppingList.getDescription());
 
 
         if (UserPreferences.getShowCheckBox(context)) {
-            tvDescription.setPaintFlags(itemShoppingList.isChecked() ? Paint.STRIKE_THRU_TEXT_FLAG : Paint.ANTI_ALIAS_FLAG);
-            tvDescription.setTypeface(null, itemShoppingList.isChecked() ? Typeface.ITALIC : Typeface.NORMAL);
+            tvDescription.setPaintFlags(itemShoppingList.getChecked() ? Paint.STRIKE_THRU_TEXT_FLAG : Paint.ANTI_ALIAS_FLAG);
+            tvDescription.setTypeface(null, itemShoppingList.getChecked() ? Typeface.ITALIC : Typeface.NORMAL);
         }
 
         int leftPadding = UserPreferences.getShowCheckBox(context) ? tvDescription.getPaddingLeft() : 15;
         tvDescription.setPadding(leftPadding, tvDescription.getPaddingTop(), tvDescription.getPaddingRight(), tvDescription.getPaddingBottom());
 
-        CheckBox cbChecked = (CheckBox) view.findViewById(R.id.checkedItemShoppingList);
+        CheckBox cbChecked = view.findViewById(R.id.checkedItemShoppingList);
         cbChecked.setOnCheckedChangeListener(null);
         cbChecked.setTag(itemShoppingList.getId());
-        cbChecked.setChecked(itemShoppingList.isChecked());
+        cbChecked.setChecked(itemShoppingList.getChecked());
         cbChecked.setClickable(!isSelected());
         cbChecked.setVisibility(UserPreferences.getShowCheckBox(context) ? View.VISIBLE : View.GONE);
 
@@ -146,15 +147,15 @@ public class ItemShoppingListCursorAdapter extends CursorAdapter {
             cbChecked.setOnCheckedChangeListener((OnCheckedChangeListener) context);
         }
 
-        TextView tvQuantity = (TextView) view.findViewById(R.id.qtItemShoppingList);
+        TextView tvQuantity = view.findViewById(R.id.qtItemShoppingList);
         tvQuantity.setVisibility(UserPreferences.getShowQuantity(context) ? View.VISIBLE : View.GONE);
         tvQuantity.setText(CustomFloatFormat.getSimpleFormatedValue(itemShoppingList.getQuantity()));
 
-        TextView tvUnitValue = (TextView) view.findViewById(R.id.unitValueItemShoppingList);
+        TextView tvUnitValue = view.findViewById(R.id.unitValueItemShoppingList);
         tvUnitValue.setVisibility(UserPreferences.getShowUnitValue(context) ? View.VISIBLE : View.GONE);
         tvUnitValue.setText(CustomFloatFormat.getMonetaryMaskedValue(context, itemShoppingList.getUnitValue()));
 
-        TextView tvTotal = (TextView) view.findViewById(R.id.totalItemShoppingList);
+        TextView tvTotal = view.findViewById(R.id.totalItemShoppingList);
         tvTotal.setVisibility(itemShoppingList.getTotal() != 0 ? View.VISIBLE : View.GONE);
         tvTotal.setText(CustomFloatFormat.getMonetaryMaskedValue(context, itemShoppingList.getTotal()));
 

@@ -1,501 +1,443 @@
-package br.com.vansact;
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import androidx.core.app.ActivityCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnFocusChangeListener;
-import android.view.View.OnKeyListener;
-import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.AutoCompleteTextView;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.SearchView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
-
-import br.com.activity.R;
-import br.com.bean.ItemShoppingList;
-import br.com.bean.ShoppingList;
-import br.com.dao.ItemShoppingListDAO;
-import br.com.dao.ShoppingListDAO;
-import br.com.vansadapt.ItemShoppingListCursorAdapter;
-import br.com.vansexception.VansException;
-import br.com.vansformat.CustomFloatFormat;
-import br.com.vansintent.CustomIntentOutside;
-import br.com.vansprefs.UserPreferences;
-import br.com.vanswatch.CustomEditTextWatcher;
-
-public class AddItemShoppingList extends Activity implements OnItemClickListener, OnItemLongClickListener, OnCheckedChangeListener, OnKeyListener, OnFocusChangeListener, SearchView.OnQueryTextListener {
-	private ItemShoppingListCursorAdapter adapter;
-	private ShoppingList shoppingList;
-	private static final int BARCODE_SCANNER_REQUEST_CODE = 2;
-    private AutoCompleteTextView edDescription;
-	private EditText edQuantity;
-	private EditText edUnitValue;
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
-		getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
-
-		getWindow().getDecorView().setSystemUiVisibility(
-				View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-						| View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-						| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-		);
-
-		setContentView(R.layout.activity_add_item_shopping_list);
-
-		View rootView = findViewById(android.R.id.content);
-
-		ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
-            Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(
-                    systemInsets.left,
-                    systemInsets.top,
-                    systemInsets.right,
-                    systemInsets.bottom
-            );
-            return WindowInsetsCompat.CONSUMED;
-        });
-
-		try {
-			shoppingList = ShoppingListDAO.select(this, getIntent().getExtras().getInt((getString(R.string.id_shopping_list))));
-		} catch (VansException e) {
-			Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-			e.printStackTrace();
-		}
-
-		this.setTitle(shoppingList.getName());
-
-        ListView lvItensShoppingList =  findViewById(R.id.lvItemShoppingList);
-		lvItensShoppingList.setOnItemClickListener(this);
-		lvItensShoppingList.setOnItemLongClickListener(this);
-
-        View headerView = (View) getLayoutInflater().inflate(R.layout.header_list_view_item_shopping_list, null);
-		lvItensShoppingList.addHeaderView(headerView, null, false);
-
-		adapter = new ItemShoppingListCursorAdapter(this, shoppingList.getId());
-		lvItensShoppingList.setAdapter(adapter);
-
-		edUnitValue = findViewById(R.id.edUnitValue);
-		edUnitValue.setVisibility(UserPreferences.getShowUnitValue(this) ? View.VISIBLE : View.GONE);
-		edUnitValue.setOnKeyListener(this);
-		edUnitValue.addTextChangedListener(new CustomEditTextWatcher(edUnitValue, 5));
-		edUnitValue.setOnFocusChangeListener(this);
-
-		edQuantity = findViewById(R.id.edQuantity);
-		edQuantity.addTextChangedListener(new CustomEditTextWatcher(edQuantity, 4));
-		edQuantity.setVisibility(UserPreferences.getShowQuantity(this) ? View.VISIBLE : View.GONE);
-		edQuantity.setOnFocusChangeListener(this);
-
-		edDescription = findViewById(R.id.edDescription);
-		edDescription.setOnItemClickListener(this);
-		edDescription.addTextChangedListener(new CustomEditTextWatcher(edDescription, -1));
-
-		if ((!UserPreferences.getShowQuantity(this)) && (!UserPreferences.getShowUnitValue(this))) {
-			edDescription.setImeOptions(EditorInfo.IME_ACTION_GO);
-			edDescription.setOnKeyListener(this);
-		} else if (!UserPreferences.getShowUnitValue(this)) {
-			edQuantity.setImeOptions(EditorInfo.IME_ACTION_GO);
-			edQuantity.setOnKeyListener(this);
-		}
-
-	}
-
-	@Override
-	protected void onResume() {
-		edUnitValue.setHint(CustomFloatFormat.getMonetaryMaskedValue(this, 0));
-		edQuantity.setHint(CustomFloatFormat.getSimpleFormatedValue(0));
-
-		try {
-			refreshListView();
-		} catch (VansException e) {
-			e.printStackTrace();
-			Toast.makeText(AddItemShoppingList.this, e.getMessage(), Toast.LENGTH_LONG).show();
-		}
-		// cancelEditing();
-		super.onResume();
-	}
-
-	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		/* ListView lvItensShoppingList - R.id.lvItemShoppingList */
-
-		if (arg0.getId() == findViewById(R.id.lvItemShoppingList).getId()) {
-			int position = arg2 - 1;
-			if (adapter.getIdSelected() != adapter.getItem(position).getId()) {
-				// Call the methodo onCreateOptionsMenu again
-				ActivityCompat.invalidateOptionsMenu(this);
-
-				setViewValues(adapter.getItem(position).getDescription(), adapter.getItem(position).getUnitValue(), adapter.getItem(position).getQuantity());
-				adapter.setIdSelected(adapter.getItem(position).getId());
-				refreshAdapter();
-			}
-		} else
-		/* AutoCompleteTextView - R.id.edDescription */
-		if (arg0.getAdapter().getItem(arg2) instanceof String) {
-			ItemShoppingList itemShoppingList;
-			try {
-				itemShoppingList = ItemShoppingListDAO.findLastInserted(this, (String) arg0.getAdapter().getItem(arg2));
-				setViewValues(itemShoppingList.getDescription(), itemShoppingList.getUnitValue(), itemShoppingList.getQuantity());
-			} catch (VansException e) {
-				e.printStackTrace();
-				Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-			}
-
-		}
-	}
-
-	@Override
-	public boolean onItemLongClick(AdapterView<?> arg0, View arg1, final int arg2, long arg3) {
-		try {
-			if (arg0.getAdapter().getItem(arg2) != null) {
-				final int position = arg2 - 1;
-				AlertDialog.Builder adb = new AlertDialog.Builder(this);
-				adb.setTitle(R.string.delete_question);
-				adb.setMessage(getString(R.string.want_delete_item) + " '" + adapter.getItem(position).getDescription() + "'?");
-				adb.setNegativeButton(R.string.no, null);
-				adb.setPositiveButton(R.string.yes, new AlertDialog.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						try {
-							ItemShoppingListDAO.delete(AddItemShoppingList.this, adapter.getItem(position).getId());
-							cancelEditing();
-						} catch (VansException e) {
-							e.printStackTrace();
-							Toast.makeText(AddItemShoppingList.this, e.getMessage(), Toast.LENGTH_LONG).show();
-						}
-
-					}
-				});
-
-				adb.show();
-			}
-		} catch (Exception e) {
-			Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-		}
-
-		return true;
-	}
-
-	@Override
-	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		try {
-			ItemShoppingList itemListaCompras = ItemShoppingListDAO.select(this, Integer.parseInt(buttonView.getTag().toString()));
-
-			if (itemListaCompras.isChecked() != isChecked) {
-				itemListaCompras.setChecked(isChecked);
-				ItemShoppingListDAO.update(this, itemListaCompras);
-				refreshListView();
-			}
-		} catch (VansException e) {
-			e.printStackTrace();
-			Toast.makeText(AddItemShoppingList.this, e.getMessage(), Toast.LENGTH_LONG).show();
-		}
-	}
-
-	@Override
-	public boolean onKey(View v, int keyCode, KeyEvent event) {
-		if ((keyCode == KeyEvent.KEYCODE_ENTER) && (!edDescription.getText().toString().isEmpty())) {
-			try {
-				botaoInserirItem();
-			} catch (VansException e) {
-				e.printStackTrace();
-				Toast.makeText(AddItemShoppingList.this, e.getMessage(), Toast.LENGTH_LONG).show();
-			}
-			return true;
-		}
-
-		return false;
-	}
-
-	private void botaoInserirItem() throws VansException {
-		if (isInsertOk(edDescription)) {
-			try {
-				String description = edDescription.getText().toString().trim();
-				Float unitValue = CustomFloatFormat.parseFloat(edUnitValue.getText().toString());
-				Float quantity = CustomFloatFormat.parseFloat(edQuantity.getText().toString());
-
-				if (adapter.getIdSelected() > 0) {
-					ItemShoppingList itemListaCompras = ItemShoppingListDAO.select(this, adapter.getIdSelected());
-					itemListaCompras.setDescription(description);
-					itemListaCompras.setQuantity(quantity);
-					itemListaCompras.setUnitValue(unitValue);
-					ItemShoppingListDAO.update(this, itemListaCompras);
-				} else {
-					ItemShoppingListDAO.insert(this, new ItemShoppingList(0, shoppingList.getId(), description, unitValue, quantity, false));
-				}
-
-			} catch (Exception e) {
-				Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-
-			} finally {
-				cancelEditing();
-			}
-		}
-	}
-
-	private void cancelEditing() throws VansException {
-		adapter.setIdSelected(0);
-		// Call the methodo onCreateOptionsMenu again
-		ActivityCompat.invalidateOptionsMenu(this);
-		clearEditTexts();
-		refreshListView();
-	}
-
-	private void clearEditTexts() {
-		setViewValues("", 0, 0);
-	}
-
-	private void setViewValues(String description, float unitValue, float quantity) {
-		edDescription.setText(description);
-		edDescription.setSelection(description.length());
-		edDescription.requestFocus();
-
-		edUnitValue.setText(unitValue > 0 ? CustomFloatFormat.getSimpleFormatedValue(unitValue) : "");
-
-		edQuantity.setText(quantity > 0 ? CustomFloatFormat.getSimpleFormatedValue(quantity) : "");
-
-	}
-
-	private boolean isInsertOk(EditText edDescricao) {
-
-		if (edDescricao.getText().toString().isEmpty()) {
-			edDescricao.requestFocus();
-			Toast.makeText(this, getString(R.string.info_desc), Toast.LENGTH_LONG).show();
-			return false;
-		}
-
-		if ((adapter.getIdSelected() == 0) && (descriptionAlreadySetted(edDescricao.getText().toString()))) {
-			Toast.makeText(this, getString(R.string.item_already_inserted), Toast.LENGTH_LONG).show();
-			// clearEditTexts();
-			return false;
-		}
-
-		return true;
-	}
-
-	private void refreshListView() throws VansException {
-		refreshAdapter();
-		edDescription.setAdapter(ItemShoppingListDAO.selectAutoComplete(this, adapter.getDescriptions()));
-
-		boolean showFooter = (adapter.getCount() > 0) && (UserPreferences.getShowQuantity(this) || UserPreferences.getShowUnitValue(this));
-
-		((TextView) findViewById(R.id.header_description_collumn)).setText(R.string.description_title);
-
-		 findViewById(R.id.header_quantity_collumn).setVisibility(showFooter && UserPreferences.getShowQuantity(this) ? View.VISIBLE : View.GONE);
-		findViewById(R.id.header_unit_value_collumn).setVisibility(showFooter && UserPreferences.getShowUnitValue(this) ? View.VISIBLE : View.GONE);
-
-		View footerBar = findViewById(R.id.footer_bar);
-		footerBar.setVisibility(showFooter ? View.VISIBLE : View.GONE);
-
-		if (showFooter) {
-			TextView totalSum = (TextView) findViewById(R.id.footer_total_sum);
-			totalSum.setText(adapter.getTotalValue());
-
-			TextView totalQuant = (TextView) findViewById(R.id.footer_total_quant);
-			totalQuant.setText(adapter.getTotalQuant());
-		} else {
-			if (adapter.getCount() == 0) {
-				((TextView) findViewById(R.id.header_description_collumn)).setText(R.string.no_item_added);
-			}
-		}
-	}
-
-	private boolean descriptionAlreadySetted(String value) {
-		for (int i = 0; i < adapter.getCount(); i++) {
-			if (adapter.getItem(i).getDescription().equalsIgnoreCase(value.trim())) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	private boolean allItensAlreadyChecked() {
-		boolean allChecked = adapter.getCount() > 0;
-		for (int i = 0; i < adapter.getCount(); i++) {
-			allChecked = allChecked && adapter.getItem(i).isChecked();
-		}
-
-		return allChecked;
-	}
-
-	private void deleteAll(final boolean onlyCheckeds) {
-		if (adapter.getCount() > 0) {
-			AlertDialog.Builder adb = new AlertDialog.Builder(this);
-			adb.setTitle(R.string.delete_question);
-			adb.setMessage(getString(onlyCheckeds ? R.string.want_delete_all_selected_itens : R.string.want_delete_all_items));
-			adb.setNegativeButton(R.string.no, null);
-			adb.setPositiveButton(R.string.yes, new AlertDialog.OnClickListener() {
-				public void onClick(DialogInterface dialog, int which) {
-					try {
-						ItemShoppingListDAO.deleteAllList(AddItemShoppingList.this, shoppingList.getId(), onlyCheckeds);
-						cancelEditing();
-					} catch (VansException e) {
-						e.printStackTrace();
-						Toast.makeText(AddItemShoppingList.this, e.getMessage(), Toast.LENGTH_LONG).show();
-					}
-				}
-			});
-
-			adb.show();
-		}
-	}
-
-	private SearchView mSearchView;
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.add_item_shopping_list_menu, menu);
-
-		MenuItem searchItem = menu.findItem(R.id.search);
-		mSearchView = (SearchView) searchItem.getActionView();
-		mSearchView.setOnQueryTextListener(this);
-		mSearchView.setQueryHint("Pesquisar");
-
-		return true;
-	}
-
-	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		menu.findItem(R.id.action_cancel).setVisible(adapter.getIdSelected() != 0);
-		menu.findItem(R.id.action_select_all).setTitle(allItensAlreadyChecked() ? getString(R.string.desselect_all) : getString(R.string.select_all));
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		try {
-			switch (item.getItemId()) {
-			case R.id.action_done:
-				botaoInserirItem();
-				return true;
-
-			case R.id.action_cancel:
-				cancelEditing();
-				return true;
-
-			case R.id.action_delete_all:
-				deleteAll(false);
-				return true;
-
-			case R.id.action_select_all:
-				ItemShoppingListDAO.checkAllItems(this, shoppingList.getId(), !allItensAlreadyChecked());
-				cancelEditing();
-				return true;
-
-			case R.id.action_delete_selecteds:
-				deleteAll(true);
-				return true;
-
-			case R.id.action_share:
-				CustomIntentOutside.shareShoppingListText(this, shoppingList.getId());
-				cancelEditing();
-				return true;
-				
-			case R.id.action_settings:
-				cancelEditing();
-				startActivity(new Intent(this, UserPreferences.class));
-				return true;
-				
-
-			case R.id.action_barcode_scan:
-				CustomIntentOutside.barcodeScanner(this, BARCODE_SCANNER_REQUEST_CODE);
-				cancelEditing();
-				return true;
-
-			default:
-				return super.onOptionsItemSelected(item);
-			}
-		} catch (VansException e) {
-			e.printStackTrace();
-			Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-		}
-		return false;
-	}
-
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (resultCode == RESULT_OK) {
-			switch (requestCode) {
-			case BARCODE_SCANNER_REQUEST_CODE:
-				edDescription.setText(data.getStringExtra("SCAN_RESULT"));
-				edDescription.requestFocus();
-				break;
-			}
-		}
-	}
-
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_MENU) {
-			ActivityCompat.invalidateOptionsMenu(this);
-		}
-		return super.onKeyDown(keyCode, event);
-	}
-
-	@Override
-	public void onFocusChange(View v, boolean hasFocus) {
-		if (hasFocus) {
-			char decimalSeparator = DecimalFormatSymbols.getInstance(Locale.getDefault()).getDecimalSeparator();
-
-			if ((v.getId() == R.id.edQuantity) && edQuantity.getText().toString().isEmpty()) {
-				edQuantity.setText("1" + decimalSeparator + "00");
-			}
-
-			if ((v.getId() == R.id.edQuantity) || (v.getId() == R.id.edUnitValue)) {
-				EditText edit = (EditText) v;
-
-				if (!edit.getText().toString().isEmpty()) {
-					int pos = edit.getText().toString().indexOf(decimalSeparator);
-
-					if (pos > 0) {
-						edit.setSelection(pos);
-					} else {
-						edit.setSelection(edit.length());
-					}
-				}
-			}
-		}
-	}
-
-	@Override
-	public boolean onQueryTextSubmit(String s) {
-		return false;
-	}
-
-	private String last;
-
-	@Override
-	public boolean onQueryTextChange(String s) {
-			last = s;
-			refreshAdapter();
-		return true;
-	}
-
-	private void refreshAdapter(){
-		adapter.refreshCursorAdapter(last);
-	}
-
+package br.com.vansact
+
+import android.app.Activity
+import android.app.AlertDialog
+import android.content.Intent
+import android.graphics.Color
+import android.os.Bundle
+import android.view.KeyEvent
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.EditorInfo
+import android.widget.AdapterView
+import android.widget.AutoCompleteTextView
+import android.widget.CompoundButton
+import android.widget.EditText
+import android.widget.ListView
+import android.widget.SearchView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import br.com.activity.R
+import br.com.bean.ItemShoppingList
+import br.com.bean.ShoppingList
+import br.com.dao.ItemShoppingListDAO
+import br.com.dao.ShoppingListDAO
+import br.com.vansadapt.ItemShoppingListCursorAdapter
+import br.com.vansexception.VansException
+import br.com.vansformat.CustomFloatFormat
+import br.com.vansintent.CustomIntentOutside
+import br.com.vansprefs.UserPreferences
+import br.com.vanswatch.CustomEditTextWatcher
+import java.text.DecimalFormatSymbols
+import java.util.Locale
+
+class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
+    AdapterView.OnItemLongClickListener, CompoundButton.OnCheckedChangeListener, View.OnKeyListener,
+    View.OnFocusChangeListener, SearchView.OnQueryTextListener {
+
+    private lateinit var adapter: ItemShoppingListCursorAdapter
+    private lateinit var shoppingList: ShoppingList
+    private lateinit var edDescription: AutoCompleteTextView
+    private lateinit var edQuantity: EditText
+    private lateinit var edUnitValue: EditText
+    private var mSearchView: SearchView? = null
+    private var lastQuery: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setupWindow()
+        setContentView(R.layout.activity_add_item_shopping_list)
+        applyWindowInsets()
+        shoppingList = getShoppingListFromIntent()
+        title = shoppingList.name
+        setupViews()
+        setupListeners()
+        setupAdapter()
+        configureInputFields()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        edUnitValue.hint = CustomFloatFormat.getMonetaryMaskedValue(this, 0.0)
+        edQuantity.hint = CustomFloatFormat.getSimpleFormatedValue(0.0)
+        try {
+            refreshListView()
+        } catch (e: VansException) {
+            showToast(e.message)
+        }
+    }
+
+    private fun setupWindow() {
+        // Replace deprecated window decoration code
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        window.statusBarColor = Color.TRANSPARENT
+        window.navigationBarColor = Color.TRANSPARENT
+        window.decorView.systemUiVisibility =
+            (View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
+    }
+
+    private fun applyWindowInsets() {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, windowInsets ->
+            val insets = windowInsets.getInsets(
+                WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime()
+            )
+            view.setPadding(insets.left, insets.top, insets.right, insets.bottom)
+            windowInsets
+        }
+    }
+
+    private fun getShoppingListFromIntent(): ShoppingList {
+        return try {
+            val shoppingList = ShoppingListDAO.select(
+                this, intent.extras!!.getInt(getString(R.string.id_shopping_list))
+            )
+            requireNotNull(shoppingList) { "ShoppingList not found for given id" }
+        } catch (e: VansException) {
+            showToast(e.message)
+            throw e
+        }
+    }
+
+    private fun setupViews() {
+        edUnitValue = findViewById(R.id.edUnitValue)
+        edQuantity = findViewById(R.id.edQuantity)
+        edDescription = findViewById(R.id.edDescription)
+    }
+
+    private fun setupListeners() {
+        findViewById<ListView>(R.id.lvItemShoppingList).apply {
+            onItemClickListener = this@AddItemShoppingList
+            onItemLongClickListener = this@AddItemShoppingList
+            addHeaderView(
+                layoutInflater.inflate(
+                    R.layout.header_list_view_item_shopping_list, null
+                ), null, false
+            )
+        }
+        edUnitValue.setOnKeyListener(this)
+        edUnitValue.addTextChangedListener(CustomEditTextWatcher(edUnitValue, 5))
+        edUnitValue.onFocusChangeListener = this
+
+        edQuantity.addTextChangedListener(CustomEditTextWatcher(edQuantity, 4))
+        edQuantity.onFocusChangeListener = this
+
+        edDescription.onItemClickListener = this
+        edDescription.addTextChangedListener(CustomEditTextWatcher(edDescription, -1))
+    }
+
+    private fun setupAdapter() {
+        adapter = ItemShoppingListCursorAdapter(this, shoppingList.id)
+        findViewById<ListView>(R.id.lvItemShoppingList).adapter = adapter
+    }
+
+    private fun configureInputFields() {
+        edUnitValue.visibility =
+            if (UserPreferences.getShowUnitValue(this)) View.VISIBLE else View.GONE
+        edQuantity.visibility =
+            if (UserPreferences.getShowQuantity(this)) View.VISIBLE else View.GONE
+
+        when {
+            !UserPreferences.getShowQuantity(this) && !UserPreferences.getShowUnitValue(this) -> {
+                edDescription.imeOptions = EditorInfo.IME_ACTION_GO
+                edDescription.setOnKeyListener(this)
+            }
+
+            !UserPreferences.getShowUnitValue(this) -> {
+                edQuantity.imeOptions = EditorInfo.IME_ACTION_GO
+                edQuantity.setOnKeyListener(this)
+            }
+        }
+    }
+
+    override fun onItemClick(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+        when (parent.id) {
+            R.id.lvItemShoppingList -> handleListItemClick(position - 1)
+            else -> handleAutoCompleteClick(parent, position)
+        }
+    }
+
+    private fun handleListItemClick(position: Int) {
+        val item = adapter.getItem(position)
+        if (adapter.idSelected != item.id) {
+            ActivityCompat.invalidateOptionsMenu(this)
+            setViewValues(item.description, item.unitValue, item.quantity)
+            adapter.idSelected = item.id
+            refreshAdapter()
+        }
+    }
+
+    private fun handleAutoCompleteClick(parent: AdapterView<*>, position: Int) {
+        val value = parent.adapter.getItem(position)
+        if (value is String) {
+            try {
+                val item = ItemShoppingListDAO.findLastInserted(this, value)
+                setViewValues(item!!.description, item.unitValue, item.quantity)
+            } catch (e: VansException) {
+                showToast(e.message)
+            }
+        }
+    }
+
+    override fun onItemLongClick(
+        parent: AdapterView<*>, view: View, position: Int, id: Long
+    ): Boolean {
+        val item = parent.adapter.getItem(position) ?: return true
+        val pos = position - 1
+        showDeleteConfirmation(pos, adapter.getItem(pos).description)
+        return true
+    }
+
+    private fun showDeleteConfirmation(position: Int, description: String) {
+        AlertDialog.Builder(this).setTitle(R.string.delete_question)
+            .setMessage(getString(R.string.want_delete_item, description))
+            .setNegativeButton(R.string.no, null)
+            .setPositiveButton(R.string.yes) { _, _ -> deleteItem(position) }.show()
+    }
+
+    private fun deleteItem(position: Int) {
+        try {
+            ItemShoppingListDAO.delete(this, adapter.getItem(position).id)
+            cancelEditing()
+        } catch (e: VansException) {
+            showToast(e.message)
+        }
+    }
+
+    override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+        try {
+            val item = ItemShoppingListDAO.select(this, buttonView.tag.toString().toInt())
+            if (item!!.checked != isChecked) {
+                item.checked = isChecked
+                ItemShoppingListDAO.update(this, item)
+                refreshListView()
+            }
+        } catch (e: VansException) {
+            showToast(e.message)
+        }
+    }
+
+    override fun onKey(v: View, keyCode: Int, event: KeyEvent): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER && edDescription.text.isNotEmpty()) {
+            tryInsertOrUpdateItem()
+            return true
+        }
+        return false
+    }
+
+    private fun tryInsertOrUpdateItem() {
+        try {
+            if (isInsertValid()) {
+                val description = edDescription.text.toString().trim()
+                val unitValue = CustomFloatFormat.parseFloat(edUnitValue.text.toString())
+                val quantity = CustomFloatFormat.parseFloat(edQuantity.text.toString())
+                if (adapter.idSelected > 0) {
+                    val item = ItemShoppingListDAO.select(this, adapter.idSelected)!!
+                    item.description = description
+                    item.quantity = quantity
+                    item.unitValue = unitValue
+                    ItemShoppingListDAO.update(this, item)
+                } else {
+                    ItemShoppingListDAO.insert(
+                        this, ItemShoppingList(
+                            0, shoppingList.id, description, unitValue, quantity, false
+                        )
+                    )
+                }
+                cancelEditing()
+            }
+        } catch (e: Exception) {
+            showToast(e.message)
+            cancelEditing()
+        }
+    }
+
+    private fun cancelEditing() {
+        adapter.idSelected = 0
+        ActivityCompat.invalidateOptionsMenu(this)
+        clearEditTexts()
+        refreshListView()
+    }
+
+    private fun clearEditTexts() = setViewValues("", 0f, 0f)
+
+    private fun setViewValues(description: String, unitValue: Float, quantity: Float) {
+        edDescription.setText(description)
+        edDescription.setSelection(description.length)
+        edDescription.requestFocus()
+        edUnitValue.setText(if (unitValue > 0) CustomFloatFormat.getSimpleFormatedValue(unitValue.toDouble()) else "")
+        edQuantity.setText(if (quantity > 0) CustomFloatFormat.getSimpleFormatedValue(quantity.toDouble()) else "")
+    }
+
+    private fun isInsertValid(): Boolean {
+        val desc = edDescription.text.toString()
+        if (desc.isEmpty()) {
+            edDescription.requestFocus()
+            showToast(getString(R.string.info_desc))
+            return false
+        }
+        if (adapter.idSelected == 0 && isDescriptionDuplicated(desc)) {
+            showToast(getString(R.string.item_already_inserted))
+            return false
+        }
+        return true
+    }
+
+    private fun refreshListView() {
+        refreshAdapter()
+        edDescription.setAdapter(ItemShoppingListDAO.selectAutoComplete(this, adapter.descriptions))
+        val showFooter =
+            adapter.count > 0 && (UserPreferences.getShowQuantity(this) || UserPreferences.getShowUnitValue(
+                this
+            ))
+        findViewById<TextView>(R.id.header_description_collumn).setText(
+            if (adapter.count == 0) R.string.no_item_added else R.string.description_title
+        )
+        findViewById<View>(R.id.header_quantity_collumn).visibility =
+            if (showFooter && UserPreferences.getShowQuantity(this)) View.VISIBLE else View.GONE
+        findViewById<View>(R.id.header_unit_value_collumn).visibility =
+            if (showFooter && UserPreferences.getShowUnitValue(this)) View.VISIBLE else View.GONE
+        findViewById<View>(R.id.footer_bar).visibility = if (showFooter) View.VISIBLE else View.GONE
+        if (showFooter) {
+            findViewById<TextView>(R.id.footer_total_sum).text = adapter.totalValue
+            findViewById<TextView>(R.id.footer_total_quant).text = adapter.totalQuant
+        }
+    }
+
+    private fun isDescriptionDuplicated(value: String): Boolean {
+        val trimmed = value.trim()
+        return (0 until adapter.count).any {
+            adapter.getItem(it).description.equals(
+                trimmed, ignoreCase = true
+            )
+        }
+    }
+
+    private fun areAllItemsChecked(): Boolean =
+        adapter.count > 0 && (0 until adapter.count).all { adapter.getItem(it).checked }
+
+    private fun deleteAllItems(onlyChecked: Boolean) {
+        if (adapter.count > 0) {
+            AlertDialog.Builder(this).setTitle(R.string.delete_question)
+                .setMessage(getString(if (onlyChecked) R.string.want_delete_all_selected_itens else R.string.want_delete_all_items))
+                .setNegativeButton(R.string.no, null).setPositiveButton(R.string.yes) { _, _ ->
+                    try {
+                        ItemShoppingListDAO.deleteAllList(this, shoppingList.id, onlyChecked)
+                        cancelEditing()
+                    } catch (e: VansException) {
+                        showToast(e.message)
+                    }
+                }.show()
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.add_item_shopping_list_menu, menu)
+        mSearchView = menu.findItem(R.id.search).actionView as? SearchView
+        mSearchView?.apply {
+            setOnQueryTextListener(this@AddItemShoppingList)
+            queryHint = getString(R.string.search)
+        }
+        return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        menu.findItem(R.id.action_cancel).isVisible = adapter.idSelected != 0
+        menu.findItem(R.id.action_select_all).title =
+            if (areAllItemsChecked()) getString(R.string.desselect_all) else getString(R.string.select_all)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        try {
+            when (item.itemId) {
+                R.id.action_done -> tryInsertOrUpdateItem()
+                R.id.action_cancel -> cancelEditing()
+                R.id.action_delete_all -> deleteAllItems(false)
+                R.id.action_select_all -> {
+                    ItemShoppingListDAO.checkAllItems(this, shoppingList.id, !areAllItemsChecked())
+                    cancelEditing()
+                }
+
+                R.id.action_delete_selecteds -> deleteAllItems(true)
+                R.id.action_share -> {
+                    CustomIntentOutside.shareShoppingListText(this, shoppingList.id)
+                    cancelEditing()
+                }
+
+                R.id.action_settings -> {
+                    cancelEditing()
+                    startActivity(Intent(this, UserPreferences::class.java))
+                }
+
+                R.id.action_barcode_scan -> {
+                    CustomIntentOutside.barcodeScanner(this, BARCODE_SCANNER_REQUEST_CODE)
+                    cancelEditing()
+                }
+
+                else -> return super.onOptionsItemSelected(item)
+            }
+            return true
+        } catch (e: VansException) {
+            showToast(e.message)
+        }
+        return false
+    }
+
+    // Replace deprecated Activity with AppCompatActivity methods
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == BARCODE_SCANNER_REQUEST_CODE) {
+            data?.getStringExtra("SCAN_RESULT")?.let { barcode ->
+                edDescription.setText(barcode)
+                edDescription.requestFocus()
+            }
+        }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            ActivityCompat.invalidateOptionsMenu(this)
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
+    override fun onFocusChange(v: View, hasFocus: Boolean) {
+        if (hasFocus) {
+            val decimalSeparator =
+                DecimalFormatSymbols.getInstance(Locale.getDefault()).decimalSeparator
+            if (v.id == R.id.edQuantity && edQuantity.text.isEmpty()) {
+                edQuantity.setText("1$decimalSeparator" + "00")
+            }
+            if (v.id == R.id.edQuantity || v.id == R.id.edUnitValue) {
+                val edit = v as EditText
+                if (edit.text.isNotEmpty()) {
+                    val pos = edit.text.indexOf(decimalSeparator)
+                    edit.setSelection(if (pos > 0) pos else edit.length())
+                }
+            }
+        }
+    }
+
+    override fun onQueryTextSubmit(query: String) = false
+
+    override fun onQueryTextChange(newText: String): Boolean {
+        lastQuery = newText
+        refreshAdapter()
+        return true
+    }
+
+    private fun refreshAdapter() = adapter.refreshCursorAdapter(lastQuery)
+
+    private fun showToast(message: String?) =
+        Toast.makeText(this, message ?: "", Toast.LENGTH_LONG).show()
+
+    companion object {
+        private const val BARCODE_SCANNER_REQUEST_CODE = 2
+    }
 }

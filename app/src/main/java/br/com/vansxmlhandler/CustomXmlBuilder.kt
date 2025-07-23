@@ -1,70 +1,65 @@
-package br.com.vansxmlhandler;
+package br.com.vansxmlhandler
 
-import java.io.IOException;
+import android.database.Cursor
+import android.widget.Toast
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.nio.ByteBuffer
+import br.com.vansxmlhandler.CustomXmlBuilder
 
-/**
- * XmlBuilder is used to write XML tags (open and close, and a few attributes)
- * to a StringBuilder. Here we have nothing to do with IO or SQL, just a fancy
- * StringBuilder.
- * 
- */
+class CustomXmlBuilder {
+    companion object {
+        const val DATA_BASE_NODO_NAME = "DATABASE"
+        const val TABLE_NODO_NAME = "TABLE"
+        const val ROW_NODO_NAME = "ROW"
+        const val COL_NODO_NAME = "COL"
+        const val NAME = "NAME"
+    }
 
-public class CustomXmlBuilder {
-	public static final String DATA_BASE_NODO_NAME = "DATABASE";
-	public static final String TABLE_NODO_NAME = "TABLE";
-	public static final String ROW_NODO_NAME = "ROW";
-	public static final String COL_NODO_NAME = "COL";
-	public static final String NAME = "NAME";
-	
-	private static final String OPEN_XML_STANZA = "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
-		
-	private static final String CLOSE_WITH_TICK = "'>";
-	
-	private static final String DB_OPEN = "<" + DATA_BASE_NODO_NAME + " " + NAME + "='";
-	private static final String DB_CLOSE = "</" + DATA_BASE_NODO_NAME + ">";
-	
-	private static final String TABLE_OPEN = "<" + TABLE_NODO_NAME + " " + NAME + "='";
-	private static final String TABLE_CLOSE = "</" + TABLE_NODO_NAME + ">";
-	
-	private static final String ROW_OPEN = "<" + ROW_NODO_NAME + ">";
-	private static final String ROW_CLOSE = "</" + ROW_NODO_NAME + ">";
-	
-	private static final String COL_OPEN = "<" + COL_NODO_NAME + " " + NAME + "='";
-	private static final String COL_CLOSE = "</" + COL_NODO_NAME + ">";
+    private val OPEN_XML_STANZA = "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+    private val CLOSE_WITH_TICK = "'>"
+    private val DB_OPEN = "<$DATA_BASE_NODO_NAME $NAME='"
+    private val DB_CLOSE = "</$DATA_BASE_NODO_NAME>"
+    private val TABLE_OPEN = "<$TABLE_NODO_NAME $NAME='"
+    private val TABLE_CLOSE = "</$TABLE_NODO_NAME>"
+    private val ROW_OPEN = "<$ROW_NODO_NAME>"
+    private val ROW_CLOSE = "</$ROW_NODO_NAME>"
+    private val COL_OPEN = "<$COL_NODO_NAME $NAME='"
+    private val COL_CLOSE = "</$COL_NODO_NAME>"
 
-	private final StringBuilder sb;
+    private val sb = StringBuilder()
 
-	public CustomXmlBuilder() throws IOException {
-		sb = new StringBuilder();
-	}
+    fun start(dbName: String) {
+        sb.append(OPEN_XML_STANZA)
+        sb.append("$DB_OPEN$dbName$CLOSE_WITH_TICK")
+    }
 
-	void start(final String dbName) {
-		sb.append(OPEN_XML_STANZA);
-		sb.append(DB_OPEN + dbName + CLOSE_WITH_TICK);
-	}
+    fun end(): String {
+        sb.append(DB_CLOSE)
+        return sb.toString()
+    }
 
-	String end() throws IOException {
-		sb.append(DB_CLOSE);
-		return sb.toString();
-	}
+    fun openTable(tableName: String) {
+        sb.append("$TABLE_OPEN$tableName$CLOSE_WITH_TICK")
+    }
 
-	void openTable(final String tableName) {
-		sb.append(TABLE_OPEN + tableName + CLOSE_WITH_TICK);
-	}
+    fun closeTable() {
+        sb.append(TABLE_CLOSE)
+    }
 
-	void closeTable() {
-		sb.append(TABLE_CLOSE);
-	}
+    fun openRow() {
+        sb.append(ROW_OPEN)
+    }
 
-	void openRow() {
-		sb.append(ROW_OPEN);
-	}
+    fun closeRow() {
+        sb.append(ROW_CLOSE)
+    }
 
-	void closeRow() {
-		sb.append(ROW_CLOSE);
-	}
+    fun addColumn(name: String, value: String?) {
+        sb.append("$COL_OPEN$name$CLOSE_WITH_TICK${value ?: ""}$COL_CLOSE")
+    }
 
-	void addColumn(final String name, final String val) throws IOException {
-		sb.append(COL_OPEN + name + CLOSE_WITH_TICK + val + COL_CLOSE);
-	}
+
+
 }

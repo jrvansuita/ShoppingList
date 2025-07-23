@@ -1,128 +1,163 @@
-package br.com.dao;
+package br.com.dao
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.ContentValues
+import android.content.Context
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
+import br.com.bean.ShoppingList
+import br.com.vansexception.VansException
+import br.com.vansschedule.AlarmNotificationShoppingList
+import java.util.Date
 
-import java.util.Date;
+object ShoppingListDAO {
+    const val TABLE_NAME: String = "SHOPPINGLIST"
+    const val FIELD_ID: String = "_id"
+    const val FIELD_NAME: String = "NAME"
+    const val FIELD_DATELIST: String = "DATELIST"
 
-import br.com.bean.ShoppingList;
-import br.com.vansexception.VansException;
-import br.com.vansschedule.AlarmNotificationShoppingList;
+    @JvmStatic
+    @Throws(VansException::class)
+    fun insert(context: Context, shoppingList: ShoppingList): ShoppingList? {
+        DataBaseDAO(context).writableDatabase.use { db ->
+            return insertInternal(context, db, shoppingList)
+        }
+    }
 
-public class ShoppingListDAO {
+    @Throws(VansException::class)
+    private fun insertInternal(
+        context: Context,
+        db: SQLiteDatabase,
+        shoppingList: ShoppingList
+    ): ShoppingList? {
+        val cv = ContentValues()
+        cv.put(FIELD_NAME, shoppingList.name)
+        cv.put(FIELD_DATELIST, shoppingList.date.time)
+        try {
+            db.insertOrThrow(TABLE_NAME, null, cv)
+            return selectLast(context, db)
+        } catch (e: Exception) {
+            throw VansException("Error inserting ShoppingList", e)
+        }
+    }
 
-	public static final String TABLE_NAME = "SHOPPINGLIST";
-	public static final String FIELD_ID = "_id";
-	public static final String FIELD_NAME = "NAME";
-	public static final String FIELD_DATELIST = "DATELIST";
+    @Throws(VansException::class)
+    private fun selectLast(context: Context, db: SQLiteDatabase): ShoppingList? {
+        try {
+            db.query(
+                TABLE_NAME,
+                arrayOf(FIELD_ID, FIELD_NAME, FIELD_DATELIST),
+                null, null, null, null, FIELD_ID + " DESC"
+            ).use { cursor ->
+                if (cursor.moveToFirst()) {
+                    return returnClassInstance(context, cursor)
+                }
+            }
+        } catch (e: Exception) {
+            throw VansException("Error selecting last ShoppingList", e)
+        }
+        return null
+    }
 
-	public static ShoppingList insert(Context context, ShoppingList shoppingList) throws VansException {
-		try (SQLiteDatabase db = new DataBaseDAO(context).getWritableDatabase()) {
-			return insertInternal(context, db, shoppingList);
-		}
-	}
+    @JvmStatic
+    @Throws(VansException::class)
+    fun select(context: Context, idShoppingList: Int): ShoppingList? {
+        try {
+            DataBaseDAO(context).readableDatabase.use { db ->
+                db.query(
+                    TABLE_NAME,
+                    arrayOf(FIELD_ID, FIELD_NAME, FIELD_DATELIST),
+                    FIELD_ID + " = ?",
+                    arrayOf(idShoppingList.toString()),
+                    null, null, null
+                ).use { cursor ->
+                    if (cursor.moveToFirst()) {
+                        return returnClassInstance(context, cursor)
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            throw VansException("Error selecting ShoppingList by ID", e)
+        }
+        return null
+    }
 
-	private static ShoppingList insertInternal(Context context, SQLiteDatabase db, ShoppingList shoppingList) throws VansException {
-		ContentValues cv = new ContentValues();
-		cv.put(FIELD_NAME, shoppingList.getName());
-		cv.put(FIELD_DATELIST, shoppingList.getDate().getTime());
-		try {
-			db.insertOrThrow(TABLE_NAME, null, cv);
-			return selectLast(context, db);
-		} catch (Exception e) {
-			throw new VansException("Error inserting ShoppingList", e);
-		}
-	}
+    @JvmStatic
+    @Throws(VansException::class)
+    fun deleteAll(context: Context) {
+        try {
+            selectAll(context).use { cursor ->
+                while (cursor != null && cursor.moveToNext()) {
+                    val idIndex = cursor.getColumnIndex(FIELD_ID)
+                    if (idIndex != -1) {
+                        delete(context, cursor.getInt(idIndex))
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            throw VansException("Error deleting all ShoppingLists", e)
+        }
+    }
 
-	private static ShoppingList selectLast(Context context, SQLiteDatabase db) throws VansException {
-		try (Cursor cursor = db.query(TABLE_NAME,
-				new String[]{FIELD_ID, FIELD_NAME, FIELD_DATELIST},
-				null, null, null, null, FIELD_ID + " DESC")) {
+    @JvmStatic
+    @Throws(VansException::class)
+    fun delete(context: Context, idShoppingList: Int) {
+        try {
+            DataBaseDAO(context).writableDatabase.use { db ->
+                db.delete(TABLE_NAME, FIELD_ID + " = ?", arrayOf(idShoppingList.toString()))
+                db.delete(
+                    ItemShoppingListDAO.TABLE_NAME,
+                    ItemShoppingListDAO.FIELD_IDSHOPPINGLIST + " = ?",
+                    arrayOf(idShoppingList.toString())
+                )
+                AlarmNotificationShoppingList.cancelAlarm(context, idShoppingList)
+            }
+        } catch (e: Exception) {
+            throw VansException("Error deleting ShoppingList", e)
+        }
+    }
 
-			if (cursor.moveToFirst()) {
-				return returnClassInstance(context, cursor);
-			}
-		} catch (Exception e) {
-			throw new VansException("Error selecting last ShoppingList", e);
-		}
-		return null;
-	}
+    @JvmStatic
+    @Throws(VansException::class)
+    fun selectAll(context: Context): Cursor {
+        try {
+            val db = DataBaseDAO(context).readableDatabase
+            return db.query(
+                TABLE_NAME,
+                arrayOf(FIELD_ID, FIELD_NAME, FIELD_DATELIST),
+                null, null, null, null, FIELD_ID + " DESC"
+            )
+        } catch (e: Exception) {
+            throw VansException("Error selecting all ShoppingLists", e)
+        }
+    }
 
-	public static ShoppingList select(Context context, int idShoppingList) throws VansException {
-		try (SQLiteDatabase db = new DataBaseDAO(context).getReadableDatabase();
-			 Cursor cursor = db.query(TABLE_NAME,
-					 new String[]{FIELD_ID, FIELD_NAME, FIELD_DATELIST},
-					 FIELD_ID + " = ?",
-					 new String[]{String.valueOf(idShoppingList)},
-					 null, null, null)) {
+    @JvmStatic
+    fun returnClassInstance(context: Context?, cursor: Cursor): ShoppingList? {
+        val idIndex = cursor.getColumnIndex(FIELD_ID)
+        val nameIndex = cursor.getColumnIndex(FIELD_NAME)
+        val dateIndex = cursor.getColumnIndex(FIELD_DATELIST)
 
-			if (cursor.moveToFirst()) {
-				return returnClassInstance(context, cursor);
-			}
-		} catch (Exception e) {
-			throw new VansException("Error selecting ShoppingList by ID", e);
-		}
-		return null;
-	}
+        if (idIndex == -1 || nameIndex == -1 || dateIndex == -1) {
+            return null // safety fallback
+        }
 
-	public static void deleteAll(Context context) throws VansException {
-		try (Cursor cursor = selectAll(context)) {
-			while (cursor != null && cursor.moveToNext()) {
-				int idIndex = cursor.getColumnIndex(FIELD_ID);
-				if (idIndex != -1) {
-					delete(context, cursor.getInt(idIndex));
-				}
-			}
-		} catch (Exception e) {
-			throw new VansException("Error deleting all ShoppingLists", e);
-		}
-	}
+        val id = cursor.getInt(idIndex)
+        val name = cursor.getString(nameIndex)
+        val dateMillis = cursor.getLong(dateIndex)
+        return ShoppingList(id, name, Date(dateMillis))
+    }
 
-	public static void delete(Context context, int idShoppingList) throws VansException {
-		try (SQLiteDatabase db = new DataBaseDAO(context).getWritableDatabase()) {
-			db.delete(TABLE_NAME, FIELD_ID + " = ?", new String[]{String.valueOf(idShoppingList)});
-			db.delete(ItemShoppingListDAO.TABLE_NAME, ItemShoppingListDAO.FIELD_IDSHOPPINGLIST + " = ?", new String[]{String.valueOf(idShoppingList)});
-			AlarmNotificationShoppingList.cancelAlarm(context, idShoppingList);
-		} catch (Exception e) {
-			throw new VansException("Error deleting ShoppingList", e);
-		}
-	}
-
-	public static Cursor selectAll(Context context) throws VansException {
-		try {
-			SQLiteDatabase db = new DataBaseDAO(context).getReadableDatabase();
-			return db.query(TABLE_NAME,
-					new String[]{FIELD_ID, FIELD_NAME, FIELD_DATELIST},
-					null, null, null, null, FIELD_ID + " DESC");
-		} catch (Exception e) {
-			throw new VansException("Error selecting all ShoppingLists", e);
-		}
-	}
-
-	public static ShoppingList returnClassInstance(Context context, Cursor cursor) {
-		int idIndex = cursor.getColumnIndex(FIELD_ID);
-		int nameIndex = cursor.getColumnIndex(FIELD_NAME);
-		int dateIndex = cursor.getColumnIndex(FIELD_DATELIST);
-
-		if (idIndex == -1 || nameIndex == -1 || dateIndex == -1) {
-			return null; // safety fallback
-		}
-
-		int id = cursor.getInt(idIndex);
-		String name = cursor.getString(nameIndex);
-		long dateMillis = cursor.getLong(dateIndex);
-		return new ShoppingList(context, id, name, new Date(dateMillis));
-	}
-
-	public static void update(Context context, ShoppingList shoppingList) throws VansException {
-		try (SQLiteDatabase db = new DataBaseDAO(context).getWritableDatabase()) {
-			ContentValues cv = new ContentValues();
-			cv.put(FIELD_NAME, shoppingList.getName());
-			db.update(TABLE_NAME, cv, FIELD_ID + " = ?", new String[]{String.valueOf(shoppingList.getId())});
-		} catch (Exception e) {
-			throw new VansException("Error updating ShoppingList", e);
-		}
-	}
+    @JvmStatic
+    @Throws(VansException::class)
+    fun update(context: Context, shoppingList: ShoppingList) {
+        try {
+            DataBaseDAO(context).writableDatabase.use { db ->
+                val cv = ContentValues()
+                cv.put(FIELD_NAME, shoppingList.name)
+                db.update(TABLE_NAME, cv, FIELD_ID + " = ?", arrayOf(shoppingList.id.toString()))
+            }
+        } catch (e: Exception) {
+            throw VansException("Error updating ShoppingList", e)
+        }
+    }
 }
