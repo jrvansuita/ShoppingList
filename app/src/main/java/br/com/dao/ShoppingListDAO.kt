@@ -49,7 +49,7 @@ object ShoppingListDAO {
                 null, null, null, null, FIELD_ID + " DESC"
             ).use { cursor ->
                 if (cursor.moveToFirst()) {
-                    return returnClassInstance(context, cursor)
+                    return returnClassInstance(cursor)
                 }
             }
         } catch (e: Exception) {
@@ -71,7 +71,7 @@ object ShoppingListDAO {
                     null, null, null
                 ).use { cursor ->
                     if (cursor.moveToFirst()) {
-                        return returnClassInstance(context, cursor)
+                        return returnClassInstance(cursor)
                     }
                 }
             }
@@ -86,7 +86,7 @@ object ShoppingListDAO {
     fun deleteAll(context: Context) {
         try {
             selectAll(context).use { cursor ->
-                while (cursor != null && cursor.moveToNext()) {
+                while (cursor.moveToNext()) {
                     val idIndex = cursor.getColumnIndex(FIELD_ID)
                     if (idIndex != -1) {
                         delete(context, cursor.getInt(idIndex))
@@ -132,7 +132,7 @@ object ShoppingListDAO {
     }
 
     @JvmStatic
-    fun returnClassInstance(context: Context?, cursor: Cursor): ShoppingList? {
+    fun returnClassInstance(cursor: Cursor): ShoppingList? {
         val idIndex = cursor.getColumnIndex(FIELD_ID)
         val nameIndex = cursor.getColumnIndex(FIELD_NAME)
         val dateIndex = cursor.getColumnIndex(FIELD_DATELIST)
@@ -158,6 +158,23 @@ object ShoppingListDAO {
             }
         } catch (e: Exception) {
             throw VansException("Error updating ShoppingList", e)
+        }
+    }
+
+    @Throws(VansException::class)
+    fun count(context: Context): Int {
+        return try {
+            val db = DataBaseDAO(context).readableDatabase
+            val cursor: Cursor = db.rawQuery("SELECT COUNT(*) FROM $TABLE_NAME", null)
+            cursor.use {
+                if (it.moveToFirst()) {
+                    it.getInt(0)
+                } else {
+                    0
+                }
+            }
+        } catch (e: Exception) {
+            throw VansException("Error select count ShoppingList", e)
         }
     }
 }

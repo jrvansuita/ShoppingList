@@ -348,4 +348,45 @@ object ItemShoppingListDAO {
 
         return result.toString()
     }
+
+    @Throws(VansException::class)
+    fun count(context: Context, listId: Int): Int {
+        return try {
+            val db = DataBaseDAO(context).readableDatabase
+            val cursor = db.rawQuery(
+                "SELECT COUNT(*) FROM $TABLE_NAME WHERE $FIELD_IDSHOPPINGLIST = ?",
+                arrayOf(listId.toString())
+            )
+            cursor.use {
+                if (it.moveToFirst()) {
+                    it.getInt(0)
+                } else {
+                    0
+                }
+            }
+        } catch (e: Exception) {
+            throw VansException(e.message, e)
+        }
+    }
+
+    @Throws(VansException::class)
+    fun getListTotal(context: Context, listId: Int): Float {
+        return try {
+            val db = DataBaseDAO(context).readableDatabase
+            val cursor = db.rawQuery(
+                "SELECT SUM($FIELD_UNITVALUE * $FIELD_QUANTITY) FROM $TABLE_NAME WHERE $FIELD_IDSHOPPINGLIST = ?",
+                arrayOf(listId.toString())
+            )
+            cursor.use {
+                if (it.moveToFirst() && !it.isNull(0)) {
+                    it.getFloat(0)
+                } else {
+                    0f
+                }
+            }
+        } catch (e: Exception) {
+            throw VansException(e.message, e)
+        }
+    }
+
 }

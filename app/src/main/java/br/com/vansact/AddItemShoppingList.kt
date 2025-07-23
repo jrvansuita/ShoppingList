@@ -28,11 +28,15 @@ import br.com.bean.ShoppingList
 import br.com.dao.ItemShoppingListDAO
 import br.com.dao.ShoppingListDAO
 import br.com.vansadapt.ItemShoppingListCursorAdapter
+import br.com.vansanalytics.AnalyticsManager
 import br.com.vansexception.VansException
 import br.com.vansformat.CustomFloatFormat
 import br.com.vansintent.CustomIntentOutside
 import br.com.vansprefs.UserPreferences
 import br.com.vanswatch.CustomEditTextWatcher
+import com.google.firebase.Firebase
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.analytics
 import java.text.DecimalFormatSymbols
 import java.util.Locale
 
@@ -47,9 +51,11 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
     private lateinit var edUnitValue: EditText
     private var mSearchView: SearchView? = null
     private var lastQuery: String? = null
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        firebaseAnalytics = Firebase.analytics
         setupWindow()
         setContentView(R.layout.activity_add_item_shopping_list)
         applyWindowInsets()
@@ -59,6 +65,8 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
         setupListeners()
         setupAdapter()
         configureInputFields()
+
+        AnalyticsManager.getInstance().logAddItemScreenView(this, shoppingList.id)
     }
 
     override fun onResume() {
@@ -195,7 +203,7 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
 
     private fun showDeleteConfirmation(position: Int, description: String) {
         AlertDialog.Builder(this).setTitle(R.string.delete_question)
-            .setMessage(getString(R.string.want_delete_item, description))
+            .setMessage("${getString(R.string.want_delete_item)} '$description'")
             .setNegativeButton(R.string.no, null)
             .setPositiveButton(R.string.yes) { _, _ -> deleteItem(position) }.show()
     }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "568390401941",
+    "project_id": "shoppinglist-a52bf",
+    "storage_bucket": "shoppinglist-a52bf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568390401941:android:fdb13fc48f9451c347409c",
+        "android_client_info": {
+          "package_name": "br.com.activity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUnsPenlab3ixAmrNaISrAhOoK2SYc5RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
