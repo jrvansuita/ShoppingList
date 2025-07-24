@@ -28,6 +28,7 @@ import br.com.bean.ShoppingList
 import br.com.dao.ItemShoppingListDAO
 import br.com.dao.ShoppingListDAO
 import br.com.vansadapt.ItemShoppingListCursorAdapter
+import br.com.vansads.AdsManager
 import br.com.vansanalytics.AnalyticsManager
 import br.com.vansexception.VansException
 import br.com.vansformat.CustomFloatFormat
@@ -67,6 +68,7 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
         configureInputFields()
 
         AnalyticsManager.getInstance().logAddItemScreenView(this, shoppingList.id)
+        AdsManager.loadAdBanner(findViewById(R.id.ads_holder))
     }
 
     override fun onResume() {

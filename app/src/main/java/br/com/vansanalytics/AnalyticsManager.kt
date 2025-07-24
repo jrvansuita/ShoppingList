@@ -35,6 +35,20 @@ class AnalyticsManager private constructor() {
         }
     }
 
+    fun logSettingsScreenView() {
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, "settings_screen")
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "UserPreferences")
+        }
+    }
+
+    fun logAboutDialogView() {
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, "about_dialog")
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "AboutDialog")
+        }
+    }
+
     companion object {
         @Volatile
         private var instance: AnalyticsManager? = null

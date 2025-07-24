@@ -22,6 +22,7 @@ import br.com.activity.R
 import br.com.bean.ShoppingList
 import br.com.dao.ShoppingListDAO
 import br.com.vansadapt.ShoppingListCursorAdapter
+import br.com.vansads.AdsManager
 import br.com.vansanalytics.AnalyticsManager
 import br.com.vansdialog.CustomDialogShoppingListOptions
 import br.com.vansexception.VansException
@@ -62,6 +63,8 @@ class MainApp : Activity(), AdapterView.OnItemClickListener,
         lvShoppingList.adapter = adapter
 
         AnalyticsManager.getInstance().logMainScreenView(this)
+
+        AdsManager.loadAdBanner(findViewById(R.id.ads_holder))
     }
 
     private fun setupWindow() {

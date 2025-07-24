@@ -1,52 +1,61 @@
-package br.com.vansdialog;
+package br.com.vansdialog
 
-import android.app.Dialog;
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.Window;
-import android.widget.TextView;
+import android.app.Dialog
+import android.content.Context
+import android.os.Build
+import android.view.LayoutInflater
+import android.view.View
+import android.view.Window
+import android.widget.TextView
+import br.com.activity.R
+import br.com.vansanalytics.AnalyticsManager
+import br.com.vansintent.CustomIntentOutside
+import java.text.DateFormat
+import java.util.Date
 
-import java.text.DateFormat;
-import java.util.Date;
+class CustomDialogAboutApp(private val context: Context) : Dialog(
+    context
+), View.OnClickListener {
+    init {
+        setCancelable(true)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
 
-import br.com.activity.R;
-import br.com.vansintent.CustomIntentOutside;
+        val pInfo = context.packageManager.getPackageInfo(context.packageName, 0)
+        val firstInstallDate =
+            DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(
+                Date(pInfo.firstInstallTime)
+            )
+        val lastUpdate = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(
+            Date(pInfo.lastUpdateTime)
+        )
 
-public class CustomDialogAboutApp extends Dialog implements android.view.View.OnClickListener {
-	private final Context context;
+        val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        setContentView(inflater.inflate(R.layout.about_app, null))
 
-	public CustomDialogAboutApp(Context context) throws NameNotFoundException {
-		super(context);
-		this.context = context;
-		setCancelable(true);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		
-		PackageInfo pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-		String firstInstallDate = DateFormat.getDateTimeInstance(DateFormat.MEDIUM,DateFormat.SHORT).format(new Date(pInfo.firstInstallTime));
-		String lastUpdate = DateFormat.getDateTimeInstance(DateFormat.MEDIUM,DateFormat.SHORT).format(new Date(pInfo.lastUpdateTime));
-		
-		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		setContentView(inflater.inflate(R.layout.about_app, null));
+        findViewById<View>(R.id.about_bt_icon_shopping_list).setOnClickListener(this)
 
-		findViewById(R.id.about_bt_icon_shopping_list).setOnClickListener(this);
+        (findViewById<View>(R.id.about_tv_version_code) as TextView).text =
+            context.getString(R.string.about_app_code) + " " + pInfo.versionCode
+        (findViewById<View>(R.id.about_tv_version_app) as TextView).text =
+            context.getString(R.string.about_app_version) + " " + pInfo.versionName
 
-		((TextView) findViewById(R.id.about_tv_version_code)).setText(context.getString(R.string.about_app_code) + " " + pInfo.versionCode);
-		((TextView) findViewById(R.id.about_tv_version_app)).setText(context.getString(R.string.about_app_version) + " " + pInfo.versionName);		
-		
-		((TextView) findViewById(R.id.about_tv_version_android)).setText(context.getString(R.string.about_android_version) + " " + android.os.Build.VERSION.RELEASE + " SDK " + android.os.Build.VERSION.SDK_INT);
-		((TextView) findViewById(R.id.about_tv_install_date)).setText(context.getString(R.string.about_app_install_date) + " " +  firstInstallDate);
-		((TextView) findViewById(R.id.about_tv_update_date)).setText(context.getString(R.string.about_app_update_date) + " " +  lastUpdate);
+        (findViewById<View>(R.id.about_tv_version_android) as TextView).text =
+            context.getString(R.string.about_android_version) + " " + Build.VERSION.RELEASE + " SDK " + Build.VERSION.SDK_INT
+        (findViewById<View>(R.id.about_tv_install_date) as TextView).text =
+            context.getString(R.string.about_app_install_date) + " " + firstInstallDate
+        (findViewById<View>(R.id.about_tv_update_date) as TextView).text =
+            context.getString(R.string.about_app_update_date) + " " + lastUpdate
 
-		((TextView) findViewById(R.id.about_tv_contact)).setText(" " + context.getString(R.string.my_email));		
-	}
+        (findViewById<View>(R.id.about_tv_contact) as TextView).text =
+            " " + context.getString(R.string.my_email)
 
-	@Override
-	public void onClick(View v) {
-		if (v.getId() == R.id.about_bt_icon_shopping_list) {
-			CustomIntentOutside.UpdateApp(context);
-		}
-	}
+        AnalyticsManager.getInstance().logAboutDialogView()
+
+    }
+
+    override fun onClick(v: View) {
+        if (v.id == R.id.about_bt_icon_shopping_list) {
+            CustomIntentOutside.UpdateApp(context)
+        }
+    }
 }

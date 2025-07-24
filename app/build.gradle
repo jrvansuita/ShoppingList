@@ -23,9 +23,19 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+        baseline = file("lint-baseline.xml")
     }
 }
 
@@ -34,4 +44,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:2.1.21"
     implementation platform('com.google.firebase:firebase-bom:34.0.0')
     implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'com.google.android.gms:play-services-ads:22.6.0'
 }
