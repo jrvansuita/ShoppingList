@@ -13,7 +13,6 @@
     <locale android:name="fr" />     <!-- 145M users, 60–70% Android in FR/AFR -->
     <locale android:name="id" />     <!-- 198M users, 90% Android in Indonesia -->
     <locale android:name="ko" />     <!-- 50M users, 70–80% Android in Korea -->
-    <locale android:name="it" />     <!-- 60M users, 70–80% Android in Italy -->
     <locale android:name="th" />     <!-- 50M users, 85% Android in Thailand -->
     <locale android:name="fil" />    <!-- 45M users, 90% Android in Philippines -->
     <locale android:name="pl" />     <!-- 45M users, 75% Android in Poland -->
