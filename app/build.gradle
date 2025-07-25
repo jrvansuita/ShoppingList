@@ -20,7 +20,7 @@ android {
     signingConfigs {
         release {
             def props = new Properties()
-            def localPropsFile = rootProject.file("local.properties")
+            def localPropsFile = rootProject.file("signing.properties")
             if (localPropsFile.exists()) {
                 props.load(new FileInputStream(localPropsFile))
             }

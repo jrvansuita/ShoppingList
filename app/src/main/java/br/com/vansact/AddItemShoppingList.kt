@@ -205,7 +205,7 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
 
     private fun showDeleteConfirmation(position: Int, description: String) {
         AlertDialog.Builder(this).setTitle(R.string.delete_question)
-            .setMessage("${getString(R.string.want_delete_item)} '$description'")
+            .setMessage(getString(R.string.want_delete_item, description))
             .setNegativeButton(R.string.no, null)
             .setPositiveButton(R.string.yes) { _, _ -> deleteItem(position) }.show()
     }

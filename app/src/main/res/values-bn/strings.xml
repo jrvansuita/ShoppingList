@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">শপিং তালিকা</string>
+    <string name="share_title">শপিং তালিকা:</string>
+    <string name="yes">হ্যাঁ</string>
+    <string name="no">না</string>
+    <string name="add_list">আইটেম যোগ করুন</string>
+    <string name="new_list">নতুন তালিকা</string>
+    <string name="hint_desc">একটি আইটেম যোগ করুন</string>
+    <string name="save">সংরক্ষণ করবেন?</string>
+    <string name="schedule">সময়সূচী</string>
+    <string name="untitled">শিরোনামহীন</string>
+    <string name="no_description">কোনো বিবরণ নেই</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">সফটওয়্যার আপডেট</string>
+    <string name="cancel">বাতিল করুন</string>
+    <string name="title_new">নতুন শপিং তালিকা</string>
+    <string name="delete_all">সব মুছে ফেলুন</string>
+    <string name="xml_import">শপিং তালিকা আমদানি করুন</string>
+    <string name="select_a_date">একটি তারিখ নির্বাচন করুন</string>
+    <string name="barcode_scan">বারকোড স্ক্যান</string>
+    <string name="delete_selecteds">নির্বাচিত মুছে ফেলুন</string>
+    <string name="duplicate">নকল করুন</string>
+    <string name="select_all">সব নির্বাচন করুন</string>
+    <string name="desselect_all">সব নির্বাচন বাতিল করুন</string>
+    <string name="delete_question">মুছে ফেলবেন?</string>
+    <string name="want_delete_list">আপনি কি তালিকাটি মুছে ফেলতে চান?</string>
+    <string name="want_delete_item">আপনি কি \"%1$s\" মুছে ফেলতে চান?</string>
+    <string name="want_delete_all_list">আপনি কি সব তালিকা মুছে ফেলতে চান?</string>
+    <string name="want_delete_all_items">আপনি কি এই শপিং তালিকার সব আইটেম মুছে ফেলতে চান?</string>
+    <string name="want_delete_all_selected_itens">আপনি কি এই শপিং তালিকার সব নির্বাচিত আইটেম মুছে ফেলতে চান?</string>
+    <string name="info_desc">দয়া করে আইটেমের বিবরণ লিখুন।</string>
+    <string name="time">সময়:</string>
+    <string name="new_notification_seted">একটি নতুন বিজ্ঞপ্তি প্রদর্শিত হবে </string>
+    <string name="notification_arrived">শপিংয়ে যাওয়ার সময় হয়েছে!</string>
+    <string name="item_already_inserted">আইটেমটি ইতিমধ্যে শপিং তালিকায় রয়েছে!</string>
+    <string name="no_connection">ইন্টারনেট সংযোগ নেই =(</string>
+    <string name="settings">সেটিংস</string>
+    <string name="options">বিকল্প</string>
+    <string name="rename">নাম পরিবর্তন করুন</string>
+    <string name="delete">মুছে ফেলুন</string>
+    <string name="share">শেয়ার করুন</string>
+    <string name="order">ক্রম</string>
+    <string name="share_via_text">টেক্সটের মাধ্যমে শেয়ার করুন</string>
+    <string name="title_rename">শপিং তালিকার নাম পরিবর্তন করুন</string>
+    <string name="share_via">এর মাধ্যমে শেয়ার করুন</string>
+    <string name="no_item_added">কোনো আইটেম যোগ করা হয়নি</string>
+    <string name="no_list_added">কোনো তালিকা যোগ করা হয়নি</string>
+    <string name="invalid_importable_xml">এটি একটি অবৈধ ফাইল</string>
+    <string name="total">মোট</string>
+    <string name="description_title">আইটেমের বিবরণ</string>
+    <string name="quantity_title">পরিমাণ</string>
+    <string name="unit_value_title">মূল্য</string>
+    <string name="visualization_style">ভিজ্যুয়ালাইজেশন স্টাইল</string>
+    <string name="show_quantity_summary">আইটেমের পরিমাণের তথ্য দেখান</string>
+    <string name="show_check_box_summary">শপিং তালিকায় চেকবক্স দেখান</string>
+    <string name="show_check_boxe_title">চেকবক্স দেখান</string>
+    <string name="show_quantity_title">পরিমাণ দেখান</string>
+    <string name="show_unit_value_summary">আইটেমের মূল্যের তথ্য দেখান</string>
+    <string name="show_unit_value_title">মূল্য দেখান</string>
+    <string name="quant_items">%d আইটেম</string>
+    <string name="ordenation_style">ক্রম স্টাইল</string>
+    <string name="ordenation_checked_style_title">নির্বাচিত আইটেমের জন্য ডিফল্ট ক্রম স্টাইল</string>
+    <string name="ordenation_alphabetical_style_title">বর্ণানুক্রমিক ক্রম স্টাইল</string>
+    <string name="default_option">বর্তমান বিকল্প:</string>
+    <string name="about_app_install_date">ইনস্টলেশনের তারিখ:</string>
+    <string name="date">তারিখ:</string>
+    <string name="about_app_update_date">সর্বশেষ আপডেট:</string>
+    <string name="about_app">এই অ্যাপ সম্পর্কে</string>
+    <string name="about_app_version">অ্যাপ সংস্করণ:</string>
+    <string name="about_app_code">সংস্করণ কোড:</string>
+    <string name="about_android_version">অ্যান্ড্রয়েড সংস্করণ:</string>
+    <string name="schedule_notification">বিজ্ঞপ্তি নির্ধারণ করুন:</string>
+    <string name="about">সম্পর্কে</string>
+    <string name="about_app_contact_me">আমার সাথে যোগাযোগ করুন:</string>
+    <string name="about_app_description">এটি Júnior Vansuita দ্বারা তৈরি একটি পরীক্ষামূলক অ্যাপ। এই অ্যাপের জন্য অর্থ প্রদান করবেন না।</string>
+    <string name="search">অনুসন্ধান করুন</string>
+    <string name="search_hint">আইটেম অনুসন্ধান করুন...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>প্রাকৃতিক ক্রম</item>
+        <item>নির্বাচিত নিচে</item>
+        <item>নির্বাচিত উপরে</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>প্রাকৃতিক ক্রম</item>
+        <item>বর্ণানুক্রমিক ক্রম (উর্ধ্বগামী)</item>
+        <item>বর্ণানুক্রমিক ক্রম (নিম্নগামী)</item>
+    </string-array>
+</resources>
+

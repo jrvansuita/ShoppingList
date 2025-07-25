@@ -53,10 +53,11 @@ Thumbs.db
 /app/degub/
 
 .gradle/
-local.properties
 
 app/build/
 
 build/*
 
+local.properties
+signing.properties
 

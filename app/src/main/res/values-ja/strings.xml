@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">買い物リスト</string>
+    <string name="share_title">買い物リスト：</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <string name="add_list">アイテムを追加</string>
+    <string name="new_list">新しいリスト</string>
+    <string name="hint_desc">アイテムを追加</string>
+    <string name="save">保存しますか？</string>
+    <string name="schedule">スケジュール</string>
+    <string name="untitled">無題</string>
+    <string name="no_description">説明なし</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">ソフトウェアの更新</string>
+    <string name="cancel">キャンセル</string>
+    <string name="title_new">新しい買い物リスト</string>
+    <string name="delete_all">すべて削除</string>
+    <string name="xml_import">買い物リストをインポート</string>
+    <string name="select_a_date">日付を選択</string>
+    <string name="barcode_scan">バーコードスキャン</string>
+    <string name="delete_selecteds">選択したものを削除</string>
+    <string name="duplicate">複製</string>
+    <string name="select_all">すべて選択</string>
+    <string name="desselect_all">すべて選択解除</string>
+    <string name="delete_question">削除しますか？</string>
+    <string name="want_delete_list">リストを削除しますか？</string>
+    <string name="want_delete_item">\"%1$s\" を削除しますか？</string>
+    <string name="want_delete_all_list">すべてのリストを削除しますか？</string>
+    <string name="want_delete_all_items">この買い物リストのすべてのアイテムを削除しますか？</string>
+    <string name="want_delete_all_selected_itens">この買い物リストの選択されたすべてのアイテムを削除しますか？</string>
+    <string name="info_desc">アイテムの説明を入力してください。</string>
+    <string name="time">時間：</string>
+    <string name="new_notification_seted">新しい通知が次の時間に表示されます：</string>
+    <string name="notification_arrived">買い物に行く時間です！</string>
+    <string name="item_already_inserted">アイテムはすでに買い物リストにあります！</string>
+    <string name="no_connection">インターネット接続がありません =(</string>
+    <string name="settings">設定</string>
+    <string name="options">オプション</string>
+    <string name="rename">名前を変更</string>
+    <string name="delete">削除</string>
+    <string name="share">共有</string>
+    <string name="order">並べ替え</string>
+    <string name="share_via_text">テキストで共有</string>
+    <string name="title_rename">買い物リストの名前を変更</string>
+    <string name="share_via">共有方法</string>
+    <string name="no_item_added">アイテムが追加されていません</string>
+    <string name="no_list_added">リストが追加されていません</string>
+    <string name="invalid_importable_xml">これは無効なファイルです</string>
+    <string name="total">合計</string>
+    <string name="description_title">アイテムの説明</string>
+    <string name="quantity_title">数量</string>
+    <string name="unit_value_title">価格</string>
+    <string name="visualization_style">表示スタイル</string>
+    <string name="show_quantity_summary">アイテムの数量情報を表示</string>
+    <string name="show_check_box_summary">買い物リストにチェックボックスを表示</string>
+    <string name="show_check_boxe_title">チェックボックスを表示</string>
+    <string name="show_quantity_title">数量を表示</string>
+    <string name="show_unit_value_summary">アイテムの価格情報を表示</string>
+    <string name="show_unit_value_title">価格を表示</string>
+    <string name="quant_items">%d アイテム</string>
+    <string name="ordenation_style">並べ替えスタイル</string>
+    <string name="ordenation_checked_style_title">チェックされたアイテムのデフォルト並べ替えスタイル</string>
+    <string name="ordenation_alphabetical_style_title">アルファベット順のデフォルト並べ替えスタイル</string>
+    <string name="default_option">現在のオプション：</string>
+    <string name="about_app_install_date">インストール日：</string>
+    <string name="date">日付：</string>
+    <string name="about_app_update_date">最終更新日：</string>
+    <string name="about_app">このアプリについて</string>
+    <string name="about_app_version">アプリのバージョン：</string>
+    <string name="about_app_code">バージョンコード：</string>
+    <string name="about_android_version">Androidバージョン：</string>
+    <string name="schedule_notification">通知をスケジュール：</string>
+    <string name="about">アプリについて</string>
+    <string name="about_app_contact_me">連絡先：</string>
+    <string name="about_app_description">これはJúnior Vansuitaによって開発された実験的なアプリです。このアプリに料金を支払わないでください。</string>
+    <string name="search">検索</string>
+    <string name="search_hint">アイテムを検索...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>自然な並べ替え</item>
+        <item>チェックされたものを下に</item>
+        <item>チェックされたものを上に</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>自然な並べ替え</item>
+        <item>アルファベット順（昇順）</item>
+        <item>アルファベット順（降順）</item>
+    </string-array>
+</resources>
+

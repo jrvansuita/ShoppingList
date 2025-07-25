@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Список покупок</string>
+    <string name="share_title">Список покупок:</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="add_list">Добавить элемент</string>
+    <string name="new_list">Новый список</string>
+    <string name="hint_desc">Добавить элемент</string>
+    <string name="save">Сохранить?</string>
+    <string name="schedule">Расписание</string>
+    <string name="untitled">Без названия</string>
+    <string name="no_description">Без описания</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Обновление программного обеспечения</string>
+    <string name="cancel">Отмена</string>
+    <string name="title_new">Новый список покупок</string>
+    <string name="delete_all">Удалить все</string>
+    <string name="xml_import">Импортировать список покупок</string>
+    <string name="select_a_date">Выберите дату</string>
+    <string name="barcode_scan">Сканировать штрих-код</string>
+    <string name="delete_selecteds">Удалить выбранные</string>
+    <string name="duplicate">Дублировать</string>
+    <string name="select_all">Выбрать все</string>
+    <string name="desselect_all">Снять выделение</string>
+    <string name="delete_question">Удалить?</string>
+    <string name="want_delete_list">Вы хотите удалить список?</string>
+    <string name="want_delete_item">Вы хотите удалить \"%1$s\"?</string>
+    <string name="want_delete_all_list">Вы хотите удалить все списки?</string>
+    <string name="want_delete_all_items">Вы хотите удалить все элементы этого списка покупок?</string>
+    <string name="want_delete_all_selected_itens">Вы хотите удалить все выбранные элементы этого списка покупок?</string>
+    <string name="info_desc">Введите описание элемента.</string>
+    <string name="time">Время:</string>
+    <string name="new_notification_seted">Новое уведомление будет показано в </string>
+    <string name="notification_arrived">Пора идти за покупками!</string>
+    <string name="item_already_inserted">Элемент уже есть в списке покупок!</string>
+    <string name="no_connection">Нет подключения к Интернету =(</string>
+    <string name="settings">Настройки</string>
+    <string name="options">Опции</string>
+    <string name="rename">Переименовать</string>
+    <string name="delete">Удалить</string>
+    <string name="share">Поделиться</string>
+    <string name="order">Сортировка</string>
+    <string name="share_via_text">Поделиться через текст</string>
+    <string name="title_rename">Переименовать список покупок</string>
+    <string name="share_via">Поделиться через</string>
+    <string name="no_item_added">Элементы не добавлены</string>
+    <string name="no_list_added">Списки не добавлены</string>
+    <string name="invalid_importable_xml">Это недействительный файл</string>
+    <string name="total">Итого</string>
+    <string name="description_title">Описание элемента</string>
+    <string name="quantity_title">Кол-во</string>
+    <string name="unit_value_title">Цена</string>
+    <string name="visualization_style">Стиль отображения</string>
+    <string name="show_quantity_summary">Показать информацию о количестве элементов</string>
+    <string name="show_check_box_summary">Показать флажки в списке покупок</string>
+    <string name="show_check_boxe_title">Показать флажки</string>
+    <string name="show_quantity_title">Показать количество</string>
+    <string name="show_unit_value_summary">Показать информацию о цене элементов</string>
+    <string name="show_unit_value_title">Показать цены</string>
+    <string name="quant_items">%d элемент(ов)</string>
+    <string name="ordenation_style">Стиль сортировки</string>
+    <string name="ordenation_checked_style_title">Стиль сортировки выбранных элементов по умолчанию</string>
+    <string name="ordenation_alphabetical_style_title">Стиль сортировки по алфавиту по умолчанию</string>
+    <string name="default_option">Текущий вариант:</string>
+    <string name="about_app_install_date">Дата установки:</string>
+    <string name="date">Дата:</string>
+    <string name="about_app_update_date">Последнее обновление:</string>
+    <string name="about_app">О приложении</string>
+    <string name="about_app_version">Версия приложения:</string>
+    <string name="about_app_code">Код версии:</string>
+    <string name="about_android_version">Версия Android:</string>
+    <string name="schedule_notification">Запланировать уведомление на:</string>
+    <string name="about">О приложении</string>
+    <string name="about_app_contact_me">Свяжитесь со мной:</string>
+    <string name="about_app_description">Это экспериментальное приложение, разработанное Júnior Vansuita. Не платите за это приложение.</string>
+    <string name="search">Поиск</string>
+    <string name="search_hint">Искать элементы...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Естественная сортировка</item>
+        <item>Выбранные внизу</item>
+        <item>Выбранные наверху</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Естественная сортировка</item>
+        <item>По алфавиту (по возрастанию)</item>
+        <item>По алфавиту (по убыванию)</item>
+    </string-array>
+</resources>
+
