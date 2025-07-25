@@ -1,7 +1,5 @@
 package br.com.vansschedule;
 
-import java.util.Calendar;
-
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -14,6 +12,8 @@ import android.graphics.BitmapFactory;
 
 import androidx.core.app.NotificationCompat;
 
+import java.util.Calendar;
+
 import br.com.activity.R;
 import br.com.bean.ShoppingList;
 import br.com.dao.ShoppingListDAO;
@@ -22,19 +22,16 @@ import br.com.vansexception.VansException;
 
 public class AlarmNotificationShoppingList extends BroadcastReceiver {
 
-    private Context context;
-    private Intent receiveIntent;
-
     // Tag names
     private static final String ACTION = "ACTION";
     private static final String ID_TAG = "ID";
-
     // tag values
     private static final String START_TAG = "START";
     private static final String STOP_TAG = "STOP";
     private static final String GOTO_TAG = "GOTO";
-
     private static final String CHANNEL_ID = "shopping_list_channel";
+    private Context context;
+    private Intent receiveIntent;
 
     public static void initAlarm(Context context, int idShoppingList, Calendar calendar) {
         ((AlarmManager) context.getSystemService(Context.ALARM_SERVICE)).set(AlarmManager.RTC, calendar.getTimeInMillis(), getPendingIntent(context, idShoppingList, START_TAG));
@@ -84,16 +81,9 @@ public class AlarmNotificationShoppingList extends BroadcastReceiver {
         if (shoppingList != null) {
             createNotificationChannel(); // Important for API 26+
 
-            Bitmap bigIcon = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
+            Bitmap bigIcon = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.ic_launcher_action_bar)
-                    .setContentTitle(shoppingList.getName())
-                    .setLargeIcon(bigIcon)
-                    .setContentText(context.getString(R.string.notification_arrived))
-                    .setLights(0xFFFF8000, 1000, 1000)
-                    .setContentIntent(getPendingIntent(context, shoppingList.getId(), GOTO_TAG))
-                    .setVibrate(new long[]{0, 500, 1000, 500}); // Custom vibration pattern
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID).setSmallIcon(R.drawable.ic_launcher_action_bar).setContentTitle(shoppingList.getName()).setLargeIcon(bigIcon).setContentText(context.getString(R.string.notification_arrived)).setLights(0xFFFF8000, 1000, 1000).setContentIntent(getPendingIntent(context, shoppingList.getId(), GOTO_TAG)).setVibrate(new long[]{0, 500, 1000, 500}); // Custom vibration pattern
 
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(shoppingList.getId(), builder.build());
@@ -103,11 +93,7 @@ public class AlarmNotificationShoppingList extends BroadcastReceiver {
     private void createNotificationChannel() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            NotificationChannel channel = new NotificationChannel(
-                    CHANNEL_ID,
-                    "Shopping List Notifications",
-                    NotificationManager.IMPORTANCE_DEFAULT
-            );
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Shopping List Notifications", NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription("Notifications for scheduled shopping lists");
             channel.enableLights(true);
             channel.enableVibration(true);

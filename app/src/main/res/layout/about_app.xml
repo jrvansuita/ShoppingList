@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/customViewStyles"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="10dp">
 
     <LinearLayout
         style="@style/matchWrap"
         android:layout_marginBottom="8dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/about_bt_icon_shopping_list"
@@ -19,17 +19,17 @@
             android:contentDescription="@string/app_name"
             android:maxWidth="95dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_launcher" />
+            android:src="@mipmap/ic_launcher_round" />
 
         <LinearLayout
             style="@style/wrapWrap"
             android:layout_marginRight="10dp"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 style="@style/wrapWrap"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
                 android:ems="30"
                 android:text="@string/app_name"
                 android:textSize="20sp" />
@@ -76,22 +76,22 @@
     <LinearLayout
         style="@style/wrapWrap"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <TextView
-            style="@style/wrapWrap"            
+            style="@style/wrapWrap"
             android:text="@string/about_app_contact_me"
             android:textSize="12sp" />
 
         <TextView
             android:id="@+id/about_tv_contact"
-            android:text="@string/no_description"
-            android:textSize="12sp"
-            android:clickable="true"
-            android:textColorLink="@color/azul"
+            style="@style/wrapWrap"
             android:autoLink="email"
-            android:linksClickable="true"            
-            style="@style/wrapWrap" />
+            android:clickable="true"
+            android:linksClickable="true"
+            android:text="@string/no_description"
+            android:textColorLink="@color/azul"
+            android:textSize="12sp" />
     </LinearLayout>
 
 </LinearLayout>
