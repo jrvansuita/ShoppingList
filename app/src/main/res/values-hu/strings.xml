@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bevásárlólista</string>
+    <string name="share_title">Bevásárlólista:</string>
+    <string name="yes">Igen</string>
+    <string name="no">Nem</string>
+    <string name="add_list">Elem hozzáadása</string>
+    <string name="new_list">Új lista</string>
+    <string name="hint_desc">Adjon hozzá egy elemet</string>
+    <string name="save">Mentés?</string>
+    <string name="schedule">Ütemezés</string>
+    <string name="untitled">Névtelen</string>
+    <string name="no_description">Nincs leírás</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Szoftverfrissítés</string>
+    <string name="cancel">Mégse</string>
+    <string name="title_new">Új bevásárlólista</string>
+    <string name="delete_all">Összes törlése</string>
+    <string name="xml_import">Bevásárlólista importálása</string>
+    <string name="select_a_date">Válasszon egy dátumot</string>
+    <string name="barcode_scan">Vonalkód beolvasása</string>
+    <string name="delete_selecteds">Kiválasztottak törlése</string>
+    <string name="duplicate">Másolat készítése</string>
+    <string name="select_all">Összes kijelölése</string>
+    <string name="desselect_all">Kijelölés megszüntetése</string>
+    <string name="delete_question">Törlés?</string>
+    <string name="want_delete_list">Biztosan törli a listát?</string>
+    <string name="want_delete_item">Biztosan törli a(z) \"%1$s\" elemet?</string>
+    <string name="want_delete_all_list">Biztosan törli az összes listát?</string>
+    <string name="want_delete_all_items">Biztosan törli a bevásárlólista összes elemét?</string>
+    <string name="want_delete_all_selected_itens">Biztosan törli a bevásárlólista összes kijelölt elemét?</string>
+    <string name="info_desc">Adja meg az elem leírását.</string>
+    <string name="time">Idő:</string>
+    <string name="new_notification_seted">Új értesítés jelenik meg ekkor: </string>
+    <string name="notification_arrived">Ideje vásárolni menni!</string>
+    <string name="item_already_inserted">Az elem már szerepel a bevásárlólistán!</string>
+    <string name="no_connection">Nincs internetkapcsolat =(</string>
+    <string name="settings">Beállítások</string>
+    <string name="options">Opciók</string>
+    <string name="rename">Átnevezés</string>
+    <string name="delete">Törlés</string>
+    <string name="share">Megosztás</string>
+    <string name="order">Rendezés</string>
+    <string name="share_via_text">Megosztás szövegesen</string>
+    <string name="title_rename">Bevásárlólista átnevezése</string>
+    <string name="share_via">Megosztás ezen keresztül</string>
+    <string name="no_item_added">Nincs hozzáadott elem</string>
+    <string name="no_list_added">Nincs hozzáadott lista</string>
+    <string name="invalid_importable_xml">Ez egy érvénytelen fájl</string>
+    <string name="total">Összesen</string>
+    <string name="description_title">Elem leírása</string>
+    <string name="quantity_title">Mennyiség</string>
+    <string name="unit_value_title">Ár</string>
+    <string name="visualization_style">Megjelenítési stílus</string>
+    <string name="show_quantity_summary">Mutassa az elemek mennyiségére vonatkozó információkat</string>
+    <string name="show_check_box_summary">Mutassa a jelölőnégyzeteket a bevásárlólistán</string>
+    <string name="show_check_boxe_title">Jelölőnégyzetek megjelenítése</string>
+    <string name="show_quantity_title">Mennyiségek megjelenítése</string>
+    <string name="show_unit_value_summary">Mutassa az elemek árára vonatkozó információkat</string>
+    <string name="show_unit_value_title">Árak megjelenítése</string>
+    <string name="quant_items">%d elem</string>
+    <string name="ordenation_style">Rendezési stílus</string>
+    <string name="ordenation_checked_style_title">Alapértelmezett rendezési stílus a kijelölt elemekhez</string>
+    <string name="ordenation_alphabetical_style_title">Alapértelmezett ábécérend</string>
+    <string name="default_option">Az aktuális opció:</string>
+    <string name="about_app_install_date">Telepítés dátuma:</string>
+    <string name="date">Dátum:</string>
+    <string name="about_app_update_date">Utolsó frissítés:</string>
+    <string name="about_app">Az alkalmazásról</string>
+    <string name="about_app_version">Alkalmazás verziója:</string>
+    <string name="about_app_code">Verziókód:</string>
+    <string name="about_android_version">Android verzió:</string>
+    <string name="schedule_notification">Értesítés ütemezése erre:</string>
+    <string name="about">Névjegy</string>
+    <string name="about_app_contact_me">Kapcsolatfelvétel velem:</string>
+    <string name="about_app_description">Ez egy kísérleti alkalmazás, amelyet Júnior Vansuita fejlesztett. Ne fizessen ezért az alkalmazásért.</string>
+    <string name="search">Keresés</string>
+    <string name="search_hint">Elemek keresése...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Természetes rendezés</item>
+        <item>Kijelöltek alul</item>
+        <item>Kijelöltek felül</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Természetes rendezés</item>
+        <item>Növekvő ábécérend</item>
+        <item>Csökkenő ábécérend</item>
+    </string-array>
+</resources>
+

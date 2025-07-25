@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lista della Spesa</string>
+    <string name="share_title">Lista della spesa:</string>
+    <string name="yes">Sì</string>
+    <string name="no">No</string>
+    <string name="add_list">Aggiungi elemento</string>
+    <string name="new_list">Nuova lista</string>
+    <string name="hint_desc">Aggiungi un elemento</string>
+    <string name="save">Salvare?</string>
+    <string name="schedule">Programma</string>
+    <string name="untitled">Senza titolo</string>
+    <string name="no_description">Nessuna descrizione</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Aggiornamento software</string>
+    <string name="cancel">Annulla</string>
+    <string name="title_new">Nuova lista della spesa</string>
+    <string name="delete_all">Elimina tutto</string>
+    <string name="xml_import">Importa lista della spesa</string>
+    <string name="select_a_date">Seleziona una data</string>
+    <string name="barcode_scan">Scansiona codice a barre</string>
+    <string name="delete_selecteds">Elimina selezionati</string>
+    <string name="duplicate">Duplica</string>
+    <string name="select_all">Seleziona tutto</string>
+    <string name="desselect_all">Deseleziona tutto</string>
+    <string name="delete_question">Eliminare?</string>
+    <string name="want_delete_list">Vuoi eliminare la lista?</string>
+    <string name="want_delete_item">Vuoi eliminare \"%1$s\"?</string>
+    <string name="want_delete_all_list">Vuoi eliminare tutte le liste?</string>
+    <string name="want_delete_all_items">Vuoi eliminare tutti gli elementi di questa lista della spesa?</string>
+    <string name="want_delete_all_selected_itens">Vuoi eliminare tutti gli elementi selezionati di questa lista della spesa?</string>
+    <string name="info_desc">Inserisci la descrizione dell'elemento.</string>
+    <string name="time">Ora:</string>
+    <string name="new_notification_seted">Una nuova notifica verrà mostrata il </string>
+    <string name="notification_arrived">È ora di fare la spesa!</string>
+    <string name="item_already_inserted">L'elemento è già nella lista della spesa!</string>
+    <string name="no_connection">Nessuna connessione a Internet =(</string>
+    <string name="settings">Impostazioni</string>
+    <string name="options">Opzioni</string>
+    <string name="rename">Rinomina</string>
+    <string name="delete">Elimina</string>
+    <string name="share">Condividi</string>
+    <string name="order">Ordina</string>
+    <string name="share_via_text">Condividi tramite testo</string>
+    <string name="title_rename">Rinomina lista della spesa</string>
+    <string name="share_via">Condividi tramite</string>
+    <string name="no_item_added">Nessun elemento aggiunto</string>
+    <string name="no_list_added">Nessuna lista aggiunta</string>
+    <string name="invalid_importable_xml">Questo è un file non valido</string>
+    <string name="total">Totale</string>
+    <string name="description_title">Descrizione elemento</string>
+    <string name="quantity_title">Quantità</string>
+    <string name="unit_value_title">Prezzo</string>
+    <string name="visualization_style">Stile di visualizzazione</string>
+    <string name="show_quantity_summary">Mostra informazioni sulla quantità degli elementi</string>
+    <string name="show_check_box_summary">Mostra le caselle di controllo nella lista della spesa</string>
+    <string name="show_check_boxe_title">Mostra caselle di controllo</string>
+    <string name="show_quantity_title">Mostra quantità</string>
+    <string name="show_unit_value_summary">Mostra informazioni sui prezzi degli elementi</string>
+    <string name="show_unit_value_title">Mostra prezzi</string>
+    <string name="quant_items">%d Elemento(i)</string>
+    <string name="ordenation_style">Stile di ordinamento</string>
+    <string name="ordenation_checked_style_title">Stile di ordinamento predefinito per gli elementi selezionati</string>
+    <string name="ordenation_alphabetical_style_title">Stile di ordinamento alfabetico predefinito</string>
+    <string name="default_option">L'opzione attuale è:</string>
+    <string name="about_app_install_date">Data di installazione:</string>
+    <string name="date">Data:</string>
+    <string name="about_app_update_date">Ultimo aggiornamento:</string>
+    <string name="about_app">Informazioni su questa app</string>
+    <string name="about_app_version">Versione dell'app:</string>
+    <string name="about_app_code">Codice versione:</string>
+    <string name="about_android_version">Versione Android:</string>
+    <string name="schedule_notification">Pianifica una notifica per:</string>
+    <string name="about">Informazioni</string>
+    <string name="about_app_contact_me">Contattami:</string>
+    <string name="about_app_description">Questa è un'app sperimentale sviluppata da Júnior Vansuita. Non pagare per questa app.</string>
+    <string name="search">Cerca</string>
+    <string name="search_hint">Cerca elementi...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Ordinamento naturale</item>
+        <item>Selezionati in basso</item>
+        <item>Selezionati in alto</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Ordinamento naturale</item>
+        <item>Ordine alfabetico crescente</item>
+        <item>Ordine alfabetico decrescente</item>
+    </string-array>
+</resources>
+

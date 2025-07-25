@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ஷாப்பிங் பட்டியல்</string>
+    <string name="share_title">ஷாப்பிங் பட்டியல்:</string>
+    <string name="yes">ஆம்</string>
+    <string name="no">இல்லை</string>
+    <string name="add_list">உருப்படியைச் சேர்க்கவும்</string>
+    <string name="new_list">புதிய பட்டியல்</string>
+    <string name="hint_desc">ஒரு உருப்படியைச் சேர்க்கவும்</string>
+    <string name="save">சேமிக்கவா?</string>
+    <string name="schedule">அட்டவணை</string>
+    <string name="untitled">தலைப்பு இல்லை</string>
+    <string name="no_description">விளக்கம் இல்லை</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">மென்பொருள் புதுப்பிப்பு</string>
+    <string name="cancel">ரத்து செய்</string>
+    <string name="title_new">புதிய ஷாப்பிங் பட்டியல்</string>
+    <string name="delete_all">அனைத்தையும் நீக்கு</string>
+    <string name="xml_import">ஷாப்பிங் பட்டியலை இறக்குமதி செய்க</string>
+    <string name="select_a_date">தேதியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="barcode_scan">பார்கோடு ஸ்கேன்</string>
+    <string name="delete_selecteds">தேர்ந்தெடுக்கப்பட்டவற்றை நீக்கு</string>
+    <string name="duplicate">நகல்</string>
+    <string name="select_all">அனைத்தையும் தேர்ந்தெடுக்கவும்</string>
+    <string name="desselect_all">அனைத்தையும் தேர்வு நீக்கு</string>
+    <string name="delete_question">நீக்கவா?</string>
+    <string name="want_delete_list">நீங்கள் பட்டியலை நீக்க விரும்புகிறீர்களா?</string>
+    <string name="want_delete_item">நீங்கள் \"%1$s\" ஐ நீக்க விரும்புகிறீர்களா?</string>
+    <string name="want_delete_all_list">நீங்கள் அனைத்து பட்டியல்களையும் நீக்க விரும்புகிறீர்களா?</string>
+    <string name="want_delete_all_items">நீங்கள் இந்த ஷாப்பிங் பட்டியலின் அனைத்து உருப்படிகளையும் நீக்க விரும்புகிறீர்களா?</string>
+    <string name="want_delete_all_selected_itens">நீங்கள் இந்த ஷாப்பிங் பட்டியலின் அனைத்து தேர்ந்தெடுக்கப்பட்ட உருப்படிகளையும் நீக்க விரும்புகிறீர்களா?</string>
+    <string name="info_desc">உருப்படியின் விளக்கத்தை உள்ளிடவும்.</string>
+    <string name="time">நேரம்:</string>
+    <string name="new_notification_seted">புதிய அறிவிப்பு இந்த நேரத்தில் காட்டப்படும் </string>
+    <string name="notification_arrived">ஷாப்பிங் செல்ல நேரம்!</string>
+    <string name="item_already_inserted">உருப்படி ஏற்கனவே ஷாப்பிங் பட்டியலில் உள்ளது!</string>
+    <string name="no_connection">இணைய இணைப்பு இல்லை =(</string>
+    <string name="settings">அமைப்புகள்</string>
+    <string name="options">விருப்பங்கள்</string>
+    <string name="rename">மறுபெயரிடு</string>
+    <string name="delete">நீக்கு</string>
+    <string name="share">பகிர்</string>
+    <string name="order">வரிசைப்படுத்து</string>
+    <string name="share_via_text">உரை மூலம் பகிர்</string>
+    <string name="title_rename">ஷாப்பிங் பட்டியலை மறுபெயரிடு</string>
+    <string name="share_via">மூலம் பகிர்</string>
+    <string name="no_item_added">எந்த உருப்படியும் சேர்க்கப்படவில்லை</string>
+    <string name="no_list_added">எந்த பட்டியலும் சேர்க்கப்படவில்லை</string>
+    <string name="invalid_importable_xml">இது தவறான கோப்பு</string>
+    <string name="total">மொத்தம்</string>
+    <string name="description_title">உருப்படி விளக்கம்</string>
+    <string name="quantity_title">அளவு</string>
+    <string name="unit_value_title">விலை</string>
+    <string name="visualization_style">காட்சி பாணி</string>
+    <string name="show_quantity_summary">உருப்படிகளின் அளவின் தகவலைக் காட்டு</string>
+    <string name="show_check_box_summary">ஷாப்பிங் பட்டியலில் செக்பாக்ஸ்களைக் காட்டு</string>
+    <string name="show_check_boxe_title">செக்பாக்ஸ்களைக் காட்டு</string>
+    <string name="show_quantity_title">அளவுகளைக் காட்டு</string>
+    <string name="show_unit_value_summary">உருப்படிகளின் விலையின் தகவலைக் காட்டு</string>
+    <string name="show_unit_value_title">விலைகளைக் காட்டு</string>
+    <string name="quant_items">%d உருப்படி(கள்)</string>
+    <string name="ordenation_style">வரிசைப்படுத்தல் பாணி</string>
+    <string name="ordenation_checked_style_title">தேர்ந்தெடுக்கப்பட்ட உருப்படிகளுக்கான இயல்புநிலை வரிசைப்படுத்தல் பாணி</string>
+    <string name="ordenation_alphabetical_style_title">அகரவரிசை வரிசைப்படுத்தல் பாணி</string>
+    <string name="default_option">தற்போதைய விருப்பம்:</string>
+    <string name="about_app_install_date">நிறுவல் தேதி:</string>
+    <string name="date">தேதி:</string>
+    <string name="about_app_update_date">கடைசி புதுப்பிப்பு:</string>
+    <string name="about_app">இந்த பயன்பாட்டைப் பற்றி</string>
+    <string name="about_app_version">பயன்பாட்டு பதிப்பு:</string>
+    <string name="about_app_code">பதிப்பு குறியீடு:</string>
+    <string name="about_android_version">ஆண்ட்ராய்டு பதிப்பு:</string>
+    <string name="schedule_notification">அறிவிப்பை திட்டமிடவும்:</string>
+    <string name="about">பற்றி</string>
+    <string name="about_app_contact_me">என்னை தொடர்பு கொள்ளவும்:</string>
+    <string name="about_app_description">இது Júnior Vansuita உருவாக்கிய ஒரு பரிசோதனை பயன்பாடு. இந்த பயன்பாட்டிற்காக பணம் செலுத்த வேண்டாம்.</string>
+    <string name="search">தேடு</string>
+    <string name="search_hint">உருப்படிகளைத் தேடு...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>இயல்புநிலை வரிசைப்படுத்தல்</item>
+        <item>தேர்ந்தெடுக்கப்பட்டவை கீழே</item>
+        <item>தேர்ந்தெடுக்கப்பட்டவை மேலே</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>இயல்புநிலை வரிசைப்படுத்தல்</item>
+        <item>அகரவரிசை ஏறுவரிசை</item>
+        <item>அகரவரிசை இறங்குவரிசை</item>
+    </string-array>
+</resources>

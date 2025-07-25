@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nákupní seznam</string>
+    <string name="share_title">Nákupní seznam:</string>
+    <string name="yes">Ano</string>
+    <string name="no">Ne</string>
+    <string name="add_list">Přidat položku</string>
+    <string name="new_list">Nový seznam</string>
+    <string name="hint_desc">Přidat položku</string>
+    <string name="save">Uložit?</string>
+    <string name="schedule">Plán</string>
+    <string name="untitled">Bez názvu</string>
+    <string name="no_description">Bez popisu</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Aktualizace softwaru</string>
+    <string name="cancel">Zrušit</string>
+    <string name="title_new">Nový nákupní seznam</string>
+    <string name="delete_all">Smazat vše</string>
+    <string name="xml_import">Importovat nákupní seznam</string>
+    <string name="select_a_date">Vyberte datum</string>
+    <string name="barcode_scan">Skenovat čárový kód</string>
+    <string name="delete_selecteds">Smazat vybrané</string>
+    <string name="duplicate">Duplikovat</string>
+    <string name="select_all">Vybrat vše</string>
+    <string name="desselect_all">Zrušit výběr</string>
+    <string name="delete_question">Smazat?</string>
+    <string name="want_delete_list">Chcete smazat seznam?</string>
+    <string name="want_delete_item">Chcete smazat \"%1$s\"?</string>
+    <string name="want_delete_all_list">Chcete smazat všechny seznamy?</string>
+    <string name="want_delete_all_items">Chcete smazat všechny položky tohoto nákupního seznamu?</string>
+    <string name="want_delete_all_selected_itens">Chcete smazat všechny vybrané položky tohoto nákupního seznamu?</string>
+    <string name="info_desc">Zadejte popis položky.</string>
+    <string name="time">Čas:</string>
+    <string name="new_notification_seted">Nové oznámení bude zobrazeno dne </string>
+    <string name="notification_arrived">Je čas jít nakupovat!</string>
+    <string name="item_already_inserted">Položka je již v nákupním seznamu!</string>
+    <string name="no_connection">Žádné připojení k internetu =(</string>
+    <string name="settings">Nastavení</string>
+    <string name="options">Možnosti</string>
+    <string name="rename">Přejmenovat</string>
+    <string name="delete">Smazat</string>
+    <string name="share">Sdílet</string>
+    <string name="order">Seřadit</string>
+    <string name="share_via_text">Sdílet přes text</string>
+    <string name="title_rename">Přejmenovat nákupní seznam</string>
+    <string name="share_via">Sdílet přes</string>
+    <string name="no_item_added">Žádná položka nebyla přidána</string>
+    <string name="no_list_added">Žádný seznam nebyl přidán</string>
+    <string name="invalid_importable_xml">Toto je neplatný soubor</string>
+    <string name="total">Celkem</string>
+    <string name="description_title">Popis položky</string>
+    <string name="quantity_title">Množství</string>
+    <string name="unit_value_title">Cena</string>
+    <string name="visualization_style">Styl zobrazení</string>
+    <string name="show_quantity_summary">Zobrazit informace o množství položek</string>
+    <string name="show_check_box_summary">Zobrazit zaškrtávací políčka v nákupním seznamu</string>
+    <string name="show_check_boxe_title">Zobrazit zaškrtávací políčka</string>
+    <string name="show_quantity_title">Zobrazit množství</string>
+    <string name="show_unit_value_summary">Zobrazit informace o cenách položek</string>
+    <string name="show_unit_value_title">Zobrazit ceny</string>
+    <string name="quant_items">%d Položka(y)</string>
+    <string name="ordenation_style">Styl řazení</string>
+    <string name="ordenation_checked_style_title">Výchozí styl řazení pro vybrané položky</string>
+    <string name="ordenation_alphabetical_style_title">Výchozí abecední styl řazení</string>
+    <string name="default_option">Aktuální možnost je:</string>
+    <string name="about_app_install_date">Datum instalace:</string>
+    <string name="date">Datum:</string>
+    <string name="about_app_update_date">Poslední aktualizace:</string>
+    <string name="about_app">O aplikaci</string>
+    <string name="about_app_version">Verze aplikace:</string>
+    <string name="about_app_code">Kód verze:</string>
+    <string name="about_android_version">Verze Androidu:</string>
+    <string name="schedule_notification">Naplánovat oznámení na:</string>
+    <string name="about">O aplikaci</string>
+    <string name="about_app_contact_me">Kontaktujte mě:</string>
+    <string name="about_app_description">Toto je experimentální aplikace vyvinutá Júnior Vansuita. Neplaťte za tuto aplikaci.</string>
+    <string name="search">Hledat</string>
+    <string name="search_hint">Hledat položky...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Přirozené řazení</item>
+        <item>Vybrané dolů</item>
+        <item>Vybrané nahoru</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Přirozené řazení</item>
+        <item>Abecední vzestupně</item>
+        <item>Abecední sestupně</item>
+    </string-array>
+</resources>
+

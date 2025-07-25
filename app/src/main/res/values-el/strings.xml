@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Λίστα Αγορών</string>
+    <string name="share_title">Λίστα αγορών:</string>
+    <string name="yes">Ναι</string>
+    <string name="no">Όχι</string>
+    <string name="add_list">Προσθήκη αντικειμένου</string>
+    <string name="new_list">Νέα λίστα</string>
+    <string name="hint_desc">Προσθέστε ένα αντικείμενο</string>
+    <string name="save">Αποθήκευση;</string>
+    <string name="schedule">Πρόγραμμα</string>
+    <string name="untitled">Χωρίς τίτλο</string>
+    <string name="no_description">Χωρίς περιγραφή</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Ενημέρωση λογισμικού</string>
+    <string name="cancel">Ακύρωση</string>
+    <string name="title_new">Νέα λίστα αγορών</string>
+    <string name="delete_all">Διαγραφή όλων</string>
+    <string name="xml_import">Εισαγωγή λίστας αγορών</string>
+    <string name="select_a_date">Επιλέξτε ημερομηνία</string>
+    <string name="barcode_scan">Σάρωση γραμμωτού κώδικα</string>
+    <string name="delete_selecteds">Διαγραφή επιλεγμένων</string>
+    <string name="duplicate">Διπλότυπο</string>
+    <string name="select_all">Επιλογή όλων</string>
+    <string name="desselect_all">Αποεπιλογή όλων</string>
+    <string name="delete_question">Διαγραφή;</string>
+    <string name="want_delete_list">Θέλετε να διαγράψετε τη λίστα;</string>
+    <string name="want_delete_item">Θέλετε να διαγράψετε το \"%1$s\";</string>
+    <string name="want_delete_all_list">Θέλετε να διαγράψετε όλες τις λίστες;</string>
+    <string name="want_delete_all_items">Θέλετε να διαγράψετε όλα τα αντικείμενα αυτής της λίστας αγορών;</string>
+    <string name="want_delete_all_selected_itens">Θέλετε να διαγράψετε όλα τα επιλεγμένα αντικείμενα αυτής της λίστας αγορών;</string>
+    <string name="info_desc">Εισάγετε την περιγραφή του αντικειμένου.</string>
+    <string name="time">Ώρα:</string>
+    <string name="new_notification_seted">Μια νέα ειδοποίηση θα εμφανιστεί στις </string>
+    <string name="notification_arrived">Ήρθε η ώρα για ψώνια!</string>
+    <string name="item_already_inserted">Το αντικείμενο υπάρχει ήδη στη λίστα αγορών!</string>
+    <string name="no_connection">Χωρίς σύνδεση στο διαδίκτυο =(</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="options">Επιλογές</string>
+    <string name="rename">Μετονομασία</string>
+    <string name="delete">Διαγραφή</string>
+    <string name="share">Κοινοποίηση</string>
+    <string name="order">Ταξινόμηση</string>
+    <string name="share_via_text">Κοινοποίηση μέσω κειμένου</string>
+    <string name="title_rename">Μετονομασία λίστας αγορών</string>
+    <string name="share_via">Κοινοποίηση μέσω</string>
+    <string name="no_item_added">Δεν προστέθηκε αντικείμενο</string>
+    <string name="no_list_added">Δεν προστέθηκε λίστα</string>
+    <string name="invalid_importable_xml">Αυτό είναι ένα μη έγκυρο αρχείο</string>
+    <string name="total">Σύνολο</string>
+    <string name="description_title">Περιγραφή αντικειμένου</string>
+    <string name="quantity_title">Ποσότητα</string>
+    <string name="unit_value_title">Τιμή</string>
+    <string name="visualization_style">Στυλ οπτικοποίησης</string>
+    <string name="show_quantity_summary">Εμφάνιση πληροφοριών σχετικά με την ποσότητα των αντικειμένων</string>
+    <string name="show_check_box_summary">Εμφάνιση πλαισίων επιλογής στη λίστα αγορών</string>
+    <string name="show_check_boxe_title">Εμφάνιση πλαισίων επιλογής</string>
+    <string name="show_quantity_title">Εμφάνιση ποσοτήτων</string>
+    <string name="show_unit_value_summary">Εμφάνιση πληροφοριών σχετικά με την τιμή των αντικειμένων</string>
+    <string name="show_unit_value_title">Εμφάνιση τιμών</string>
+    <string name="quant_items">%d Αντικείμενο(α)</string>
+    <string name="ordenation_style">Στυλ ταξινόμησης</string>
+    <string name="ordenation_checked_style_title">Προεπιλεγμένο στυλ ταξινόμησης για επιλεγμένα αντικείμενα</string>
+    <string name="ordenation_alphabetical_style_title">Προεπιλεγμένο αλφαβητικό στυλ ταξινόμησης</string>
+    <string name="default_option">Η τρέχουσα επιλογή είναι:</string>
+    <string name="about_app_install_date">Ημερομηνία εγκατάστασης:</string>
+    <string name="date">Ημερομηνία:</string>
+    <string name="about_app_update_date">Τελευταία ενημέρωση:</string>
+    <string name="about_app">Σχετικά με την εφαρμογή</string>
+    <string name="about_app_version">Έκδοση εφαρμογής:</string>
+    <string name="about_app_code">Κωδικός έκδοσης:</string>
+    <string name="about_android_version">Έκδοση Android:</string>
+    <string name="schedule_notification">Προγραμματισμός ειδοποίησης για:</string>
+    <string name="about">Σχετικά</string>
+    <string name="about_app_contact_me">Επικοινωνήστε μαζί μου:</string>
+    <string name="about_app_description">Αυτή είναι μια πειραματική εφαρμογή που αναπτύχθηκε από τον Júnior Vansuita. Μην πληρώσετε για αυτήν την εφαρμογή.</string>
+    <string name="search">Αναζήτηση</string>
+    <string name="search_hint">Αναζήτηση αντικειμένων...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Φυσική ταξινόμηση</item>
+        <item>Επιλεγμένα κάτω</item>
+        <item>Επιλεγμένα πάνω</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Φυσική ταξινόμηση</item>
+        <item>Αλφαβητική σειρά αύξουσα</item>
+        <item>Αλφαβητική σειρά φθίνουσα</item>
+    </string-array>
+</resources>
+

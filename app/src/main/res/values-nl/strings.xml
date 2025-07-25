@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Boodschappenlijst</string>
+    <string name="share_title">Boodschappenlijst:</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nee</string>
+    <string name="add_list">Item toevoegen</string>
+    <string name="new_list">Nieuwe lijst</string>
+    <string name="hint_desc">Voeg een item toe</string>
+    <string name="save">Opslaan?</string>
+    <string name="schedule">Schema</string>
+    <string name="untitled">Naamloos</string>
+    <string name="no_description">Geen beschrijving</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Software-update</string>
+    <string name="cancel">Annuleren</string>
+    <string name="title_new">Nieuwe boodschappenlijst</string>
+    <string name="delete_all">Alles verwijderen</string>
+    <string name="xml_import">Boodschappenlijst importeren</string>
+    <string name="select_a_date">Selecteer een datum</string>
+    <string name="barcode_scan">Barcode scannen</string>
+    <string name="delete_selecteds">Geselecteerde verwijderen</string>
+    <string name="duplicate">Dupliceren</string>
+    <string name="select_all">Alles selecteren</string>
+    <string name="desselect_all">Alles deselecteren</string>
+    <string name="delete_question">Verwijderen?</string>
+    <string name="want_delete_list">Wilt u de lijst verwijderen?</string>
+    <string name="want_delete_item">Wilt u \"%1$s\" verwijderen?</string>
+    <string name="want_delete_all_list">Wilt u alle lijsten verwijderen?</string>
+    <string name="want_delete_all_items">Wilt u alle items in deze boodschappenlijst verwijderen?</string>
+    <string name="want_delete_all_selected_itens">Wilt u alle geselecteerde items in deze boodschappenlijst verwijderen?</string>
+    <string name="info_desc">Voer de beschrijving van het item in.</string>
+    <string name="time">Tijd:</string>
+    <string name="new_notification_seted">Een nieuwe melding wordt weergegeven op </string>
+    <string name="notification_arrived">Tijd om boodschappen te doen!</string>
+    <string name="item_already_inserted">Het item staat al op de boodschappenlijst!</string>
+    <string name="no_connection">Geen internetverbinding =(</string>
+    <string name="settings">Instellingen</string>
+    <string name="options">Opties</string>
+    <string name="rename">Hernoemen</string>
+    <string name="delete">Verwijderen</string>
+    <string name="share">Delen</string>
+    <string name="order">Sorteren</string>
+    <string name="share_via_text">Delen via tekst</string>
+    <string name="title_rename">Boodschappenlijst hernoemen</string>
+    <string name="share_via">Delen via</string>
+    <string name="no_item_added">Geen items toegevoegd</string>
+    <string name="no_list_added">Geen lijsten toegevoegd</string>
+    <string name="invalid_importable_xml">Dit is een ongeldig bestand</string>
+    <string name="total">Totaal</string>
+    <string name="description_title">Itembeschrijving</string>
+    <string name="quantity_title">Aantal</string>
+    <string name="unit_value_title">Prijs</string>
+    <string name="visualization_style">Weergavestijl</string>
+    <string name="show_quantity_summary">Toon informatie over het aantal items</string>
+    <string name="show_check_box_summary">Toon selectievakjes in de boodschappenlijst</string>
+    <string name="show_check_boxe_title">Selectievakjes weergeven</string>
+    <string name="show_quantity_title">Hoeveelheden weergeven</string>
+    <string name="show_unit_value_summary">Toon informatie over de prijs van items</string>
+    <string name="show_unit_value_title">Prijzen weergeven</string>
+    <string name="quant_items">%d Item(s)</string>
+    <string name="ordenation_style">Sorteerstijl</string>
+    <string name="ordenation_checked_style_title">Standaard sorteerstijl voor geselecteerde items</string>
+    <string name="ordenation_alphabetical_style_title">Standaard alfabetische sorteerstijl</string>
+    <string name="default_option">De huidige optie is:</string>
+    <string name="about_app_install_date">Installatiedatum:</string>
+    <string name="date">Datum:</string>
+    <string name="about_app_update_date">Laatste update:</string>
+    <string name="about_app">Over deze app</string>
+    <string name="about_app_version">App-versie:</string>
+    <string name="about_app_code">Versiecode:</string>
+    <string name="about_android_version">Android-versie:</string>
+    <string name="schedule_notification">Plan een melding voor:</string>
+    <string name="about">Over</string>
+    <string name="about_app_contact_me">Neem contact met mij op:</string>
+    <string name="about_app_description">Dit is een experimentele app ontwikkeld door Júnior Vansuita. Betaal niet voor deze app.</string>
+    <string name="search">Zoeken</string>
+    <string name="search_hint">Zoek items...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Natuurlijke sortering</item>
+        <item>Geselecteerde onderaan</item>
+        <item>Geselecteerde bovenaan</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Natuurlijke sortering</item>
+        <item>Alfabetische volgorde oplopend</item>
+        <item>Alfabetische volgorde aflopend</item>
+    </string-array>
+</resources>
+

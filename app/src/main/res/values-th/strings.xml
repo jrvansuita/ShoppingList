@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">รายการช้อปปิ้ง</string>
+    <string name="share_title">รายการช้อปปิ้ง:</string>
+    <string name="yes">ใช่</string>
+    <string name="no">ไม่</string>
+    <string name="add_list">เพิ่มรายการ</string>
+    <string name="new_list">รายการใหม่</string>
+    <string name="hint_desc">เพิ่มรายการ</string>
+    <string name="save">บันทึก?</string>
+    <string name="schedule">กำหนดการ</string>
+    <string name="untitled">ไม่มีชื่อ</string>
+    <string name="no_description">ไม่มีคำอธิบาย</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">อัปเดตซอฟต์แวร์</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="title_new">รายการช้อปปิ้งใหม่</string>
+    <string name="delete_all">ลบทั้งหมด</string>
+    <string name="xml_import">นำเข้ารายการช้อปปิ้ง</string>
+    <string name="select_a_date">เลือกวันที่</string>
+    <string name="barcode_scan">สแกนบาร์โค้ด</string>
+    <string name="delete_selecteds">ลบที่เลือก</string>
+    <string name="duplicate">ทำซ้ำ</string>
+    <string name="select_all">เลือกทั้งหมด</string>
+    <string name="desselect_all">ยกเลิกการเลือกทั้งหมด</string>
+    <string name="delete_question">ลบ?</string>
+    <string name="want_delete_list">คุณต้องการลบรายการหรือไม่?</string>
+    <string name="want_delete_item">คุณต้องการลบ \"%1$s\" หรือไม่?</string>
+    <string name="want_delete_all_list">คุณต้องการลบรายการทั้งหมดหรือไม่?</string>
+    <string name="want_delete_all_items">คุณต้องการลบรายการทั้งหมดในรายการช้อปปิ้งนี้หรือไม่?</string>
+    <string name="want_delete_all_selected_itens">คุณต้องการลบรายการที่เลือกทั้งหมดในรายการช้อปปิ้งนี้หรือไม่?</string>
+    <string name="info_desc">กรุณาใส่คำอธิบายรายการ</string>
+    <string name="time">เวลา:</string>
+    <string name="new_notification_seted">การแจ้งเตือนใหม่จะแสดงใน </string>
+    <string name="notification_arrived">ถึงเวลาช้อปปิ้งแล้ว!</string>
+    <string name="item_already_inserted">รายการนี้มีอยู่ในรายการช้อปปิ้งแล้ว!</string>
+    <string name="no_connection">ไม่มีการเชื่อมต่ออินเทอร์เน็ต =(</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="options">ตัวเลือก</string>
+    <string name="rename">เปลี่ยนชื่อ</string>
+    <string name="delete">ลบ</string>
+    <string name="share">แชร์</string>
+    <string name="order">เรียงลำดับ</string>
+    <string name="share_via_text">แชร์ผ่านข้อความ</string>
+    <string name="title_rename">เปลี่ยนชื่อรายการช้อปปิ้ง</string>
+    <string name="share_via">แชร์ผ่าน</string>
+    <string name="no_item_added">ไม่มีการเพิ่มรายการ</string>
+    <string name="no_list_added">ไม่มีการเพิ่มรายการ</string>
+    <string name="invalid_importable_xml">นี่คือไฟล์ที่ไม่ถูกต้อง</string>
+    <string name="total">รวม</string>
+    <string name="description_title">คำอธิบายรายการ</string>
+    <string name="quantity_title">จำนวน</string>
+    <string name="unit_value_title">ราคา</string>
+    <string name="visualization_style">สไตล์การแสดงผล</string>
+    <string name="show_quantity_summary">แสดงข้อมูลเกี่ยวกับจำนวนรายการ</string>
+    <string name="show_check_box_summary">แสดงช่องทำเครื่องหมายในรายการช้อปปิ้ง</string>
+    <string name="show_check_boxe_title">แสดงช่องทำเครื่องหมาย</string>
+    <string name="show_quantity_title">แสดงจำนวน</string>
+    <string name="show_unit_value_summary">แสดงข้อมูลเกี่ยวกับราคาของรายการ</string>
+    <string name="show_unit_value_title">แสดงราคา</string>
+    <string name="quant_items">%d รายการ</string>
+    <string name="ordenation_style">สไตล์การเรียงลำดับ</string>
+    <string name="ordenation_checked_style_title">สไตล์การเรียงลำดับเริ่มต้นสำหรับรายการที่เลือก</string>
+    <string name="ordenation_alphabetical_style_title">สไตล์การเรียงลำดับตามตัวอักษรเริ่มต้น</string>
+    <string name="default_option">ตัวเลือกปัจจุบันคือ:</string>
+    <string name="about_app_install_date">วันที่ติดตั้ง:</string>
+    <string name="date">วันที่:</string>
+    <string name="about_app_update_date">อัปเดตล่าสุด:</string>
+    <string name="about_app">เกี่ยวกับแอปนี้</string>
+    <string name="about_app_version">เวอร์ชันแอป:</string>
+    <string name="about_app_code">รหัสเวอร์ชัน:</string>
+    <string name="about_android_version">เวอร์ชัน Android:</string>
+    <string name="schedule_notification">กำหนดการแจ้งเตือนสำหรับ:</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="about_app_contact_me">ติดต่อฉัน:</string>
+    <string name="about_app_description">นี่คือแอปทดลองที่พัฒนาโดย Júnior Vansuita อย่าจ่ายเงินสำหรับแอปนี้</string>
+    <string name="search">ค้นหา</string>
+    <string name="search_hint">ค้นหารายการ...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>การเรียงลำดับตามธรรมชาติ</item>
+        <item>รายการที่เลือกด้านล่าง</item>
+        <item>รายการที่เลือกด้านบน</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>การเรียงลำดับตามธรรมชาติ</item>
+        <item>ตัวอักษรจากน้อยไปมาก</item>
+        <item>ตัวอักษรจากมากไปน้อย</item>
+    </string-array>
+</resources>
+

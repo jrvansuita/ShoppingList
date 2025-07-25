@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Senarai Membeli-belah</string>
+    <string name="share_title">Senarai membeli-belah:</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="add_list">Tambah item</string>
+    <string name="new_list">Senarai baru</string>
+    <string name="hint_desc">Tambah item</string>
+    <string name="save">Simpan?</string>
+    <string name="schedule">Jadual</string>
+    <string name="untitled">Tanpa tajuk</string>
+    <string name="no_description">Tiada penerangan</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Kemas kini perisian</string>
+    <string name="cancel">Batal</string>
+    <string name="title_new">Senarai membeli-belah baru</string>
+    <string name="delete_all">Padam semua</string>
+    <string name="xml_import">Import senarai membeli-belah</string>
+    <string name="select_a_date">Pilih tarikh</string>
+    <string name="barcode_scan">Imbas kod bar</string>
+    <string name="delete_selecteds">Padam yang dipilih</string>
+    <string name="duplicate">Duplikasi</string>
+    <string name="select_all">Pilih semua</string>
+    <string name="desselect_all">Nyahpilih semua</string>
+    <string name="delete_question">Padam?</string>
+    <string name="want_delete_list">Adakah anda mahu memadam senarai?</string>
+    <string name="want_delete_item">Adakah anda mahu memadam \"%1$s\"?</string>
+    <string name="want_delete_all_list">Adakah anda mahu memadam semua senarai?</string>
+    <string name="want_delete_all_items">Adakah anda mahu memadam semua item dalam senarai membeli-belah ini?</string>
+    <string name="want_delete_all_selected_itens">Adakah anda mahu memadam semua item yang dipilih dalam senarai membeli-belah ini?</string>
+    <string name="info_desc">Sila masukkan penerangan item.</string>
+    <string name="time">Masa:</string>
+    <string name="new_notification_seted">Pemberitahuan baru akan dipaparkan pada </string>
+    <string name="notification_arrived">Masa untuk membeli-belah!</string>
+    <string name="item_already_inserted">Item sudah ada dalam senarai membeli-belah!</string>
+    <string name="no_connection">Tiada sambungan internet =(</string>
+    <string name="settings">Tetapan</string>
+    <string name="options">Pilihan</string>
+    <string name="rename">Namakan semula</string>
+    <string name="delete">Padam</string>
+    <string name="share">Kongsi</string>
+    <string name="order">Susunan</string>
+    <string name="share_via_text">Kongsi melalui teks</string>
+    <string name="title_rename">Namakan semula senarai membeli-belah</string>
+    <string name="share_via">Kongsi melalui</string>
+    <string name="no_item_added">Tiada item ditambah</string>
+    <string name="no_list_added">Tiada senarai ditambah</string>
+    <string name="invalid_importable_xml">Ini adalah fail tidak sah</string>
+    <string name="total">Jumlah</string>
+    <string name="description_title">Penerangan item</string>
+    <string name="quantity_title">Kuantiti</string>
+    <string name="unit_value_title">Harga</string>
+    <string name="visualization_style">Gaya visualisasi</string>
+    <string name="show_quantity_summary">Tunjukkan maklumat tentang kuantiti item</string>
+    <string name="show_check_box_summary">Tunjukkan kotak semak dalam senarai membeli-belah</string>
+    <string name="show_check_boxe_title">Tunjukkan kotak semak</string>
+    <string name="show_quantity_title">Tunjukkan kuantiti</string>
+    <string name="show_unit_value_summary">Tunjukkan maklumat tentang harga item</string>
+    <string name="show_unit_value_title">Tunjukkan harga</string>
+    <string name="quant_items">%d Item</string>
+    <string name="ordenation_style">Gaya susunan</string>
+    <string name="ordenation_checked_style_title">Gaya susunan lalai untuk item yang dipilih</string>
+    <string name="ordenation_alphabetical_style_title">Gaya susunan abjad lalai</string>
+    <string name="default_option">Pilihan semasa ialah:</string>
+    <string name="about_app_install_date">Tarikh pemasangan:</string>
+    <string name="date">Tarikh:</string>
+    <string name="about_app_update_date">Kemas kini terakhir:</string>
+    <string name="about_app">Tentang aplikasi ini</string>
+    <string name="about_app_version">Versi aplikasi:</string>
+    <string name="about_app_code">Kod versi:</string>
+    <string name="about_android_version">Versi Android:</string>
+    <string name="schedule_notification">Jadualkan pemberitahuan untuk:</string>
+    <string name="about">Tentang</string>
+    <string name="about_app_contact_me">Hubungi saya:</string>
+    <string name="about_app_description">Ini adalah aplikasi eksperimen yang dibangunkan oleh Júnior Vansuita. Jangan bayar untuk aplikasi ini.</string>
+    <string name="search">Cari</string>
+    <string name="search_hint">Cari item...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Susunan semula jadi</item>
+        <item>Dipilih di bawah</item>
+        <item>Dipilih di atas</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Susunan semula jadi</item>
+        <item>Susunan abjad menaik</item>
+        <item>Susunan abjad menurun</item>
+    </string-array>
+</resources>
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lista Zakupów</string>
+    <string name="share_title">Lista zakupów:</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="add_list">Dodaj przedmiot</string>
+    <string name="new_list">Nowa lista</string>
+    <string name="hint_desc">Dodaj przedmiot</string>
+    <string name="save">Zapisz?</string>
+    <string name="schedule">Harmonogram</string>
+    <string name="untitled">Bez tytułu</string>
+    <string name="no_description">Brak opisu</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Aktualizacja oprogramowania</string>
+    <string name="cancel">Anuluj</string>
+    <string name="title_new">Nowa lista zakupów</string>
+    <string name="delete_all">Usuń wszystko</string>
+    <string name="xml_import">Importuj listę zakupów</string>
+    <string name="select_a_date">Wybierz datę</string>
+    <string name="barcode_scan">Skanuj kod kreskowy</string>
+    <string name="delete_selecteds">Usuń zaznaczone</string>
+    <string name="duplicate">Duplikuj</string>
+    <string name="select_all">Zaznacz wszystko</string>
+    <string name="desselect_all">Odznacz wszystko</string>
+    <string name="delete_question">Usunąć?</string>
+    <string name="want_delete_list">Czy chcesz usunąć listę?</string>
+    <string name="want_delete_item">Czy chcesz usunąć \"%1$s\"?</string>
+    <string name="want_delete_all_list">Czy chcesz usunąć wszystkie listy?</string>
+    <string name="want_delete_all_items">Czy chcesz usunąć wszystkie przedmioty z tej listy zakupów?</string>
+    <string name="want_delete_all_selected_itens">Czy chcesz usunąć wszystkie zaznaczone przedmioty z tej listy zakupów?</string>
+    <string name="info_desc">Wprowadź opis przedmiotu.</string>
+    <string name="time">Czas:</string>
+    <string name="new_notification_seted">Nowe powiadomienie zostanie wyświetlone o </string>
+    <string name="notification_arrived">Czas na zakupy!</string>
+    <string name="item_already_inserted">Przedmiot jest już na liście zakupów!</string>
+    <string name="no_connection">Brak połączenia z Internetem =(</string>
+    <string name="settings">Ustawienia</string>
+    <string name="options">Opcje</string>
+    <string name="rename">Zmień nazwę</string>
+    <string name="delete">Usuń</string>
+    <string name="share">Udostępnij</string>
+    <string name="order">Sortowanie</string>
+    <string name="share_via_text">Udostępnij przez tekst</string>
+    <string name="title_rename">Zmień nazwę listy zakupów</string>
+    <string name="share_via">Udostępnij przez</string>
+    <string name="no_item_added">Nie dodano żadnych przedmiotów</string>
+    <string name="no_list_added">Nie dodano żadnych list</string>
+    <string name="invalid_importable_xml">To jest nieprawidłowy plik</string>
+    <string name="total">Razem</string>
+    <string name="description_title">Opis przedmiotu</string>
+    <string name="quantity_title">Ilość</string>
+    <string name="unit_value_title">Cena</string>
+    <string name="visualization_style">Styl wizualizacji</string>
+    <string name="show_quantity_summary">Pokaż informacje o ilości przedmiotów</string>
+    <string name="show_check_box_summary">Pokaż pola wyboru na liście zakupów</string>
+    <string name="show_check_boxe_title">Pokaż pola wyboru</string>
+    <string name="show_quantity_title">Pokaż ilości</string>
+    <string name="show_unit_value_summary">Pokaż informacje o cenach przedmiotów</string>
+    <string name="show_unit_value_title">Pokaż ceny</string>
+    <string name="quant_items">%d Przedmiot(y)</string>
+    <string name="ordenation_style">Styl sortowania</string>
+    <string name="ordenation_checked_style_title">Domyślny styl sortowania dla zaznaczonych przedmiotów</string>
+    <string name="ordenation_alphabetical_style_title">Domyślny alfabetyczny styl sortowania</string>
+    <string name="default_option">Obecna opcja to:</string>
+    <string name="about_app_install_date">Data instalacji:</string>
+    <string name="date">Data:</string>
+    <string name="about_app_update_date">Ostatnia aktualizacja:</string>
+    <string name="about_app">O aplikacji</string>
+    <string name="about_app_version">Wersja aplikacji:</string>
+    <string name="about_app_code">Kod wersji:</string>
+    <string name="about_android_version">Wersja Androida:</string>
+    <string name="schedule_notification">Zaplanuj powiadomienie na:</string>
+    <string name="about">O aplikacji</string>
+    <string name="about_app_contact_me">Skontaktuj się ze mną:</string>
+    <string name="about_app_description">To jest eksperymentalna aplikacja opracowana przez Júnior Vansuita. Nie płać za tę aplikację.</string>
+    <string name="search">Szukaj</string>
+    <string name="search_hint">Szukaj przedmiotów...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Naturalne sortowanie</item>
+        <item>Zaznaczone na dole</item>
+        <item>Zaznaczone na górze</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Naturalne sortowanie</item>
+        <item>Alfabetyczne rosnąco</item>
+        <item>Alfabetyczne malejąco</item>
+    </string-array>
+</resources>
+

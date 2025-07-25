@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">쇼핑 목록</string>
+    <string name="share_title">쇼핑 목록:</string>
+    <string name="yes">예</string>
+    <string name="no">아니요</string>
+    <string name="add_list">항목 추가</string>
+    <string name="new_list">새 목록</string>
+    <string name="hint_desc">항목 추가</string>
+    <string name="save">저장하시겠습니까?</string>
+    <string name="schedule">일정</string>
+    <string name="untitled">제목 없음</string>
+    <string name="no_description">설명 없음</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">소프트웨어 업데이트</string>
+    <string name="cancel">취소</string>
+    <string name="title_new">새 쇼핑 목록</string>
+    <string name="delete_all">모두 삭제</string>
+    <string name="xml_import">쇼핑 목록 가져오기</string>
+    <string name="select_a_date">날짜 선택</string>
+    <string name="barcode_scan">바코드 스캔</string>
+    <string name="delete_selecteds">선택 항목 삭제</string>
+    <string name="duplicate">복제</string>
+    <string name="select_all">모두 선택</string>
+    <string name="desselect_all">모두 선택 해제</string>
+    <string name="delete_question">삭제하시겠습니까?</string>
+    <string name="want_delete_list">목록을 삭제하시겠습니까?</string>
+    <string name="want_delete_item">\"%1$s\"을(를) 삭제하시겠습니까?</string>
+    <string name="want_delete_all_list">모든 목록을 삭제하시겠습니까?</string>
+    <string name="want_delete_all_items">이 쇼핑 목록의 모든 항목을 삭제하시겠습니까?</string>
+    <string name="want_delete_all_selected_itens">이 쇼핑 목록의 선택된 모든 항목을 삭제하시겠습니까?</string>
+    <string name="info_desc">항목 설명을 입력하세요.</string>
+    <string name="time">시간:</string>
+    <string name="new_notification_seted">새 알림이 다음 시간에 표시됩니다 </string>
+    <string name="notification_arrived">쇼핑할 시간입니다!</string>
+    <string name="item_already_inserted">항목이 이미 쇼핑 목록에 있습니다!</string>
+    <string name="no_connection">인터넷 연결 없음 =(</string>
+    <string name="settings">설정</string>
+    <string name="options">옵션</string>
+    <string name="rename">이름 변경</string>
+    <string name="delete">삭제</string>
+    <string name="share">공유</string>
+    <string name="order">정렬</string>
+    <string name="share_via_text">텍스트로 공유</string>
+    <string name="title_rename">쇼핑 목록 이름 변경</string>
+    <string name="share_via">다음을 통해 공유</string>
+    <string name="no_item_added">추가된 항목이 없습니다</string>
+    <string name="no_list_added">추가된 목록이 없습니다</string>
+    <string name="invalid_importable_xml">유효하지 않은 파일입니다</string>
+    <string name="total">총계</string>
+    <string name="description_title">항목 설명</string>
+    <string name="quantity_title">수량</string>
+    <string name="unit_value_title">가격</string>
+    <string name="visualization_style">시각화 스타일</string>
+    <string name="show_quantity_summary">항목 수량에 대한 정보 표시</string>
+    <string name="show_check_box_summary">쇼핑 목록에 체크박스 표시</string>
+    <string name="show_check_boxe_title">체크박스 표시</string>
+    <string name="show_quantity_title">수량 표시</string>
+    <string name="show_unit_value_summary">항목 가격에 대한 정보 표시</string>
+    <string name="show_unit_value_title">가격 표시</string>
+    <string name="quant_items">%d 항목</string>
+    <string name="ordenation_style">정렬 스타일</string>
+    <string name="ordenation_checked_style_title">선택된 항목의 기본 정렬 스타일</string>
+    <string name="ordenation_alphabetical_style_title">기본 알파벳 정렬 스타일</string>
+    <string name="default_option">현재 옵션:</string>
+    <string name="about_app_install_date">설치 날짜:</string>
+    <string name="date">날짜:</string>
+    <string name="about_app_update_date">마지막 업데이트:</string>
+    <string name="about_app">이 앱에 대해</string>
+    <string name="about_app_version">앱 버전:</string>
+    <string name="about_app_code">버전 코드:</string>
+    <string name="about_android_version">안드로이드 버전:</string>
+    <string name="schedule_notification">알림 예약:</string>
+    <string name="about">정보</string>
+    <string name="about_app_contact_me">저에게 연락하세요:</string>
+    <string name="about_app_description">이 앱은 Júnior Vansuita가 개발한 실험용 앱입니다. 이 앱에 대해 비용을 지불하지 마세요.</string>
+    <string name="search">검색</string>
+    <string name="search_hint">항목 검색...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>자연스러운 정렬</item>
+        <item>선택된 항목 아래로</item>
+        <item>선택된 항목 위로</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>자연스러운 정렬</item>
+        <item>알파벳 오름차순</item>
+        <item>알파벳 내림차순</item>
+    </string-array>
+</resources>
+

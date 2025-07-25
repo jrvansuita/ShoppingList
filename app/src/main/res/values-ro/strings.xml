@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Listă de cumpărături</string>
+    <string name="share_title">Listă de cumpărături:</string>
+    <string name="yes">Da</string>
+    <string name="no">Nu</string>
+    <string name="add_list">Adaugă articol</string>
+    <string name="new_list">Listă nouă</string>
+    <string name="hint_desc">Adaugă un articol</string>
+    <string name="save">Salvezi?</string>
+    <string name="schedule">Program</string>
+    <string name="untitled">Fără titlu</string>
+    <string name="no_description">Fără descriere</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Actualizare software</string>
+    <string name="cancel">Anulează</string>
+    <string name="title_new">Listă de cumpărături nouă</string>
+    <string name="delete_all">Șterge tot</string>
+    <string name="xml_import">Importă lista de cumpărături</string>
+    <string name="select_a_date">Selectează o dată</string>
+    <string name="barcode_scan">Scanează codul de bare</string>
+    <string name="delete_selecteds">Șterge selecțiile</string>
+    <string name="duplicate">Duplică</string>
+    <string name="select_all">Selectează tot</string>
+    <string name="desselect_all">Deselectează tot</string>
+    <string name="delete_question">Ștergi?</string>
+    <string name="want_delete_list">Vrei să ștergi lista?</string>
+    <string name="want_delete_item">Vrei să ștergi \"%1$s\"?</string>
+    <string name="want_delete_all_list">Vrei să ștergi toate listele?</string>
+    <string name="want_delete_all_items">Vrei să ștergi toate articolele din această listă de cumpărături?</string>
+    <string name="want_delete_all_selected_itens">Vrei să ștergi toate articolele selectate din această listă de cumpărături?</string>
+    <string name="info_desc">Introduceți descrierea articolului.</string>
+    <string name="time">Timp:</string>
+    <string name="new_notification_seted">O notificare nouă va fi afișată pe </string>
+    <string name="notification_arrived">E timpul să mergi la cumpărături!</string>
+    <string name="item_already_inserted">Articolul este deja în lista de cumpărături!</string>
+    <string name="no_connection">Fără conexiune la internet =(</string>
+    <string name="settings">Setări</string>
+    <string name="options">Opțiuni</string>
+    <string name="rename">Redenumește</string>
+    <string name="delete">Șterge</string>
+    <string name="share">Partajează</string>
+    <string name="order">Sortare</string>
+    <string name="share_via_text">Partajează prin text</string>
+    <string name="title_rename">Redenumește lista de cumpărături</string>
+    <string name="share_via">Partajează prin</string>
+    <string name="no_item_added">Niciun articol adăugat</string>
+    <string name="no_list_added">Nicio listă adăugată</string>
+    <string name="invalid_importable_xml">Acesta este un fișier invalid</string>
+    <string name="total">Total</string>
+    <string name="description_title">Descriere articol</string>
+    <string name="quantity_title">Cantitate</string>
+    <string name="unit_value_title">Preț</string>
+    <string name="visualization_style">Stil de vizualizare</string>
+    <string name="show_quantity_summary">Afișează informații despre cantitatea articolelor</string>
+    <string name="show_check_box_summary">Afișează casetele de selectare în lista de cumpărături</string>
+    <string name="show_check_boxe_title">Afișează casetele de selectare</string>
+    <string name="show_quantity_title">Afișează cantitățile</string>
+    <string name="show_unit_value_summary">Afișează informații despre prețul articolelor</string>
+    <string name="show_unit_value_title">Afișează prețurile</string>
+    <string name="quant_items">%d Articol(e)</string>
+    <string name="ordenation_style">Stil de sortare</string>
+    <string name="ordenation_checked_style_title">Stil de sortare implicit pentru articolele selectate</string>
+    <string name="ordenation_alphabetical_style_title">Stil de sortare alfabetică implicit</string>
+    <string name="default_option">Opțiunea curentă este:</string>
+    <string name="about_app_install_date">Data instalării:</string>
+    <string name="date">Data:</string>
+    <string name="about_app_update_date">Ultima actualizare:</string>
+    <string name="about_app">Despre această aplicație</string>
+    <string name="about_app_version">Versiunea aplicației:</string>
+    <string name="about_app_code">Codul versiunii:</string>
+    <string name="about_android_version">Versiunea Android:</string>
+    <string name="schedule_notification">Programează o notificare pentru:</string>
+    <string name="about">Despre</string>
+    <string name="about_app_contact_me">Contactează-mă:</string>
+    <string name="about_app_description">Aceasta este o aplicație experimentală dezvoltată de Júnior Vansuita. Nu plătiți pentru această aplicație.</string>
+    <string name="search">Caută</string>
+    <string name="search_hint">Caută articole...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Sortare naturală</item>
+        <item>Articole selectate jos</item>
+        <item>Articole selectate sus</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Sortare naturală</item>
+        <item>Ordine alfabetică ascendentă</item>
+        <item>Ordine alfabetică descendentă</item>
+    </string-array>
+</resources>
+

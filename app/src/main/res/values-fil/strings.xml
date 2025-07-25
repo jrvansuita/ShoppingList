@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Listahan ng Pamimili</string>
+    <string name="share_title">Listahan ng pamimili:</string>
+    <string name="yes">Oo</string>
+    <string name="no">Hindi</string>
+    <string name="add_list">Magdagdag ng item</string>
+    <string name="new_list">Bagong listahan</string>
+    <string name="hint_desc">Magdagdag ng isang item</string>
+    <string name="save">I-save?</string>
+    <string name="schedule">Iskedyul</string>
+    <string name="untitled">Walang pamagat</string>
+    <string name="no_description">Walang paglalarawan</string>
+    <string name="mask_unti_value">US$</string>
+    <string name="update">Pag-update ng software</string>
+    <string name="cancel">Kanselahin</string>
+    <string name="title_new">Bagong listahan ng pamimili</string>
+    <string name="delete_all">Tanggalin lahat</string>
+    <string name="xml_import">I-import ang listahan ng pamimili</string>
+    <string name="select_a_date">Pumili ng petsa</string>
+    <string name="barcode_scan">I-scan ang barcode</string>
+    <string name="delete_selecteds">Tanggalin ang napili</string>
+    <string name="duplicate">Kopyahin</string>
+    <string name="select_all">Piliin lahat</string>
+    <string name="desselect_all">Alisin ang lahat ng pagpili</string>
+    <string name="delete_question">Tanggalin?</string>
+    <string name="want_delete_list">Gusto mo bang tanggalin ang listahan?</string>
+    <string name="want_delete_item">Gusto mo bang tanggalin ang \"%1$s\"?</string>
+    <string name="want_delete_all_list">Gusto mo bang tanggalin ang lahat ng listahan?</string>
+    <string name="want_delete_all_items">Gusto mo bang tanggalin ang lahat ng item sa listahan ng pamimili na ito?</string>
+    <string name="want_delete_all_selected_itens">Gusto mo bang tanggalin ang lahat ng napiling item sa listahan ng pamimili na ito?</string>
+    <string name="info_desc">Ilagay ang paglalarawan ng item.</string>
+    <string name="time">Oras:</string>
+    <string name="new_notification_seted">Ang bagong abiso ay ipapakita sa </string>
+    <string name="notification_arrived">Panahon na para mamili!</string>
+    <string name="item_already_inserted">Ang item ay nasa listahan ng pamimili na!</string>
+    <string name="no_connection">Walang koneksyon sa internet =(</string>
+    <string name="settings">Mga Setting</string>
+    <string name="options">Mga Opsyon</string>
+    <string name="rename">Palitan ang pangalan</string>
+    <string name="delete">Tanggalin</string>
+    <string name="share">Ibahagi</string>
+    <string name="order">Ayusin</string>
+    <string name="share_via_text">Ibahagi sa pamamagitan ng text</string>
+    <string name="title_rename">Palitan ang pangalan ng listahan ng pamimili</string>
+    <string name="share_via">Ibahagi sa pamamagitan ng</string>
+    <string name="no_item_added">Walang item na idinagdag</string>
+    <string name="no_list_added">Walang listahan na idinagdag</string>
+    <string name="invalid_importable_xml">Ito ay isang hindi wastong file</string>
+    <string name="total">Kabuuan</string>
+    <string name="description_title">Paglalarawan ng item</string>
+    <string name="quantity_title">Dami</string>
+    <string name="unit_value_title">Presyo</string>
+    <string name="visualization_style">Estilo ng visualization</string>
+    <string name="show_quantity_summary">Ipakita ang impormasyon tungkol sa dami ng mga item</string>
+    <string name="show_check_box_summary">Ipakita ang mga checkbox sa listahan ng pamimili</string>
+    <string name="show_check_boxe_title">Ipakita ang mga checkbox</string>
+    <string name="show_quantity_title">Ipakita ang dami</string>
+    <string name="show_unit_value_summary">Ipakita ang impormasyon tungkol sa presyo ng mga item</string>
+    <string name="show_unit_value_title">Ipakita ang mga presyo</string>
+    <string name="quant_items">%d Item</string>
+    <string name="ordenation_style">Estilo ng pag-aayos</string>
+    <string name="ordenation_checked_style_title">Default na estilo ng pag-aayos para sa mga napiling item</string>
+    <string name="ordenation_alphabetical_style_title">Default na estilo ng pag-aayos ng alpabeto</string>
+    <string name="default_option">Ang kasalukuyang opsyon ay:</string>
+    <string name="about_app_install_date">Petsa ng pag-install:</string>
+    <string name="date">Petsa:</string>
+    <string name="about_app_update_date">Huling pag-update:</string>
+    <string name="about_app">Tungkol sa app na ito</string>
+    <string name="about_app_version">Bersyon ng app:</string>
+    <string name="about_app_code">Code ng bersyon:</string>
+    <string name="about_android_version">Bersyon ng Android:</string>
+    <string name="schedule_notification">Iskedyul ng abiso para sa:</string>
+    <string name="about">Tungkol sa</string>
+    <string name="about_app_contact_me">Makipag-ugnayan sa akin:</string>
+    <string name="about_app_description">Ito ay isang eksperimentong app na binuo ni Júnior Vansuita. Huwag magbayad para sa app na ito.</string>
+    <string name="search">Maghanap</string>
+    <string name="search_hint">Maghanap ng mga item...</string>
+    <string-array name="ordenation_checked_style_list_array">
+        <item>Natural na pag-aayos</item>
+        <item>Napili sa ibaba</item>
+        <item>Napili sa itaas</item>
+    </string-array>
+    <string-array name="ordenation_alphabetical_style_list_array">
+        <item>Natural na pag-aayos</item>
+        <item>Alpabetikong pataas</item>
+        <item>Alpabetikong pababa</item>
+    </string-array>
+</resources>
+
