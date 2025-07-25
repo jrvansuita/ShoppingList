@@ -30,6 +30,7 @@ object AdsManager {
     private var isShowingAd = false
 
     fun initialize(application: Application) {
+        if (!BuildConfig.ADS_ENABLED) return
         if (isInitialized) return
 
         MobileAds.initialize(application) {
@@ -38,7 +39,15 @@ object AdsManager {
         }
     }
 
+    private fun canShowInterstitialAd(): Boolean {
+        return BuildConfig.ADS_ENABLED && !isShowingAd && interstitialAd != null
+    }
+
     private fun loadInterstitialAd(context: Context) {
+        if (!BuildConfig.ADS_ENABLED) {
+            return
+        }
+
         val adUnitId =
             if (BuildConfig.DEBUG) INTERSTITIAL_TEST_AD_UNIT_ID else INTERSTITIAL_AD_UNIT_ID
         InterstitialAd.load(
@@ -61,7 +70,7 @@ object AdsManager {
     }
 
     fun showInterstitialAd(activity: Activity, onAdFinished: () -> Unit) {
-        if (isShowingAd || interstitialAd == null) {
+        if (!canShowInterstitialAd()) {
             onAdFinished()
             return
         }
@@ -104,6 +113,11 @@ object AdsManager {
         adContainer: ViewGroup,
         isDebug: Boolean = BuildConfig.DEBUG
     ) {
+        if (!BuildConfig.ADS_ENABLED) {
+            adContainer.removeAllViews()
+            return
+        }
+
         val adView = AdView(adContainer.context)
 
         val adUnitId = if (isDebug) {

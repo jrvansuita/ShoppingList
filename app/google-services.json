@@ -22,6 +22,45 @@
         "appinvite_service": {
           "other_platform_oauth_client": []
         }
+      },
+      "admob_app_id": "ca-app-pub-7819301718588435~4612469109"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568390401941:android:14983ded09e0a0b947409c",
+        "android_client_info": {
+          "package_name": "br.com.activity.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUnsPenlab3ixAmrNaISrAhOoK2SYc5RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568390401941:android:5a2fddec778695de47409c",
+        "android_client_info": {
+          "package_name": "br.com.activity.withoutads"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUnsPenlab3ixAmrNaISrAhOoK2SYc5RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
       }
     }
   ],

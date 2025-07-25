@@ -32,10 +32,27 @@ android {
         }
     }
 
+
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            buildConfigField "boolean", "ADS_ENABLED", "true"
+            //resValue "string", "app_name", "[Debug]"
+        }
+
+        withoutAds {
+            initWith debug
+            buildConfigField "boolean", "ADS_ENABLED", "false"
+            applicationIdSuffix ".withoutads"
+            versionNameSuffix "-withoutads"
+            //resValue "string", "app_name", "[No Ads]"
+        }
+
         release {
             signingConfig signingConfigs.release
             minifyEnabled false
+            buildConfigField "boolean", "ADS_ENABLED", "true"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
