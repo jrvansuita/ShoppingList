@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.view.ViewGroup
 import br.com.activity.BuildConfig
+import br.com.vansanalytics.AnalyticsManager
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
@@ -14,13 +15,15 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
 
 object AdsManager {
     private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-7819301718588435/7682968684"
     private const val INTERSTITIAL_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
 
-    const val BANNER_AD_UNIT_ID = "ca-app-pub-7819301718588435/4430953538"
-    const val BANNER_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
+    private const val BANNER_AD_UNIT_ID = "ca-app-pub-7819301718588435/4430953538"
+    private const val BANNER_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
 
     private var interstitialAd: InterstitialAd? = null
     private var isInitialized = false
@@ -45,9 +48,13 @@ object AdsManager {
             object : InterstitialAdLoadCallback() {
                 override fun onAdLoaded(ad: InterstitialAd) {
                     interstitialAd = ad
+                    AnalyticsManager.getInstance().logAdLoaded(true)
                 }
 
                 override fun onAdFailedToLoad(error: LoadAdError) {
+                    Firebase.crashlytics.recordException(
+                        Exception("Failed to load interstitial ad: ${error.message}")
+                    )
                     interstitialAd = null
                 }
             })
@@ -64,7 +71,12 @@ object AdsManager {
         interstitialAd?.apply {
             fullScreenContentCallback = object : FullScreenContentCallback() {
                 override fun onAdShowedFullScreenContent() {
-                    interstitialAd = null // Discard the shown ad
+                    interstitialAd = null
+                    AnalyticsManager.getInstance().logAdSeen(true)
+                }
+
+                override fun onAdClicked() {
+                    AnalyticsManager.getInstance().logAdOpen(true)
                 }
 
                 override fun onAdDismissedFullScreenContent() {
@@ -75,6 +87,9 @@ object AdsManager {
 
                 override fun onAdFailedToShowFullScreenContent(adError: AdError) {
                     isShowingAd = false
+                    Firebase.crashlytics.recordException(
+                        Exception("Failed to show interstitial ad: ${adError.message}")
+                    )
                     onAdFinished()
                     loadInterstitialAd(activity)
                 }
@@ -109,6 +124,21 @@ object AdsManager {
         adContainer.addView(adView)
 
         val adRequest = AdRequest.Builder().build()
+        adView.adListener = object : com.google.android.gms.ads.AdListener() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Firebase.crashlytics.recordException(
+                    Exception("Failed to load banner ad: ${adError.message}")
+                )
+            }
+
+            override fun onAdLoaded() {
+                AnalyticsManager.getInstance().logAdSeen()
+            }
+
+            override fun onAdOpened() {
+                AnalyticsManager.getInstance().logAdOpen()
+            }
+        }
         adView.loadAd(adRequest)
     }
 }

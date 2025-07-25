@@ -49,6 +49,24 @@ class AnalyticsManager private constructor() {
         }
     }
 
+    fun logAdLoaded(isInterstitial: Boolean = false) {
+        firebaseAnalytics.logEvent("ad_loaded") {
+            param("ad_type", "interstitial".takeIf { isInterstitial } ?: "banner")
+        }
+    }
+
+    fun logAdSeen(isInterstitial: Boolean = false) {
+        firebaseAnalytics.logEvent("ad_seen") {
+            param("ad_type", "interstitial".takeIf { isInterstitial } ?: "banner")
+        }
+    }
+
+    fun logAdOpen(isInterstitial: Boolean = false) {
+        firebaseAnalytics.logEvent("ad_open") {
+            param("ad_type", "interstitial".takeIf { isInterstitial } ?: "banner")
+        }
+    }
+
     companion object {
         @Volatile
         private var instance: AnalyticsManager? = null
