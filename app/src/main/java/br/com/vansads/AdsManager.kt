@@ -19,10 +19,10 @@ import com.google.firebase.Firebase
 import com.google.firebase.crashlytics.crashlytics
 
 object AdsManager {
-    private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-7819301718588435/7682968684"
+    private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-7819301718588435/3398177117"
     private const val INTERSTITIAL_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
 
-    private const val BANNER_AD_UNIT_ID = "ca-app-pub-7819301718588435/4430953538"
+    private const val BANNER_AD_UNIT_ID = "ca-app-pub-7819301718588435/5949601500"
     private const val BANNER_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
 
     private var interstitialAd: InterstitialAd? = null
@@ -79,7 +79,7 @@ object AdsManager {
 
         interstitialAd?.apply {
             fullScreenContentCallback = object : FullScreenContentCallback() {
-                override fun onAdShowedFullScreenContent() {
+                override fun onAdImpression() {
                     interstitialAd = null
                     AnalyticsManager.getInstance().logAdSeen(true)
                 }
@@ -145,7 +145,7 @@ object AdsManager {
                 )
             }
 
-            override fun onAdLoaded() {
+            override fun onAdImpression() {
                 AnalyticsManager.getInstance().logAdSeen()
             }
 
