@@ -111,7 +111,6 @@ object AdsManager {
 
     fun loadAdBanner(
         adContainer: ViewGroup,
-        isDebug: Boolean = BuildConfig.DEBUG
     ) {
         if (!BuildConfig.ADS_ENABLED) {
             adContainer.removeAllViews()
@@ -120,7 +119,7 @@ object AdsManager {
 
         val adView = AdView(adContainer.context)
 
-        val adUnitId = if (isDebug) {
+        val adUnitId = if (BuildConfig.DEBUG) {
             BANNER_TEST_AD_UNIT_ID
         } else {
             BANNER_AD_UNIT_ID
