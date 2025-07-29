@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.app.NavUtils
 import br.com.activity.R
-import br.com.vansact.AddItemShoppingList
 import br.com.vansxmlhandler.ShoppingListXmlImporter
 import org.w3c.dom.DOMException
 import org.w3c.dom.Document
@@ -22,15 +21,15 @@ class ShoppingListImporter : Activity() {
         super.onCreate(savedInstanceState)
         var doc: Document? = null
 
-        if (intent.scheme == "content" || intent.scheme == "file") {
+        val data = intent?.data
+        val scheme = intent?.scheme
+        if (data != null && (scheme == "content" || scheme == "file")) {
             try {
-                val attachment = contentResolver.openInputStream(
-                    intent.data!!
-                )
-                val builder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-                doc = builder.parse(attachment)
-                doc.documentElement.normalize()
-                attachment!!.close()
+                contentResolver.openInputStream(data)?.use { attachment ->
+                    val builder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+                    doc = builder.parse(attachment)
+                    doc?.documentElement?.normalize()
+                }
             } catch (e: FileNotFoundException) {
                 e.printStackTrace()
             } catch (e: ParserConfigurationException) {
@@ -42,11 +41,14 @@ class ShoppingListImporter : Activity() {
             }
         }
 
+        if (doc == null) {
+            Toast.makeText(this, "Import failed. Please try again.", Toast.LENGTH_LONG).show()
+            finish()
+            return
+        }
+
         try {
-            val slImporter = ShoppingListXmlImporter(
-                this,
-                doc!!
-            )
+            val slImporter = ShoppingListXmlImporter(this, doc)
             slImporter.importXml()
             if (slImporter.wasSucessful()) {
                 startActivity(

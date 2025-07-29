@@ -1,124 +1,139 @@
-package br.com.vansschedule;
+package br.com.vansschedule
 
-import android.app.AlarmManager;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.app.AlarmManager
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.graphics.BitmapFactory
+import android.os.Build
+import androidx.core.app.NotificationCompat
+import br.com.activity.R
+import br.com.bean.ShoppingList
+import br.com.dao.ShoppingListDAO.select
+import br.com.vansact.AddItemShoppingList
+import br.com.vansexception.VansException
+import java.util.Calendar
 
-import androidx.core.app.NotificationCompat;
-
-import java.util.Calendar;
-
-import br.com.activity.R;
-import br.com.bean.ShoppingList;
-import br.com.dao.ShoppingListDAO;
-import br.com.vansact.AddItemShoppingList;
-import br.com.vansexception.VansException;
-
-public class AlarmNotificationShoppingList extends BroadcastReceiver {
-
-    // Tag names
-    private static final String ACTION = "ACTION";
-    private static final String ID_TAG = "ID";
-    // tag values
-    private static final String START_TAG = "START";
-    private static final String STOP_TAG = "STOP";
-    private static final String GOTO_TAG = "GOTO";
-    private static final String CHANNEL_ID = "shopping_list_channel";
-    private Context context;
-    private Intent receiveIntent;
-
-    public static void initAlarm(Context context, int idShoppingList, Calendar calendar) {
-        ((AlarmManager) context.getSystemService(Context.ALARM_SERVICE)).set(AlarmManager.RTC, calendar.getTimeInMillis(), getPendingIntent(context, idShoppingList, START_TAG));
-    }
-
-    public static void cancelAlarm(Context context, int idShoppingList) {
-        ((AlarmManager) context.getSystemService(Context.ALARM_SERVICE)).set(AlarmManager.RTC, System.currentTimeMillis(), getPendingIntent(context, idShoppingList, STOP_TAG));
-    }
-
-    private static PendingIntent getPendingIntent(Context context, int id, String actionValue) {
-        Intent i = new Intent(context, AlarmNotificationShoppingList.class);
-        i.putExtra(ACTION, actionValue);
-        i.putExtra(ID_TAG, id);
-
-        int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
-
-        return PendingIntent.getBroadcast(context, id, i, flags);
-    }
-
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        this.context = context;
-        this.receiveIntent = intent;
-
-        if (intent.getExtras().getString(ACTION).equals(START_TAG)) {
-            notificate();
-        } else if (intent.getExtras().getString(ACTION).equals(GOTO_TAG)) {
-            gotoShoppingList();
-        } else if (intent.getExtras().getString(ACTION).equals(STOP_TAG)) {
-            stopNotification();
+class AlarmNotificationShoppingList : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        val action = intent.getStringExtra(ACTION) ?: return
+        when (action) {
+            START_TAG -> notificate(context, intent)
+            GOTO_TAG -> gotoShoppingList(context, intent)
+            STOP_TAG -> stopNotification(context, intent)
         }
     }
 
-    private ShoppingList getShoppingList(Context context, Intent intent) {
-        if (intent.getExtras().getInt(ID_TAG) > 0) {
-            try {
-                return ShoppingListDAO.select(context, intent.getExtras().getInt(ID_TAG));
-            } catch (VansException e) {
-                e.printStackTrace();
+    private fun getShoppingList(context: Context, intent: Intent): ShoppingList? {
+        val id = intent.getIntExtra(ID_TAG, -1)
+        if (id <= 0) return null
+        return try {
+            select(context, id)
+        } catch (e: VansException) {
+            logError("Failed to select shopping list", e)
+            null
+        }
+    }
+
+    private fun notificate(context: Context, intent: Intent) {
+        val shoppingList = getShoppingList(context, intent) ?: return
+        createNotificationChannel(context)
+        val bigIcon = BitmapFactory.decodeResource(context.resources, R.mipmap.ic_launcher)
+        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher_action_bar)
+            .setContentTitle(shoppingList.name)
+            .setLargeIcon(bigIcon)
+            .setContentText(context.getString(R.string.notification_arrived))
+            .setLights(-0x8000, 1000, 1000)
+            .setContentIntent(getPendingIntent(context, shoppingList.id, GOTO_TAG))
+            .setVibrate(longArrayOf(0, 500, 1000, 500))
+        (context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager)?.notify(
+            shoppingList.id,
+            builder.build()
+        )
+    }
+
+    private fun createNotificationChannel(context: Context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val notificationManager =
+                context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                "Shopping List Notifications",
+                NotificationManager.IMPORTANCE_DEFAULT
+            ).apply {
+                description = "Notifications for scheduled shopping lists"
+                enableLights(true)
+                enableVibration(true)
+            }
+            notificationManager?.createNotificationChannel(channel)
+        }
+    }
+
+    private fun stopNotification(context: Context, intent: Intent) {
+        val id = intent.getIntExtra(ID_TAG, -1)
+        if (id <= 0) return
+        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
+        val notificationManager =
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as? NotificationManager
+        getPendingIntent(context, id, STOP_TAG)?.let {
+            alarmManager?.cancel(it)
+            notificationManager?.cancel(id)
+        }
+    }
+
+    private fun gotoShoppingList(context: Context, intent: Intent) {
+        stopNotification(context, intent)
+        val shoppingList = getShoppingList(context, intent) ?: return
+        val resultIntent = Intent(context, AddItemShoppingList::class.java).apply {
+            putExtra(context.getString(R.string.id_shopping_list), shoppingList.id)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        context.startActivity(resultIntent)
+    }
+
+    companion object {
+        private const val ACTION = "ACTION"
+        private const val ID_TAG = "ID"
+        private const val START_TAG = "START"
+        private const val STOP_TAG = "STOP"
+        private const val GOTO_TAG = "GOTO"
+        private const val CHANNEL_ID = "shopping_list_channel"
+
+        @JvmStatic
+        fun initAlarm(context: Context, idShoppingList: Int, calendar: Calendar) {
+            val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
+            getPendingIntent(context, idShoppingList, START_TAG)?.let {
+                alarmManager?.set(AlarmManager.RTC, calendar.timeInMillis, it)
             }
         }
-        return null;
-    }
 
-    private void notificate() {
-        ShoppingList shoppingList = getShoppingList(context, receiveIntent);
-        if (shoppingList != null) {
-            createNotificationChannel(); // Important for API 26+
+        fun cancelAlarm(context: Context, idShoppingList: Int) {
+            val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
+            getPendingIntent(context, idShoppingList, STOP_TAG)?.let {
+                alarmManager?.set(AlarmManager.RTC, System.currentTimeMillis(), it)
+            }
+        }
 
-            Bitmap bigIcon = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
+        private fun getPendingIntent(
+            context: Context?,
+            id: Int,
+            actionValue: String?
+        ): PendingIntent? {
+            if (context == null) return null
+            val i = Intent(context, AlarmNotificationShoppingList::class.java).apply {
+                putExtra(ACTION, actionValue)
+                putExtra(ID_TAG, id)
+            }
+            val flags = PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            return PendingIntent.getBroadcast(context, id, i, flags)
+        }
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID).setSmallIcon(R.drawable.ic_launcher_action_bar).setContentTitle(shoppingList.getName()).setLargeIcon(bigIcon).setContentText(context.getString(R.string.notification_arrived)).setLights(0xFFFF8000, 1000, 1000).setContentIntent(getPendingIntent(context, shoppingList.getId(), GOTO_TAG)).setVibrate(new long[]{0, 500, 1000, 500}); // Custom vibration pattern
-
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(shoppingList.getId(), builder.build());
+        private fun logError(message: String, throwable: Throwable) {
+            android.util.Log.e("AlarmNotification", message, throwable)
         }
     }
-
-    private void createNotificationChannel() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Shopping List Notifications", NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription("Notifications for scheduled shopping lists");
-            channel.enableLights(true);
-            channel.enableVibration(true);
-            notificationManager.createNotificationChannel(channel);
-        }
-    }
-
-    private void stopNotification() {
-        int id = receiveIntent.getExtras().getInt(ID_TAG);
-
-        ((AlarmManager) context.getSystemService(Context.ALARM_SERVICE)).cancel(getPendingIntent(context, id, STOP_TAG));
-        ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE)).cancel(id);
-    }
-
-    private void gotoShoppingList() {
-        stopNotification();
-
-        ShoppingList shoppingList = getShoppingList(context, receiveIntent);
-        if (shoppingList != null) {
-            Intent resultIntent = new Intent(context, AddItemShoppingList.class);
-            resultIntent.putExtra(context.getString(R.string.id_shopping_list), shoppingList.getId());
-            resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            context.startActivity(resultIntent);
-        }
-    }
-
 }

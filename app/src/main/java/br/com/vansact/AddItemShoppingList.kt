@@ -103,13 +103,17 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
     }
 
     private fun getShoppingListFromIntent(): ShoppingList {
+        val extras = intent.extras
+        val id = extras?.getInt(getString(R.string.id_shopping_list), -1) ?: -1
+        if (id <= 0) {
+            finish()
+        }
         return try {
-            val shoppingList = ShoppingListDAO.select(
-                this, intent.extras!!.getInt(getString(R.string.id_shopping_list))
-            )
+            val shoppingList = ShoppingListDAO.select(this, id)
             requireNotNull(shoppingList) { "ShoppingList not found for given id" }
         } catch (e: VansException) {
             showToast(e.message)
+            finish()
             throw e
         }
     }
@@ -197,7 +201,7 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
     override fun onItemLongClick(
         parent: AdapterView<*>, view: View, position: Int, id: Long
     ): Boolean {
-        val item = parent.adapter.getItem(position) ?: return true
+        parent.adapter.getItem(position) ?: return true
         val pos = position - 1
         showDeleteConfirmation(pos, adapter.getItem(pos).description)
         return true
