@@ -1,0 +1,23 @@
+[versions]
+agp = "8.13.0-alpha02"
+kotlin = "2.2.0"
+appcompat = "1.7.1"
+firebase-bom = "34.0.0"
+gms-google-services = "4.4.3"
+firebase-crashlytics = "3.0.5"
+gms-ads = "24.5.0"
+
+[libraries]
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+gms-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "gms-ads" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+gms-google-services = { id = "com.google.gms.google-services", version.ref = "gms-google-services" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics" }

@@ -19,7 +19,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.crashlytics.crashlytics
 
 object AdsManager {
-    private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-7819301718588435/3398177117"
+    private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-7819301718588435/6992811341"
     private const val INTERSTITIAL_TEST_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
 
     private const val BANNER_AD_UNIT_ID = "ca-app-pub-7819301718588435/5949601500"
