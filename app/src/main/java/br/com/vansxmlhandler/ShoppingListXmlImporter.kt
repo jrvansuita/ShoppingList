@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.widget.Toast
+import androidx.core.database.sqlite.transaction
 import br.com.activity.R
 import br.com.bean.ItemShoppingList
 import br.com.bean.ShoppingList
@@ -46,49 +47,48 @@ class ShoppingListXmlImporter(
         if (isImportableBase()) {
             val tablesList = doc.documentElement.childNodes
             val db: SQLiteDatabase = DataBaseDAO(context).writableDatabase
-            db.beginTransaction()
-            try {
-                for (i in 0 until tablesList.length) {
-                    val tableNode = tablesList.item(i)
-                    if (isImportableTable(tableNode)) {
-                        val rowsList = tableNode.childNodes
-                        for (j in 0 until rowsList.length) {
-                            val rowNode = rowsList.item(j)
-                            if (isImportableRow(rowNode)) {
-                                val colsList = rowNode.childNodes
-                                for (k in 0 until colsList.length) {
-                                    val colNode = colsList.item(k)
-                                    if (isImportableCol(colNode)) {
-                                        setColAttributesToTableClass(tableNode, colNode)
-                                    } else {
-                                        break
+            db.transaction {
+                try {
+                    for (i in 0 until tablesList.length) {
+                        val tableNode = tablesList.item(i)
+                        if (isImportableTable(tableNode)) {
+                            val rowsList = tableNode.childNodes
+                            for (j in 0 until rowsList.length) {
+                                val rowNode = rowsList.item(j)
+                                if (isImportableRow(rowNode)) {
+                                    val colsList = rowNode.childNodes
+                                    for (k in 0 until colsList.length) {
+                                        val colNode = colsList.item(k)
+                                        if (isImportableCol(colNode)) {
+                                            setColAttributesToTableClass(tableNode, colNode)
+                                        } else {
+                                            break
+                                        }
                                     }
-                                }
-                                when (getTableName(tableNode)) {
-                                    ShoppingListDAO.TABLE_NAME -> {
-                                        shoppingList =
-                                            ShoppingListDAO.insert(context, shoppingList)!!
-                                    }
+                                    when (getTableName(tableNode)) {
+                                        ShoppingListDAO.TABLE_NAME -> {
+                                            shoppingList =
+                                                ShoppingListDAO.insert(context, shoppingList)!!
+                                        }
 
-                                    ItemShoppingListDAO.TABLE_NAME -> {
-                                        ItemShoppingListDAO.insert(context, itemShoppingList)
+                                        ItemShoppingListDAO.TABLE_NAME -> {
+                                            ItemShoppingListDAO.insert(context, itemShoppingList)
+                                        }
                                     }
+                                } else {
+                                    break
                                 }
-                            } else {
-                                break
                             }
+                        } else {
+                            break
                         }
-                    } else {
-                        break
                     }
+                    wasSucessful = true
+                } catch (e: Exception) {
+                    wasSucessful = false
+                    doToast(e.message)
+                } finally {
                 }
-                db.setTransactionSuccessful()
-                wasSucessful = true
-            } catch (e: Exception) {
-                wasSucessful = false
-                doToast(e.message)
-            } finally {
-                db.endTransaction()
                 db.close()
             }
         }
@@ -197,4 +197,3 @@ class ShoppingListXmlImporter(
         (context as? Activity)?.finish()
     }
 }
-
