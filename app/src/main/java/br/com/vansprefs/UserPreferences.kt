@@ -17,6 +17,7 @@ import br.com.activity.R
 import br.com.vansads.AdsManager
 import br.com.vansanalytics.AnalyticsManager
 import br.com.vansdialog.CustomDialogAboutApp
+import br.com.vansdialog.PromoBannerDialog
 
 class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
     OnPreferenceClickListener {
@@ -36,6 +37,8 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
             findPreference(getString(R.string.user_preference_ordenation_alphabetical_list)) as ListPreference
 
         (findPreference(getString(R.string.user_preference_about_app)) as Preference).onPreferenceClickListener =
+            this
+        (findPreference(getString(R.string.user_preference_pro_app)) as Preference).onPreferenceClickListener =
             this
 
         AnalyticsManager.getInstance().logSettingsScreenView()
@@ -106,8 +109,11 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
 
     override fun onPreferenceClick(preference: Preference): Boolean {
         try {
-            if (preference.key == getString(R.string.user_preference_about_app)) {
-                CustomDialogAboutApp(preference.context).show()
+            when (preference.key) {
+                getString(R.string.user_preference_about_app) ->
+                    CustomDialogAboutApp(preference.context).show()
+                getString(R.string.user_preference_pro_app) ->
+                    PromoBannerDialog.show(this, force = true)
             }
         } catch (e: PackageManager.NameNotFoundException) {
             Toast.makeText(preference.context, e.message, Toast.LENGTH_LONG).show()

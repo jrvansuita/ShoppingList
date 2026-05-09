@@ -19,8 +19,8 @@ object PromoBannerDialog {
     private const val KEY_CLOSED_AT = "closed_at"
     private const val TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000L
 
-    fun show(activity: Activity) {
-        if (!shouldShow(activity)) return
+    fun show(activity: Activity, force: Boolean = false) {
+        if (!force && !shouldShow(activity)) return
 
         val dialog = Dialog(activity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
