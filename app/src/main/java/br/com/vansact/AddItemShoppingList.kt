@@ -303,6 +303,7 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
     }
 
     private fun refreshListView() {
+        currentFocus?.clearFocus()
         refreshAdapter()
         edDescription.setAdapter(ItemShoppingListDAO.selectAutoComplete(this, adapter.descriptions))
         val showFooter =
