@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import br.com.vansdialog.PromoBannerDialog
 import br.com.activity.R
 import br.com.bean.ShoppingList
 import br.com.dao.ShoppingListDAO
@@ -82,6 +83,7 @@ class MainApp : Activity(), AdapterView.OnItemClickListener,
         lvShoppingList.onItemClickListener = this
         lvShoppingList.onItemLongClickListener = this
         refreshListView()
+        PromoBannerDialog.show(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
