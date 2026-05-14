@@ -41,6 +41,15 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="@string/pref_pro_category" >
+
+        <Preference
+            android:key="@string/user_preference_pro_app"
+            android:title="@string/pref_pro_title"
+            android:summary="@string/pref_pro_summary" />
+
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/about_app" >
 
         <Preference

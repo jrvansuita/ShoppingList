@@ -77,6 +77,10 @@
     <string name="about_app_contact_me">Contact me : </string>
     <string name="about_app_description">This is an experimental app developed by Júnior Vansuita. Do not pay for this app.</string>
 
+    <string name="pref_pro_category">Shopping List Pro</string>
+    <string name="pref_pro_title">Upgrade to Pro</string>
+    <string name="pref_pro_summary">Try the new Shopping List Pro — more features, better experience!</string>
+
     <string name="search">Search</string>
     <string name="search_hint">Search items...</string>
 

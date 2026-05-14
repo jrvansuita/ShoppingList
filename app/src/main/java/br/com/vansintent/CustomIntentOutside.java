@@ -51,12 +51,14 @@ public class CustomIntentOutside {
 		context.startActivity(Intent.createChooser(i, context.getString(R.string.share_via)));
 	}
 
+	private static final String PRO_APP_PACKAGE = "com.neat.nest.shoppinglist";
+
 	public static void UpdateApp(Context context) {
 		if (sucessInternetConnectivity(context, true)) {
 			try {
-				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName())));
+				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + PRO_APP_PACKAGE)));
 			} catch (android.content.ActivityNotFoundException anfe) {
-				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
+				context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + PRO_APP_PACKAGE)));
 			}
 		}
 	}
