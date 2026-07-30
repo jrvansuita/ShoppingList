@@ -10,6 +10,7 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.activity.R
+import br.com.vansads.BillingManager
 
 object PromoBannerDialog {
 
@@ -20,6 +21,8 @@ object PromoBannerDialog {
     private const val TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000L
 
     fun show(activity: Activity, force: Boolean = false) {
+        // A user who paid to remove the ads never sees the Pro promotion.
+        if (BillingManager.adsRemoved) return
         if (!force && !shouldShow(activity)) return
 
         val dialog = Dialog(activity)
@@ -29,6 +32,8 @@ object PromoBannerDialog {
         dialog.setCancelable(false)
 
         dialog.findViewById<ImageView>(R.id.imgBanner).setOnClickListener {
+            saveClosedAt(activity)
+            dialog.dismiss()
             activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRO_STORE_URL)))
         }
         dialog.findViewById<TextView>(R.id.btnCloseBanner).setOnClickListener {

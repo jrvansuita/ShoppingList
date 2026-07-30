@@ -6,6 +6,7 @@ firebase-bom = "34.0.0"
 gms-google-services = "4.4.3"
 firebase-crashlytics = "3.0.5"
 gms-ads = "24.5.0"
+billing = "8.3.0"
 
 [libraries]
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
@@ -14,6 +15,7 @@ firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "fir
 firebase-crashlytics-ndk = { module = "com.google.firebase:firebase-crashlytics-ndk" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 gms-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "gms-ads" }
+billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

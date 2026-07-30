@@ -41,7 +41,14 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/pref_pro_category" >
+    <PreferenceCategory
+        android:key="@string/user_preference_pro_category"
+        android:title="@string/pref_pro_category" >
+
+        <Preference
+            android:key="@string/user_preference_remove_ads"
+            android:title="@string/pref_remove_ads_title"
+            android:summary="@string/pref_remove_ads_summary" />
 
         <Preference
             android:key="@string/user_preference_pro_app"

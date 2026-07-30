@@ -66,6 +66,8 @@ class MainApp : Activity(), AdapterView.OnItemClickListener,
         AnalyticsManager.getInstance().logMainScreenView(this)
 
         AdsManager.loadAdBanner(findViewById(R.id.ads_holder))
+
+        PromoBannerDialog.show(this)
     }
 
     private fun setupWindow() {
@@ -83,7 +85,6 @@ class MainApp : Activity(), AdapterView.OnItemClickListener,
         lvShoppingList.onItemClickListener = this
         lvShoppingList.onItemLongClickListener = this
         refreshListView()
-        PromoBannerDialog.show(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

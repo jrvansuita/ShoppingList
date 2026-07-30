@@ -78,6 +78,12 @@
     <string name="about_app_description">This is an experimental app developed by Júnior Vansuita. Do not pay for this app.</string>
 
     <string name="pref_pro_category">Shopping List Pro</string>
+    <!-- TODO: Translate these strings into the other locales in res/values-*. -->
+    <string name="pref_remove_ads_title">Remove ads</string>
+    <string name="pref_remove_ads_summary">Pay once and remove all the ads.</string>
+    <string name="ads_removed_title">Ads removed</string>
+    <string name="ads_removed_message">Thank you! Your list is clean now, with no ads.</string>
+    <string name="ads_removed_button">Great</string>
     <string name="pref_pro_title">Upgrade to Pro</string>
     <string name="pref_pro_summary">Try the new Shopping List Pro — more features, better experience!</string>
 

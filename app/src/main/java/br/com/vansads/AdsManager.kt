@@ -34,8 +34,11 @@ object AdsManager {
     private var isInitialized = false
     private var isShowingAd = false
 
+    /** Ads are off when the build disables them, or when the user paid to remove them. */
+    private fun adsEnabled() = BuildConfig.ADS_ENABLED && !BillingManager.adsRemoved
+
     fun initialize(application: Application) {
-        if (!BuildConfig.ADS_ENABLED) return
+        if (!adsEnabled()) return
         if (isInitialized) return
 
         MobileAds.initialize(application) {
@@ -45,11 +48,11 @@ object AdsManager {
     }
 
     private fun canShowInterstitialAd(): Boolean {
-        return BuildConfig.ADS_ENABLED && !isShowingAd && interstitialAd != null
+        return adsEnabled() && !isShowingAd && interstitialAd != null
     }
 
     private fun loadInterstitialAd(context: Context) {
-        if (!BuildConfig.ADS_ENABLED) return
+        if (!adsEnabled()) return
         val adUnitId = getInterstitialAdUnitId()
         InterstitialAd.load(
             context,
@@ -121,7 +124,7 @@ object AdsManager {
     fun loadAdBanner(
         adContainer: ViewGroup,
     ) {
-        if (!BuildConfig.ADS_ENABLED) {
+        if (!adsEnabled()) {
             adContainer.removeAllViews()
             return
         }
