@@ -86,5 +86,14 @@
         <item>ตัวอักษรจากน้อยไปมาก</item>
         <item>ตัวอักษรจากมากไปน้อย</item>
     </string-array>
-</resources>
 
+    <string name="pref_remove_ads_title">ลบโฆษณา</string>
+    <string name="pref_remove_ads_summary">จ่ายครั้งเดียวเพื่อลบโฆษณาทั้งหมด</string>
+    <string name="ads_removed_title">ลบโฆษณาแล้ว</string>
+    <string name="ads_removed_message">ขอบคุณ! รายการของคุณสะอาดแล้ว ไม่มีโฆษณา</string>
+    <string name="ads_removed_button">เยี่ยม</string>
+
+    <string name="pref_pro_title">อัปเกรดเป็น Pro</string>
+    <string name="pref_pro_summary">ลองใช้ Shopping List Pro ใหม่ — ฟีเจอร์มากขึ้น ประสบการณ์ที่ดีกว่า!</string>
+
+</resources>

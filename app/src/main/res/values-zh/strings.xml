@@ -86,4 +86,14 @@
         <item>升序字母排序</item>
         <item>降序字母排序</item>
     </string-array>
+
+    <string name="pref_remove_ads_title">移除广告</string>
+    <string name="pref_remove_ads_summary">一次付费，移除所有广告。</string>
+    <string name="ads_removed_title">广告已移除</string>
+    <string name="ads_removed_message">谢谢！您的清单现在很清爽，没有广告。</string>
+    <string name="ads_removed_button">好的</string>
+
+    <string name="pref_pro_title">升级到 Pro</string>
+    <string name="pref_pro_summary">试试全新的 Shopping List Pro — 功能更多，体验更好！</string>
+
 </resources>

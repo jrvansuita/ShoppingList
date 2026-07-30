@@ -86,5 +86,14 @@
         <item>Növekvő ábécérend</item>
         <item>Csökkenő ábécérend</item>
     </string-array>
-</resources>
 
+    <string name="pref_remove_ads_title">Hirdetések eltávolítása</string>
+    <string name="pref_remove_ads_summary">Fizessen egyszer, és távolítsa el az összes hirdetést.</string>
+    <string name="ads_removed_title">Hirdetések eltávolítva</string>
+    <string name="ads_removed_message">Köszönjük! A listája most tiszta, hirdetések nélkül.</string>
+    <string name="ads_removed_button">Nagyszerű</string>
+
+    <string name="pref_pro_title">Váltás Pro verzióra</string>
+    <string name="pref_pro_summary">Próbálja ki az új Shopping List Pro alkalmazást — több funkció, jobb élmény!</string>
+
+</resources>

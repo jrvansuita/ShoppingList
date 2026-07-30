@@ -86,5 +86,14 @@
         <item>Алфавітний порядок (зростання)</item>
         <item>Алфавітний порядок (спадання)</item>
     </string-array>
-</resources>
 
+    <string name="pref_remove_ads_title">Прибрати рекламу</string>
+    <string name="pref_remove_ads_summary">Заплатіть один раз і приберіть усю рекламу.</string>
+    <string name="ads_removed_title">Рекламу прибрано</string>
+    <string name="ads_removed_message">Дякуємо! Тепер ваш список чистий, без реклами.</string>
+    <string name="ads_removed_button">Чудово</string>
+
+    <string name="pref_pro_title">Перейти на Pro</string>
+    <string name="pref_pro_summary">Спробуйте новий Shopping List Pro — більше функцій і зручності!</string>
+
+</resources>

@@ -92,4 +92,13 @@
         <item>Ordre alphabétique décroissant</item>
     </string-array>
 
+    <string name="pref_remove_ads_title">Supprimer les publicités</string>
+    <string name="pref_remove_ads_summary">Payez une fois et supprimez toutes les publicités.</string>
+    <string name="ads_removed_title">Publicités supprimées</string>
+    <string name="ads_removed_message">Merci ! Votre liste est maintenant propre, sans publicité.</string>
+    <string name="ads_removed_button">Super</string>
+
+    <string name="pref_pro_title">Passer à Pro</string>
+    <string name="pref_pro_summary">Essayez le nouveau Shopping List Pro — plus de fonctions, une meilleure expérience !</string>
+
 </resources>

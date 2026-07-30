@@ -86,5 +86,14 @@
         <item>Susunan abjad menaik</item>
         <item>Susunan abjad menurun</item>
     </string-array>
-</resources>
 
+    <string name="pref_remove_ads_title">Buang iklan</string>
+    <string name="pref_remove_ads_summary">Bayar sekali dan buang semua iklan.</string>
+    <string name="ads_removed_title">Iklan dibuang</string>
+    <string name="ads_removed_message">Terima kasih! Senarai anda kini bersih, tiada iklan.</string>
+    <string name="ads_removed_button">Bagus</string>
+
+    <string name="pref_pro_title">Naik taraf ke Pro</string>
+    <string name="pref_pro_summary">Cuba Shopping List Pro yang baharu — lebih banyak ciri, pengalaman lebih baik!</string>
+
+</resources>

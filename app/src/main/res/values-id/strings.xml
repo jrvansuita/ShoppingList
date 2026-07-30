@@ -86,5 +86,14 @@
         <item>Urutan alfabetis naik</item>
         <item>Urutan alfabetis turun</item>
     </string-array>
-</resources>
 
+    <string name="pref_remove_ads_title">Hapus iklan</string>
+    <string name="pref_remove_ads_summary">Bayar sekali dan hapus semua iklan.</string>
+    <string name="ads_removed_title">Iklan dihapus</string>
+    <string name="ads_removed_message">Terima kasih! Daftar Anda kini bersih, tanpa iklan.</string>
+    <string name="ads_removed_button">Bagus</string>
+
+    <string name="pref_pro_title">Tingkatkan ke Pro</string>
+    <string name="pref_pro_summary">Coba Shopping List Pro yang baru — lebih banyak fitur, pengalaman lebih baik!</string>
+
+</resources>

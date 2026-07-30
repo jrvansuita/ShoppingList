@@ -88,5 +88,15 @@
         <item>Ordem alfabética decrescente</item>
     </string-array>
 
+    <string name="pref_remove_ads_title">Remover anúncios</string>
+    <string name="pref_remove_ads_summary">Pague uma vez e remova todos os anúncios.</string>
+    <string name="ads_removed_title">Anúncios removidos</string>
+    <string name="ads_removed_message">Obrigado! Sua lista está limpa agora, sem anúncios.</string>
+    <string name="ads_removed_button">Ótimo</string>
+
+    <string name="pref_pro_title">Faça upgrade para o Pro</string>
+    <string name="pref_pro_summary">Experimente o novo Shopping List Pro — mais recursos, melhor experiência!</string>
+    <string name="search">Pesquisar</string>
+    <string name="search_hint">Pesquisar itens...</string>
 
 </resources>
