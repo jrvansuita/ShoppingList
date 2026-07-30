@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Váltás Pro verzióra</string>
     <string name="pref_pro_summary">Próbálja ki az új Shopping List Pro alkalmazást — több funkció, jobb élmény!</string>
 
+    <string name="house_ad_title">Elege van a hirdetésekből?</string>
+    <string name="house_ad_message">Tetszik az alkalmazás? Tüntesse el őket végleg.</string>
+    <string name="house_ad_button">Megveszem</string>
+
 </resources>

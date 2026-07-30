@@ -65,7 +65,7 @@ class MainApp : Activity(), AdapterView.OnItemClickListener,
 
         AnalyticsManager.getInstance().logMainScreenView(this)
 
-        AdsManager.loadAdBanner(findViewById(R.id.ads_holder))
+        AdsManager.loadAdBanner(findViewById(R.id.ads_holder), allowHouseAd = true)
 
         PromoBannerDialog.show(this)
     }

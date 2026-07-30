@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Перейти на Pro</string>
     <string name="pref_pro_summary">Попробуйте новый Shopping List Pro — больше функций и удобства!</string>
 
+    <string name="house_ad_title">Устали от рекламы?</string>
+    <string name="house_ad_message">Нравится приложение? Уберите её навсегда.</string>
+    <string name="house_ad_button">Купить</string>
+
 </resources>

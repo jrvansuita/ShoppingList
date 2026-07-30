@@ -96,4 +96,8 @@
     <string name="pref_pro_title">প্রো-তে আপগ্রেড করুন</string>
     <string name="pref_pro_summary">নতুন Shopping List Pro ব্যবহার করে দেখুন — আরও ফিচার, আরও ভালো অভিজ্ঞতা!</string>
 
+    <string name="house_ad_title">বিজ্ঞাপনে ক্লান্ত?</string>
+    <string name="house_ad_message">অ্যাপটি ভালো লাগে? বিজ্ঞাপন চিরতরে সরান।</string>
+    <string name="house_ad_button">এখনই কিনুন</string>
+
 </resources>

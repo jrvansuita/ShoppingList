@@ -100,4 +100,8 @@
     <string name="search">بحث</string>
     <string name="search_hint">البحث عن العناصر...</string>
 
+    <string name="house_ad_title">سئمت من الإعلانات؟</string>
+    <string name="house_ad_message">يعجبك التطبيق؟ أزل الإعلانات نهائيًا.</string>
+    <string name="house_ad_button">اشترِ الآن</string>
+
 </resources>

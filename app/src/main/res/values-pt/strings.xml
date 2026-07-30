@@ -99,4 +99,8 @@
     <string name="search">Pesquisar</string>
     <string name="search_hint">Pesquisar itens...</string>
 
+    <string name="house_ad_title">Cansado de anúncios?</string>
+    <string name="house_ad_message">Gosta do app? Remova os anúncios para sempre.</string>
+    <string name="house_ad_button">Comprar</string>
+
 </resources>

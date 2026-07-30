@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Naik taraf ke Pro</string>
     <string name="pref_pro_summary">Cuba Shopping List Pro yang baharu — lebih banyak ciri, pengalaman lebih baik!</string>
 
+    <string name="house_ad_title">Bosan dengan iklan?</string>
+    <string name="house_ad_message">Suka apl ini? Buang iklan selamanya.</string>
+    <string name="house_ad_button">Beli sekarang</string>
+
 </resources>

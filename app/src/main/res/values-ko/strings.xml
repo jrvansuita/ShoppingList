@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Pro로 업그레이드</string>
     <string name="pref_pro_summary">새로운 Shopping List Pro를 사용해 보세요. 더 많은 기능과 더 나은 경험을 제공합니다!</string>
 
+    <string name="house_ad_title">광고가 불편하신가요?</string>
+    <string name="house_ad_message">이 앱이 마음에 드시나요? 광고를 영구히 없애세요.</string>
+    <string name="house_ad_button">구매하기</string>
+
 </resources>

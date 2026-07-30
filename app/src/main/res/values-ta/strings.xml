@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Pro ஆக மேம்படுத்தவும்</string>
     <string name="pref_pro_summary">புதிய Shopping List Pro-வை முயற்சிக்கவும் — அதிக அம்சங்கள், சிறந்த அனுபவம்!</string>
 
+    <string name="house_ad_title">விளம்பரங்களால் சலிப்பா?</string>
+    <string name="house_ad_message">இந்த ஆப் பிடிக்குமா? அவற்றை நிரந்தரமாக நீக்கு.</string>
+    <string name="house_ad_button">வாங்கு</string>
+
 </resources>
