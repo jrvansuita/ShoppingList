@@ -93,4 +93,7 @@
     <string name="ads_removed_message">Ευχαριστούμε! Η λίστα σας είναι πλέον καθαρή, χωρίς διαφημίσεις.</string>
     <string name="ads_removed_button">Τέλεια</string>
 
+    <string name="pref_pro_title">Αναβάθμιση σε Pro</string>
+    <string name="pref_pro_summary">Δοκιμάστε το νέο Shopping List Pro — περισσότερες λειτουργίες, καλύτερη εμπειρία!</string>
+
 </resources>

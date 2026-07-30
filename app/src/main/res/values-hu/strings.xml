@@ -93,4 +93,7 @@
     <string name="ads_removed_message">Köszönjük! A listája most tiszta, hirdetések nélkül.</string>
     <string name="ads_removed_button">Nagyszerű</string>
 
+    <string name="pref_pro_title">Váltás Pro verzióra</string>
+    <string name="pref_pro_summary">Próbálja ki az új Shopping List Pro alkalmazást — több funkció, jobb élmény!</string>
+
 </resources>

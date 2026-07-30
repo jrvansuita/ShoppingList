@@ -77,7 +77,8 @@
     <string name="about_app_contact_me">Contact me : </string>
     <string name="about_app_description">This is an experimental app developed by Júnior Vansuita. Do not pay for this app.</string>
 
-    <string name="pref_pro_category">Shopping List Pro</string>
+    <!-- The product name stays in English in every locale. -->
+    <string name="pref_pro_category" translatable="false">Shopping List Pro</string>
     <string name="pref_remove_ads_title">Remove ads</string>
     <string name="pref_remove_ads_summary">Pay once and remove all the ads.</string>
     <string name="ads_removed_title">Ads removed</string>

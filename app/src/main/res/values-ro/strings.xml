@@ -93,4 +93,7 @@
     <string name="ads_removed_message">Mulțumim! Lista ta este acum curată, fără reclame.</string>
     <string name="ads_removed_button">Excelent</string>
 
+    <string name="pref_pro_title">Treci la Pro</string>
+    <string name="pref_pro_summary">Încearcă noul Shopping List Pro — mai multe funcții, o experiență mai bună!</string>
+
 </resources>

@@ -93,4 +93,7 @@
     <string name="ads_removed_message">धन्यवाद! आपकी सूची अब साफ़ है, कोई विज्ञापन नहीं।</string>
     <string name="ads_removed_button">बढ़िया</string>
 
+    <string name="pref_pro_title">प्रो में अपग्रेड करें</string>
+    <string name="pref_pro_summary">नया Shopping List Pro आज़माएं — ज़्यादा फ़ीचर, बेहतर अनुभव!</string>
+
 </resources>

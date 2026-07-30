@@ -93,4 +93,7 @@
     <string name="ads_removed_message">Bedankt! Je lijst is nu schoon, zonder advertenties.</string>
     <string name="ads_removed_button">Top</string>
 
+    <string name="pref_pro_title">Upgraden naar Pro</string>
+    <string name="pref_pro_summary">Probeer de nieuwe Shopping List Pro — meer functies, betere ervaring!</string>
+
 </resources>

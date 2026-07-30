@@ -94,4 +94,9 @@
     <string name="ads_removed_message">Obrigado! Sua lista está limpa agora, sem anúncios.</string>
     <string name="ads_removed_button">Ótimo</string>
 
+    <string name="pref_pro_title">Faça upgrade para o Pro</string>
+    <string name="pref_pro_summary">Experimente o novo Shopping List Pro — mais recursos, melhor experiência!</string>
+    <string name="search">Pesquisar</string>
+    <string name="search_hint">Pesquisar itens...</string>
+
 </resources>

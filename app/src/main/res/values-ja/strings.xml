@@ -93,4 +93,7 @@
     <string name="ads_removed_message">ありがとうございます！リストは広告のないすっきりした状態になりました。</string>
     <string name="ads_removed_button">OK</string>
 
+    <string name="pref_pro_title">Pro にアップグレード</string>
+    <string name="pref_pro_summary">新しい Shopping List Pro をお試しください。機能が増えて、より快適になりました！</string>
+
 </resources>

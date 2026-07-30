@@ -93,4 +93,7 @@
     <string name="ads_removed_message">ขอบคุณ! รายการของคุณสะอาดแล้ว ไม่มีโฆษณา</string>
     <string name="ads_removed_button">เยี่ยม</string>
 
+    <string name="pref_pro_title">อัปเกรดเป็น Pro</string>
+    <string name="pref_pro_summary">ลองใช้ Shopping List Pro ใหม่ — ฟีเจอร์มากขึ้น ประสบการณ์ที่ดีกว่า!</string>
+
 </resources>

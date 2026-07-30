@@ -93,4 +93,7 @@
     <string name="ads_removed_message">Terima kasih! Daftar Anda kini bersih, tanpa iklan.</string>
     <string name="ads_removed_button">Bagus</string>
 
+    <string name="pref_pro_title">Tingkatkan ke Pro</string>
+    <string name="pref_pro_summary">Coba Shopping List Pro yang baru — lebih banyak fitur, pengalaman lebih baik!</string>
+
 </resources>

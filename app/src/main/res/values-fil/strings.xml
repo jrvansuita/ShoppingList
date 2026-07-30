@@ -93,4 +93,7 @@
     <string name="ads_removed_message">Salamat! Malinis na ang iyong listahan, walang ad.</string>
     <string name="ads_removed_button">Ayos</string>
 
+    <string name="pref_pro_title">Mag-upgrade sa Pro</string>
+    <string name="pref_pro_summary">Subukan ang bagong Shopping List Pro — mas maraming feature, mas magandang karanasan!</string>
+
 </resources>

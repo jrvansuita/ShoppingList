@@ -93,4 +93,7 @@
     <string name="ads_removed_message">감사합니다! 이제 목록에 광고가 없습니다.</string>
     <string name="ads_removed_button">좋아요</string>
 
+    <string name="pref_pro_title">Pro로 업그레이드</string>
+    <string name="pref_pro_summary">새로운 Shopping List Pro를 사용해 보세요. 더 많은 기능과 더 나은 경험을 제공합니다!</string>
+
 </resources>

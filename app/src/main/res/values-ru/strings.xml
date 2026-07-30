@@ -93,4 +93,7 @@
     <string name="ads_removed_message">Спасибо! Теперь ваш список чистый, без рекламы.</string>
     <string name="ads_removed_button">Отлично</string>
 
+    <string name="pref_pro_title">Перейти на Pro</string>
+    <string name="pref_pro_summary">Попробуйте новый Shopping List Pro — больше функций и удобства!</string>
+
 </resources>
