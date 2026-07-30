@@ -86,4 +86,5 @@ dependencies {
     implementation(libs.firebase.crashlytics.ndk)
     implementation(libs.firebase.analytics)
     implementation(libs.gms.ads)
+    implementation(libs.billing)
 }

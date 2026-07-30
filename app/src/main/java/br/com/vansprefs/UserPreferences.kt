@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.core.content.edit
 import br.com.activity.R
 import br.com.vansads.AdsManager
+import br.com.vansads.BillingManager
 import br.com.vansanalytics.AnalyticsManager
 import br.com.vansdialog.CustomDialogAboutApp
 import br.com.vansdialog.PromoBannerDialog
@@ -114,6 +115,14 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
                     CustomDialogAboutApp(preference.context).show()
                 getString(R.string.user_preference_pro_app) ->
                     PromoBannerDialog.show(this, force = true)
+
+                getString(R.string.user_preference_remove_ads) ->
+                    if (BillingManager.adsRemoved) {
+                        Toast.makeText(this, R.string.pref_remove_ads_done, Toast.LENGTH_LONG).show()
+                    } else {
+                        // recreate() drops the banner that is already on screen.
+                        BillingManager.purchase(this) { runOnUiThread { recreate() } }
+                    }
             }
         } catch (e: PackageManager.NameNotFoundException) {
             Toast.makeText(preference.context, e.message, Toast.LENGTH_LONG).show()
