@@ -17,6 +17,7 @@ import br.com.activity.R
 import br.com.vansads.AdsManager
 import br.com.vansads.BillingManager
 import br.com.vansanalytics.AnalyticsManager
+import br.com.vansdialog.AdsRemovedDialog
 import br.com.vansdialog.CustomDialogAboutApp
 import br.com.vansdialog.PromoBannerDialog
 
@@ -118,10 +119,12 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
 
                 getString(R.string.user_preference_remove_ads) ->
                     if (BillingManager.adsRemoved) {
-                        Toast.makeText(this, R.string.pref_remove_ads_done, Toast.LENGTH_LONG).show()
+                        AdsRemovedDialog.show(this)
                     } else {
-                        // recreate() drops the banner that is already on screen.
-                        BillingManager.purchase(this) { runOnUiThread { recreate() } }
+                        BillingManager.purchase(this) {
+                            // recreate() drops the banner that is already on screen.
+                            runOnUiThread { AdsRemovedDialog.show(this) { recreate() } }
+                        }
                     }
             }
         } catch (e: PackageManager.NameNotFoundException) {
