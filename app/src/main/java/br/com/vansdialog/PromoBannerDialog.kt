@@ -29,6 +29,8 @@ object PromoBannerDialog {
         dialog.setCancelable(false)
 
         dialog.findViewById<ImageView>(R.id.imgBanner).setOnClickListener {
+            saveClosedAt(activity)
+            dialog.dismiss()
             activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRO_STORE_URL)))
         }
         dialog.findViewById<TextView>(R.id.btnCloseBanner).setOnClickListener {
