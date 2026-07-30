@@ -16,8 +16,8 @@ android {
         applicationId = "br.com.activity"
         minSdk = 23
         targetSdk = 36
-        versionCode = 39
-        versionName = "1.5"
+        versionCode = 40
+        versionName = "1.6"
     }
 
     signingConfigs {
