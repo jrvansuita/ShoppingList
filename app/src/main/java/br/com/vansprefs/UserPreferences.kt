@@ -9,6 +9,7 @@ import android.preference.ListPreference
 import android.preference.Preference
 import android.preference.Preference.OnPreferenceClickListener
 import android.preference.PreferenceActivity
+import android.preference.PreferenceCategory
 import android.preference.PreferenceManager
 import android.view.MenuItem
 import android.widget.Toast
@@ -42,6 +43,10 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
             this
         (findPreference(getString(R.string.user_preference_pro_app)) as Preference).onPreferenceClickListener =
             this
+        (findPreference(getString(R.string.user_preference_remove_ads)) as Preference).onPreferenceClickListener =
+            this
+
+        hideProEntryWhenPaid()
 
         AnalyticsManager.getInstance().logSettingsScreenView()
         addBannerAd()
@@ -58,6 +63,17 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
 
         root.addView(adContainer)
         AdsManager.loadAdBanner(adContainer)
+    }
+
+    /** A user who paid to remove the ads does not see the Pro promotion. */
+    private fun hideProEntryWhenPaid() {
+        if (!BillingManager.adsRemoved) return
+
+        val category =
+            findPreference(getString(R.string.user_preference_pro_category)) as? PreferenceCategory
+        val proEntry = findPreference(getString(R.string.user_preference_pro_app))
+
+        if (category != null && proEntry != null) category.removePreference(proEntry)
     }
 
     private val fistPrefs: Unit

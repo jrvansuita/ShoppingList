@@ -10,6 +10,7 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.activity.R
+import br.com.vansads.BillingManager
 
 object PromoBannerDialog {
 
@@ -20,6 +21,8 @@ object PromoBannerDialog {
     private const val TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000L
 
     fun show(activity: Activity, force: Boolean = false) {
+        // A user who paid to remove the ads never sees the Pro promotion.
+        if (BillingManager.adsRemoved) return
         if (!force && !shouldShow(activity)) return
 
         val dialog = Dialog(activity)
