@@ -86,4 +86,11 @@
         <item>升序字母排序</item>
         <item>降序字母排序</item>
     </string-array>
+
+    <string name="pref_remove_ads_title">移除广告</string>
+    <string name="pref_remove_ads_summary">一次付费，移除所有广告。</string>
+    <string name="ads_removed_title">广告已移除</string>
+    <string name="ads_removed_message">谢谢！您的清单现在很清爽，没有广告。</string>
+    <string name="ads_removed_button">好的</string>
+
 </resources>

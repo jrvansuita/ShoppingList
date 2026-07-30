@@ -86,5 +86,11 @@
         <item>বর্ণানুক্রমিক ক্রম (উর্ধ্বগামী)</item>
         <item>বর্ণানুক্রমিক ক্রম (নিম্নগামী)</item>
     </string-array>
-</resources>
 
+    <string name="pref_remove_ads_title">বিজ্ঞাপন সরান</string>
+    <string name="pref_remove_ads_summary">একবার পেমেন্ট করুন এবং সব বিজ্ঞাপন সরিয়ে দিন।</string>
+    <string name="ads_removed_title">বিজ্ঞাপন সরানো হয়েছে</string>
+    <string name="ads_removed_message">ধন্যবাদ! আপনার তালিকা এখন পরিষ্কার, কোনো বিজ্ঞাপন নেই।</string>
+    <string name="ads_removed_button">দারুণ</string>
+
+</resources>

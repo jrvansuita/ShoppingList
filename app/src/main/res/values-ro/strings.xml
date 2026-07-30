@@ -86,5 +86,11 @@
         <item>Ordine alfabetică ascendentă</item>
         <item>Ordine alfabetică descendentă</item>
     </string-array>
-</resources>
 
+    <string name="pref_remove_ads_title">Elimină reclamele</string>
+    <string name="pref_remove_ads_summary">Plătește o dată și elimină toate reclamele.</string>
+    <string name="ads_removed_title">Reclame eliminate</string>
+    <string name="ads_removed_message">Mulțumim! Lista ta este acum curată, fără reclame.</string>
+    <string name="ads_removed_button">Excelent</string>
+
+</resources>

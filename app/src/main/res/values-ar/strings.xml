@@ -89,4 +89,10 @@
         <item>ترتيب تنازلي ابجدي</item>
     </string-array>
 
+    <string name="pref_remove_ads_title">إزالة الإعلانات</string>
+    <string name="pref_remove_ads_summary">ادفع مرة واحدة وأزل كل الإعلانات.</string>
+    <string name="ads_removed_title">تمت إزالة الإعلانات</string>
+    <string name="ads_removed_message">شكرًا لك! قائمتك الآن نظيفة وبدون إعلانات.</string>
+    <string name="ads_removed_button">رائع</string>
+
 </resources>
