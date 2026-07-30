@@ -11,6 +11,8 @@ import com.android.billingclient.api.PendingPurchasesParams
 import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.android.billingclient.api.QueryPurchasesParams
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
 
 /**
  * One time purchase that removes the ads.
@@ -72,18 +74,30 @@ object BillingManager {
                 .build()
 
             billingClient.queryProductDetailsAsync(params) { _, result ->
-                val details = result.productDetailsList.firstOrNull() ?: return@queryProductDetailsAsync
+                val details = result.productDetailsList.firstOrNull()
+
+                if (details == null) {
+                    // The purchase sheet stays closed with no error, so record it.
+                    Firebase.crashlytics.recordException(
+                        Exception("No product details for $PRODUCT_ID. Check the Play Console.")
+                    )
+                    return@queryProductDetailsAsync
+                }
+
+                val productParams = BillingFlowParams.ProductDetailsParams.newBuilder()
+                    .setProductDetails(details)
+
+                // Play splits a one time product into purchase options, and each one
+                // carries an offer token. A product with no purchase option has none.
+                details.oneTimePurchaseOfferDetailsList
+                    ?.firstOrNull()
+                    ?.offerToken
+                    ?.let { productParams.setOfferToken(it) }
 
                 billingClient.launchBillingFlow(
                     activity,
                     BillingFlowParams.newBuilder()
-                        .setProductDetailsParamsList(
-                            listOf(
-                                BillingFlowParams.ProductDetailsParams.newBuilder()
-                                    .setProductDetails(details)
-                                    .build()
-                            )
-                        )
+                        .setProductDetailsParamsList(listOf(productParams.build()))
                         .build()
                 )
             }
