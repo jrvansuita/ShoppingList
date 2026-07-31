@@ -10,6 +10,7 @@ import br.com.bean.ShoppingList
 import br.com.dao.DataBaseDAO
 import br.com.dao.ItemShoppingListDAO
 import br.com.dao.ShoppingListDAO
+import br.com.vansanalytics.AnalyticsManager
 import br.com.vansformat.CustomFloatFormat
 import org.w3c.dom.DOMException
 import org.w3c.dom.Document
@@ -35,6 +36,7 @@ class ShoppingListXmlImporter(
         false
     )
     private var wasSucessful: Boolean = false
+    private var importedItems: Int = 0
 
     fun getImportedShoppingList(): ShoppingList = shoppingList
 
@@ -43,6 +45,7 @@ class ShoppingListXmlImporter(
     @Throws(DOMException::class, ParseException::class)
     fun importXml() {
         wasSucessful = false
+        importedItems = 0
         if (isImportableBase()) {
             val tablesList = doc.documentElement.childNodes
             val db: SQLiteDatabase = DataBaseDAO(context).writableDatabase
@@ -72,6 +75,7 @@ class ShoppingListXmlImporter(
 
                                     ItemShoppingListDAO.TABLE_NAME -> {
                                         ItemShoppingListDAO.insert(context, db, itemShoppingList)
+                                        importedItems++
                                     }
                                 }
                             } else {
@@ -95,6 +99,7 @@ class ShoppingListXmlImporter(
                     if (db.inTransaction()) db.endTransaction()
                     db.close()
                 }
+                AnalyticsManager.getInstance().logListImported(wasSucessful, importedItems)
             }
         }
     }

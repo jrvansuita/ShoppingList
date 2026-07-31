@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import br.com.activity.R
+import br.com.vansanalytics.AnalyticsManager
 import br.com.vansdialog.AdsRemovedDialog
 import com.google.android.gms.ads.AdSize
 
@@ -44,7 +45,7 @@ object HouseAdBanner {
         view.setOnClickListener {
             if (BillingManager.adsRemoved) return@setOnClickListener
 
-            BillingManager.purchase(activity) {
+            BillingManager.purchase(activity, AnalyticsManager.SOURCE_HOUSE_BANNER) {
                 activity.runOnUiThread {
                     if (activity.isFinishing) return@runOnUiThread
                     AdsRemovedDialog.show(activity) { activity.recreate() }
@@ -54,6 +55,8 @@ object HouseAdBanner {
 
         adContainer.removeAllViews()
         adContainer.addView(view)
+
+        AnalyticsManager.getInstance().logHouseAdSeen()
         return true
     }
 

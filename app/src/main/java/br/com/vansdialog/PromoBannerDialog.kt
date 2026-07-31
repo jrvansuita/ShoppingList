@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import br.com.activity.R
 import br.com.vansads.BillingManager
+import br.com.vansanalytics.AnalyticsManager
 
 object PromoBannerDialog {
 
@@ -34,14 +35,17 @@ object PromoBannerDialog {
         dialog.findViewById<ImageView>(R.id.imgBanner).setOnClickListener {
             saveClosedAt(activity)
             dialog.dismiss()
+            AnalyticsManager.getInstance().logPromoBannerClicked()
             activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRO_STORE_URL)))
         }
         dialog.findViewById<TextView>(R.id.btnCloseBanner).setOnClickListener {
+            AnalyticsManager.getInstance().logPromoBannerClosed()
             saveClosedAt(activity)
             dialog.dismiss()
         }
 
         dialog.show()
+        AnalyticsManager.getInstance().logPromoBannerSeen(force)
     }
 
     private fun shouldShow(activity: Activity): Boolean {
