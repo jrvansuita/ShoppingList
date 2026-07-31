@@ -16,7 +16,7 @@ android {
         applicationId = "br.com.activity"
         minSdk = 23
         targetSdk = 36
-        versionCode = 40
+        versionCode = 41
         versionName = "1.6"
     }
 
