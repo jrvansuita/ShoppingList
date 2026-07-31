@@ -3,9 +3,10 @@ package br.com.dao
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.widget.Toast
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
 
-class DataBaseDAO(private val context: Context) :
+class DataBaseDAO(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL("CREATE TABLE SHOPPINGLIST(_id INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,DATELIST INTEGER);")
@@ -13,6 +14,7 @@ class DataBaseDAO(private val context: Context) :
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        var began = false
         try {
             if ((newVersion <= 13)) {
                 db.execSQL("ALTER TABLE ITEMSHOPPINGLIST ADD COLUMN QUANTITY FLOAT DEFAULT 0;")
@@ -20,6 +22,7 @@ class DataBaseDAO(private val context: Context) :
 
             if ((newVersion == 15)) {
                 db.beginTransaction()
+                began = true
                 db.execSQL("CREATE TABLE SHOPPINGLISTX(_id INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,DATELIST INTEGER);")
                 db.execSQL("INSERT INTO SHOPPINGLISTX(_id,NAME,DATELIST) SELECT ID,NAME,DATELIST FROM SHOPPINGLIST;")
                 db.execSQL("DROP TABLE IF EXISTS SHOPPINGLIST;")
@@ -35,9 +38,13 @@ class DataBaseDAO(private val context: Context) :
                 db.setTransactionSuccessful()
             }
         } catch (e: Exception) {
-            Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
+            Firebase.crashlytics.recordException(e)
         } finally {
-            db.endTransaction()
+            // End only a transaction that this method started. SQLiteOpenHelper
+            // already runs onUpgrade inside its own transaction, so an
+            // unbalanced call here would end that one and leave the upgrade
+            // half done.
+            if (began) db.endTransaction()
         }
     }
 

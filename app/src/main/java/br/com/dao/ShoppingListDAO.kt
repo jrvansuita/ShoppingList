@@ -23,6 +23,20 @@ object ShoppingListDAO {
         }
     }
 
+    /**
+     * Inserts on a database that the caller owns.
+     *
+     * Use this inside a transaction. The other insert opens and closes its own
+     * database, so its work would land outside the transaction of the caller.
+     */
+    @JvmStatic
+    @Throws(VansException::class)
+    fun insert(
+        context: Context,
+        db: SQLiteDatabase,
+        shoppingList: ShoppingList
+    ): ShoppingList? = insertInternal(context, db, shoppingList)
+
     @Throws(VansException::class)
     private fun insertInternal(
         context: Context,

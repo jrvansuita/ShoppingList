@@ -23,12 +23,28 @@ object ItemShoppingListDAO {
     @JvmStatic
     @Throws(VansException::class)
     fun insert(context: Context, itemShoppingList: ItemShoppingList): ItemShoppingList? {
+        DataBaseDAO(context).writableDatabase.use { db ->
+            return insert(context, db, itemShoppingList)
+        }
+    }
+
+    /**
+     * Inserts on a database that the caller owns.
+     *
+     * Use this inside a transaction. The other insert opens and closes its own
+     * database, so its work would land outside the transaction of the caller.
+     */
+    @JvmStatic
+    @Throws(VansException::class)
+    fun insert(
+        context: Context,
+        db: SQLiteDatabase,
+        itemShoppingList: ItemShoppingList
+    ): ItemShoppingList? {
         try {
-            DataBaseDAO(context).writableDatabase.use { db ->
-                val cv = buildContentValues(itemShoppingList)
-                db.insertOrThrow(TABLE_NAME, null, cv)
-                return selectLast(context, db)
-            }
+            val cv = buildContentValues(itemShoppingList)
+            db.insertOrThrow(TABLE_NAME, null, cv)
+            return selectLast(context, db)
         } catch (e: Exception) {
             throw VansException(e.message, e)
         }
