@@ -53,6 +53,14 @@
     <color name="green_alpha">#6680CA80</color>
     
     <color name="red">#E68176</color>
+    <color name="red_alpha_pressed">#66E68176</color>
+
+    <!-- The red of the app icon. Used by the house banner. -->
+    <color name="red_brand_dark">#A60F0F</color>
+    <color name="red_brand_dark_alpha">#66A60F0F</color>
+
+    <color name="red_brand_light">#C62828</color>
+    <color name="red_brand_light_alpha">#66C62828</color>
     <color name="red_alpha">#66E68176</color>    
     
     <color name="yellow">#CCCC66</color>

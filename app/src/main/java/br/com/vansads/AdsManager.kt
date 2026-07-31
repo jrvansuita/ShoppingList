@@ -149,6 +149,11 @@ object AdsManager {
             // The house banner needs an Activity to start the purchase. Fall back.
         }
 
+        // The house banner stretches the container, so give the width back.
+        adContainer.layoutParams = adContainer.layoutParams?.apply {
+            width = ViewGroup.LayoutParams.WRAP_CONTENT
+        }
+
         val adView = AdView(adContainer.context)
 
         val adUnitId = if (BuildConfig.DEBUG) {

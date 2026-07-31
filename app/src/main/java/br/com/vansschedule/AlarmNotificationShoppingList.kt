@@ -43,7 +43,7 @@ class AlarmNotificationShoppingList : BroadcastReceiver() {
         createNotificationChannel(context)
         val bigIcon = BitmapFactory.decodeResource(context.resources, R.mipmap.ic_launcher)
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_action_bar)
+            .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(shoppingList.name)
             .setLargeIcon(bigIcon)
             .setContentText(context.getString(R.string.notification_arrived))

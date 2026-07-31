@@ -30,6 +30,12 @@ object HouseAdBanner {
         val view = LayoutInflater.from(adContainer.context)
             .inflate(R.layout.view_house_ad, adContainer, false)
 
+        // The height matches the network banner. The width is free, so the
+        // container stretches instead of wrapping the network banner width.
+        adContainer.layoutParams = adContainer.layoutParams?.apply {
+            width = ViewGroup.LayoutParams.MATCH_PARENT
+        }
+
         view.layoutParams = FrameLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
             adSize.getHeightInPixels(adContainer.context)

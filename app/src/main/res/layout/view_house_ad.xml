@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   The house banner that offers the ad removal purchase.
-  It replaces the network banner sometimes, so it uses the same height.
+  It uses the same height as the network banner, so the layout does not move
+  when one replaces the other. The width is free, and fills the screen.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/houseAdRoot"
@@ -11,13 +12,21 @@
     android:clickable="true"
     android:focusable="true"
     android:gravity="center_vertical"
+    android:minWidth="600dp"
     android:orientation="horizontal"
-    android:paddingStart="12dp"
+    android:paddingStart="10dp"
     android:paddingEnd="10dp">
+
+    <ImageView
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -47,13 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:background="@drawable/bg_house_ad_button"
-        android:duplicateParentState="true"
         android:paddingStart="14dp"
         android:paddingTop="7dp"
         android:paddingEnd="14dp"
         android:paddingBottom="7dp"
         android:text="@string/house_ad_button"
-        android:textColor="@color/blue_marine_dark"
+        android:textColor="@color/red_brand_dark"
         android:textSize="13sp"
         android:textStyle="bold" />
 
