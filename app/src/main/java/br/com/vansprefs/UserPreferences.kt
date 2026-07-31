@@ -137,7 +137,7 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
                     if (BillingManager.adsRemoved) {
                         AdsRemovedDialog.show(this)
                     } else {
-                        BillingManager.purchase(this) {
+                        BillingManager.purchase(this, AnalyticsManager.SOURCE_SETTINGS) {
                             // recreate() drops the banner that is already on screen.
                             runOnUiThread { AdsRemovedDialog.show(this) { recreate() } }
                         }

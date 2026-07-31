@@ -11,6 +11,7 @@ import com.android.billingclient.api.PendingPurchasesParams
 import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.android.billingclient.api.QueryPurchasesParams
+import br.com.vansanalytics.AnalyticsManager
 import com.google.firebase.Firebase
 import com.google.firebase.crashlytics.crashlytics
 
@@ -39,9 +40,16 @@ object BillingManager {
     private var client: BillingClient? = null
     private var onEntitlementChanged: (() -> Unit)? = null
 
+    /** Set while a purchase this session started is still open. Null for a restore. */
+    private var pendingSource: String? = null
+    private var lastPriceMicros: Long = 0L
+    private var lastCurrency: String = ""
+
+
     fun initialize(context: Context) {
         val app = context.applicationContext
         adsRemoved = prefs(app).getBoolean(KEY_ADS_REMOVED, false)
+        AnalyticsManager.getInstance().setAdsRemovedUserProperty(adsRemoved)
 
         if (client != null) return
 
@@ -49,16 +57,42 @@ object BillingManager {
             .enablePendingPurchases(
                 PendingPurchasesParams.newBuilder().enableOneTimeProducts().build()
             )
-            .setListener { _, purchases -> applyPurchases(app, purchases) }
+            .setListener { result, purchases ->
+                when (result.responseCode) {
+                    BillingClient.BillingResponseCode.OK ->
+                        applyPurchases(app, purchases)
+
+                    BillingClient.BillingResponseCode.USER_CANCELED -> {
+                        AnalyticsManager.getInstance().logRemoveAdsFailed(
+                            pendingSource.orEmpty(), AnalyticsManager.REASON_CANCELLED
+                        )
+                        pendingSource = null
+                    }
+
+                    else -> {
+                        AnalyticsManager.getInstance().logRemoveAdsFailed(
+                            pendingSource.orEmpty(), AnalyticsManager.REASON_BILLING_ERROR
+                        )
+                        pendingSource = null
+                    }
+                }
+            }
             .build()
 
         // Play is the source of truth. A refund must turn the ads back on.
         connect { queryPurchases(app) }
     }
 
-    /** Starts the Play purchase flow. [onDone] runs when the entitlement changes. */
-    fun purchase(activity: Activity, onDone: () -> Unit) {
+    /**
+     * Starts the Play purchase flow. [onDone] runs when the entitlement changes.
+     *
+     * [source] names the entry point, so the reports can compare the settings
+     * entry with the house banner.
+     */
+    fun purchase(activity: Activity, source: String, onDone: () -> Unit) {
         onEntitlementChanged = onDone
+        pendingSource = source
+        AnalyticsManager.getInstance().logRemoveAdsClicked(source)
 
         connect {
             val billingClient = client ?: return@connect
@@ -81,8 +115,17 @@ object BillingManager {
                     Firebase.crashlytics.recordException(
                         Exception("No product details for $PRODUCT_ID. Check the Play Console.")
                     )
+                    AnalyticsManager.getInstance()
+                        .logRemoveAdsFailed(source, AnalyticsManager.REASON_NO_PRODUCT)
+                    pendingSource = null
                     return@queryProductDetailsAsync
                 }
+
+                val offer = details.oneTimePurchaseOfferDetailsList?.firstOrNull()
+                lastPriceMicros = offer?.priceAmountMicros ?: 0L
+                lastCurrency = offer?.priceCurrencyCode.orEmpty()
+                AnalyticsManager.getInstance()
+                    .logRemoveAdsFlowStarted(source, lastPriceMicros, lastCurrency)
 
                 val productParams = BillingFlowParams.ProductDetailsParams.newBuilder()
                     .setProductDetails(details)
@@ -155,6 +198,22 @@ object BillingManager {
 
         adsRemoved = value
         prefs(context).edit().putBoolean(KEY_ADS_REMOVED, value).apply()
+
+        val analytics = AnalyticsManager.getInstance()
+        analytics.setAdsRemovedUserProperty(value)
+
+        when {
+            // Only a flow that this session started counts as a sale. Play also
+            // reports a purchase after a reinstall, and that is not revenue.
+            value && pendingSource != null ->
+                analytics.logRemoveAdsPurchased(PRODUCT_ID, lastPriceMicros, lastCurrency)
+
+            value -> analytics.logRemoveAdsRestored(PRODUCT_ID)
+
+            else -> analytics.logRemoveAdsRevoked()
+        }
+        pendingSource = null
+
         onEntitlementChanged?.invoke()
     }
 
