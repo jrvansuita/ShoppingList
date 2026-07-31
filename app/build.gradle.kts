@@ -77,6 +77,22 @@ android {
         abortOnError = false
         baseline = file("lint-baseline.xml")
     }
+
+    bundle {
+        density {
+            // Ship every density in one APK, instead of one split per density.
+            //
+            // The drawables of this app stop at xxhdpi, and none of them has a
+            // default in res/drawable. A device that installs only one density
+            // split can then miss a drawable, and the theme fails to read the
+            // action bar icon while the window builds. That crash happens
+            // before onCreate returns, so the app cannot start.
+            //
+            // The drawable folders hold about 276 KB in total, so the extra
+            // download is small next to the 9.4 MB bundle.
+            enableSplit = false
+        }
+    }
 }
 
 dependencies {
