@@ -84,6 +84,10 @@
     <string name="ads_removed_title">Ads removed</string>
     <string name="ads_removed_message">Thank you! Your list is clean now, with no ads.</string>
     <string name="ads_removed_button">Great</string>
+
+    <string name="house_ad_title">Tired of ads?</string>
+    <string name="house_ad_message">Love this app? Remove them for good.</string>
+    <string name="house_ad_button">Buy now</string>
     <string name="pref_pro_title">Upgrade to Pro</string>
     <string name="pref_pro_summary">Try the new Shopping List Pro — more features, better experience!</string>
 

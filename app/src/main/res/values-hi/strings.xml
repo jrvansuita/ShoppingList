@@ -96,4 +96,8 @@
     <string name="pref_pro_title">प्रो में अपग्रेड करें</string>
     <string name="pref_pro_summary">नया Shopping List Pro आज़माएं — ज़्यादा फ़ीचर, बेहतर अनुभव!</string>
 
+    <string name="house_ad_title">विज्ञापनों से परेशान?</string>
+    <string name="house_ad_message">ऐप पसंद है? इन्हें हमेशा के लिए हटाएं।</string>
+    <string name="house_ad_button">अभी खरीदें</string>
+
 </resources>

@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Cambiar a Pro</string>
     <string name="pref_pro_summary">¡Prueba el nuevo Shopping List Pro: más funciones y mejor experiencia!</string>
 
+    <string name="house_ad_title">¿Cansado de los anuncios?</string>
+    <string name="house_ad_message">¿Te gusta la app? Quítalos para siempre.</string>
+    <string name="house_ad_button">Comprar</string>
+
 </resources>

@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Treci la Pro</string>
     <string name="pref_pro_summary">Încearcă noul Shopping List Pro — mai multe funcții, o experiență mai bună!</string>
 
+    <string name="house_ad_title">Te-ai săturat de reclame?</string>
+    <string name="house_ad_message">Îți place aplicația? Elimină-le definitiv.</string>
+    <string name="house_ad_button">Cumpără</string>
+
 </resources>

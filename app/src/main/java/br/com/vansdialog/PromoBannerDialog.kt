@@ -18,7 +18,7 @@ object PromoBannerDialog {
         "https://play.google.com/store/apps/details?id=com.neat.nest.shoppinglist"
     private const val PREFS_NAME = "promo_banner"
     private const val KEY_CLOSED_AT = "closed_at"
-    private const val TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000L
+    private const val FIVE_DAYS_MS = 5 * 24 * 60 * 60 * 1000L
 
     fun show(activity: Activity, force: Boolean = false) {
         // A user who paid to remove the ads never sees the Pro promotion.
@@ -48,7 +48,7 @@ object PromoBannerDialog {
         val closedAt = activity
             .getSharedPreferences(PREFS_NAME, Activity.MODE_PRIVATE)
             .getLong(KEY_CLOSED_AT, 0L)
-        return closedAt == 0L || System.currentTimeMillis() - closedAt >= TWO_DAYS_MS
+        return closedAt == 0L || System.currentTimeMillis() - closedAt >= FIVE_DAYS_MS
     }
 
     private fun saveClosedAt(activity: Activity) {

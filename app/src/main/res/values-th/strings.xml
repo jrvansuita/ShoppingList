@@ -96,4 +96,8 @@
     <string name="pref_pro_title">อัปเกรดเป็น Pro</string>
     <string name="pref_pro_summary">ลองใช้ Shopping List Pro ใหม่ — ฟีเจอร์มากขึ้น ประสบการณ์ที่ดีกว่า!</string>
 
+    <string name="house_ad_title">เบื่อโฆษณาไหม?</string>
+    <string name="house_ad_message">ชอบแอปนี้ไหม? ลบโฆษณาถาวร</string>
+    <string name="house_ad_button">ซื้อเลย</string>
+
 </resources>

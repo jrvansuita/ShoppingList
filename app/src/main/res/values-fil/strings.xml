@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Mag-upgrade sa Pro</string>
     <string name="pref_pro_summary">Subukan ang bagong Shopping List Pro — mas maraming feature, mas magandang karanasan!</string>
 
+    <string name="house_ad_title">Pagod na sa mga ad?</string>
+    <string name="house_ad_message">Gusto mo ang app? Alisin ang mga ito habambuhay.</string>
+    <string name="house_ad_button">Bumili na</string>
+
 </resources>

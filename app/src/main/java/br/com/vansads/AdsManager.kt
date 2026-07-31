@@ -18,6 +18,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.firebase.Firebase
 import com.google.firebase.crashlytics.crashlytics
+import kotlin.random.Random
 
 object AdsManager {
     private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-7819301718588435/6992811341"
@@ -34,8 +35,15 @@ object AdsManager {
     private var isInitialized = false
     private var isShowingAd = false
 
+    /** How often the house banner takes the banner slot, instead of the network banner. */
+    private const val HOUSE_AD_CHANCE = 0.3f
+
     /** Ads are off when the build disables them, or when the user paid to remove them. */
     private fun adsEnabled() = BuildConfig.ADS_ENABLED && !BillingManager.adsRemoved
+
+    /** The house banner uses this too, so both banners have the same size. */
+    private fun bannerAdSize(context: Context): AdSize =
+        AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, 360)
 
     fun initialize(application: Application) {
         if (!adsEnabled()) return
@@ -121,12 +129,29 @@ object AdsManager {
         loadInterstitialAd(context)
     }
 
+    /**
+     * Loads a banner into [adContainer].
+     *
+     * When [allowHouseAd] is true, the house banner that offers the ad removal
+     * purchase takes the slot part of the time, in place of the network banner.
+     */
     fun loadAdBanner(
         adContainer: ViewGroup,
+        allowHouseAd: Boolean = false,
     ) {
         if (!adsEnabled()) {
             adContainer.removeAllViews()
             return
+        }
+
+        if (allowHouseAd && Random.nextFloat() < HOUSE_AD_CHANCE) {
+            if (HouseAdBanner.show(adContainer, bannerAdSize(adContainer.context))) return
+            // The house banner needs an Activity to start the purchase. Fall back.
+        }
+
+        // The house banner stretches the container, so give the width back.
+        adContainer.layoutParams = adContainer.layoutParams?.apply {
+            width = ViewGroup.LayoutParams.WRAP_CONTENT
         }
 
         val adView = AdView(adContainer.context)
@@ -138,12 +163,7 @@ object AdsManager {
         }
 
         adView.adUnitId = adUnitId
-        adView.setAdSize(
-            AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
-                adContainer.context,
-                360
-            )
-        )
+        adView.setAdSize(bannerAdSize(adContainer.context))
 
         adContainer.removeAllViews()
         adContainer.addView(adView)

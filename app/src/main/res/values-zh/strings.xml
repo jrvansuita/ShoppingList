@@ -96,4 +96,8 @@
     <string name="pref_pro_title">升级到 Pro</string>
     <string name="pref_pro_summary">试试全新的 Shopping List Pro — 功能更多，体验更好！</string>
 
+    <string name="house_ad_title">厌倦广告了吗？</string>
+    <string name="house_ad_message">喜欢这个应用？永久移除广告。</string>
+    <string name="house_ad_button">立即购买</string>
+
 </resources>

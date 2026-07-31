@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Pro にアップグレード</string>
     <string name="pref_pro_summary">新しい Shopping List Pro をお試しください。機能が増えて、より快適になりました！</string>
 
+    <string name="house_ad_title">広告にうんざり？</string>
+    <string name="house_ad_message">このアプリが好きですか？広告を完全に削除。</string>
+    <string name="house_ad_button">購入</string>
+
 </resources>

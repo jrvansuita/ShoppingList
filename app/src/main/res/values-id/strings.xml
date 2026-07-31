@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Tingkatkan ke Pro</string>
     <string name="pref_pro_summary">Coba Shopping List Pro yang baru — lebih banyak fitur, pengalaman lebih baik!</string>
 
+    <string name="house_ad_title">Bosan dengan iklan?</string>
+    <string name="house_ad_message">Suka aplikasi ini? Hapus iklan selamanya.</string>
+    <string name="house_ad_button">Beli sekarang</string>
+
 </resources>

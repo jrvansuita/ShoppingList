@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Upgraden naar Pro</string>
     <string name="pref_pro_summary">Probeer de nieuwe Shopping List Pro — meer functies, betere ervaring!</string>
 
+    <string name="house_ad_title">Genoeg van advertenties?</string>
+    <string name="house_ad_message">Vind je de app leuk? Verwijder ze voorgoed.</string>
+    <string name="house_ad_button">Nu kopen</string>
+
 </resources>

@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Přejít na Pro</string>
     <string name="pref_pro_summary">Vyzkoušejte nový Shopping List Pro — více funkcí, lepší zážitek!</string>
 
+    <string name="house_ad_title">Už vás reklamy unavují?</string>
+    <string name="house_ad_message">Líbí se vám aplikace? Odeberte je navždy.</string>
+    <string name="house_ad_button">Koupit</string>
+
 </resources>

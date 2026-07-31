@@ -96,4 +96,8 @@
     <string name="pref_pro_title">Αναβάθμιση σε Pro</string>
     <string name="pref_pro_summary">Δοκιμάστε το νέο Shopping List Pro — περισσότερες λειτουργίες, καλύτερη εμπειρία!</string>
 
+    <string name="house_ad_title">Βαρεθήκατε τις διαφημίσεις;</string>
+    <string name="house_ad_message">Σας αρέσει η εφαρμογή; Καταργήστε τις οριστικά.</string>
+    <string name="house_ad_button">Αγορά</string>
+
 </resources>
