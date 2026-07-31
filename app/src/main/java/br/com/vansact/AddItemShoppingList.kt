@@ -71,6 +71,11 @@ class AddItemShoppingList : Activity(), AdapterView.OnItemClickListener,
         AdsManager.loadAdBanner(findViewById(R.id.ads_holder))
     }
 
+    override fun onDestroy() {
+        AdsManager.releaseAdBanner(findViewById(R.id.ads_holder))
+        super.onDestroy()
+    }
+
     override fun onResume() {
         super.onResume()
         edUnitValue.hint = CustomFloatFormat.getMonetaryMaskedValue(this, 0.0)

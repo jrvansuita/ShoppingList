@@ -80,6 +80,13 @@ class MainApp : Activity(), AdapterView.OnItemClickListener,
             (View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
     }
 
+    override fun onDestroy() {
+        // Release the banner before the window goes away, or a detached ad view
+        // can crash the next draw pass.
+        AdsManager.releaseAdBanner(findViewById(R.id.ads_holder))
+        super.onDestroy()
+    }
+
     override fun onResume() {
         super.onResume()
         lvShoppingList.onItemClickListener = this

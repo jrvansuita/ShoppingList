@@ -3,6 +3,7 @@ package br.com.vansads
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.view.View
 import android.view.ViewGroup
 import br.com.activity.BuildConfig
 import br.com.vansanalytics.AnalyticsManager
@@ -140,9 +141,11 @@ object AdsManager {
         allowHouseAd: Boolean = false,
     ) {
         if (!adsEnabled()) {
-            adContainer.removeAllViews()
+            releaseAdBanner(adContainer)
             return
         }
+
+        releaseAdBanner(adContainer)
 
         if (allowHouseAd && Random.nextFloat() < HOUSE_AD_CHANCE) {
             if (HouseAdBanner.show(adContainer, bannerAdSize(adContainer.context))) return
@@ -153,6 +156,12 @@ object AdsManager {
         adContainer.layoutParams = adContainer.layoutParams?.apply {
             width = ViewGroup.LayoutParams.WRAP_CONTENT
         }
+
+        // The ad runs in a WebView. When that WebView holds the window focus and
+        // then leaves the tree, the next draw pass maps the focus rectangle
+        // through a parent that is already null, and the app crashes. Keep the
+        // focus out of the ad, so there is nothing to map.
+        adContainer.descendantFocusability = ViewGroup.FOCUS_BLOCK_DESCENDANTS
 
         val adView = AdView(adContainer.context)
 
@@ -181,6 +190,35 @@ object AdsManager {
             }
         }
         adView.loadAd(adRequest)
+    }
+
+    /**
+     * Empties the banner slot in [adContainer].
+     *
+     * Clears the focus and destroys the [AdView] before the view leaves the
+     * tree. A detached ad view that still holds the focus crashes the next draw
+     * pass in ViewRootImpl.scrollToRectOrFocus. Destroying it also releases the
+     * WebView that the ad runs in.
+     *
+     * Call this from onDestroy of every screen that shows a banner.
+     */
+    fun releaseAdBanner(adContainer: ViewGroup) {
+        if (adContainer.childCount == 0) return
+
+        // Take the focus back before the children leave the tree.
+        adContainer.clearFocus()
+
+        for (index in 0 until adContainer.childCount) {
+            val child = adContainer.getChildAt(index)
+            child.clearFocus()
+            if (child is AdView) {
+                child.visibility = View.GONE
+                child.destroy()
+            }
+        }
+
+        adContainer.removeAllViews()
+        adContainer.descendantFocusability = ViewGroup.FOCUS_AFTER_DESCENDANTS
     }
 
     private fun getInterstitialAdUnitId(): String {
