@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityNodeInfo
 import br.com.activity.BuildConfig
 import br.com.vansanalytics.AnalyticsManager
 import com.google.android.gms.ads.AdError
@@ -163,6 +164,15 @@ object AdsManager {
         // focus out of the ad, so there is nothing to map.
         adContainer.descendantFocusability = ViewGroup.FOCUS_BLOCK_DESCENDANTS
 
+        // Accessibility focus is a separate thing, and the setting above does not
+        // cover it. A screen reader can hold accessibility focus inside the ad.
+        // When the window regains focus, the platform maps that node through its
+        // parent. If the ad left the tree first, the parent is null and the app
+        // dies with no frame of ours in the report. Keep the ad out of the
+        // accessibility tree, so there is no node to hold.
+        adContainer.importantForAccessibility =
+            View.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+
         val adView = AdView(adContainer.context)
 
         val adUnitId = if (BuildConfig.DEBUG) {
@@ -211,6 +221,10 @@ object AdsManager {
         for (index in 0 until adContainer.childCount) {
             val child = adContainer.getChildAt(index)
             child.clearFocus()
+            child.performAccessibilityAction(
+                AccessibilityNodeInfo.ACTION_CLEAR_ACCESSIBILITY_FOCUS,
+                null
+            )
             if (child is AdView) {
                 child.visibility = View.GONE
                 child.destroy()
@@ -218,7 +232,11 @@ object AdsManager {
         }
 
         adContainer.removeAllViews()
+
+        // Give both settings back. The house banner is a real control, so it
+        // must stay reachable by touch and by a screen reader.
         adContainer.descendantFocusability = ViewGroup.FOCUS_AFTER_DESCENDANTS
+        adContainer.importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_AUTO
     }
 
     private fun getInterstitialAdUnitId(): String {
