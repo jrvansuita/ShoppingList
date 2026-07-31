@@ -67,11 +67,11 @@ class ShoppingListXmlImporter(
                                 when (getTableName(tableNode)) {
                                     ShoppingListDAO.TABLE_NAME -> {
                                         shoppingList =
-                                            ShoppingListDAO.insert(context, shoppingList)!!
+                                            ShoppingListDAO.insert(context, db, shoppingList)!!
                                     }
 
                                     ItemShoppingListDAO.TABLE_NAME -> {
-                                        ItemShoppingListDAO.insert(context, itemShoppingList)
+                                        ItemShoppingListDAO.insert(context, db, itemShoppingList)
                                     }
                                 }
                             } else {
@@ -88,8 +88,13 @@ class ShoppingListXmlImporter(
                 wasSucessful = false
                 doToast(e.message)
             } finally {
-                db.endTransaction()
-                db.close()
+                // Never touch a database that is already closed, and never end a
+                // transaction that is not open. Either one throws from here and
+                // hides the real error, or kills the activity while it starts.
+                if (db.isOpen) {
+                    if (db.inTransaction()) db.endTransaction()
+                    db.close()
+                }
             }
         }
     }
