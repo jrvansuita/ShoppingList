@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The default font sizes.
+
+  The other buckets are values-sw320dp, sw480dp, sw600dp and sw720dp. None of
+  them matches a screen with a smallest width below 320dp. A user reaches that
+  size by raising Display size in the system settings.
+
+  Without this file the reference does not resolve on such a screen, and the
+  app crashes while it inflates the layout. So keep every name here in step
+  with the other buckets.
+
+  These values match values-sw320dp, the smallest bucket. A screen smaller than
+  every bucket gets the smallest sizes.
+-->
+
+<resources>
+
+    <dimen name="grand_lord_font_size">28.16sp</dimen>
+    <dimen name="master_big_font">23sp</dimen>
+
+    <dimen name="plus_big_font">16.38sp</dimen>
+    <dimen name="extra_big_font">11.84sp</dimen>
+    <dimen name="big_font">10.24sp</dimen>
+    <dimen name="plus_medium_font">9.21sp</dimen>
+    <dimen name="extra_medium_font">8.7sp</dimen>
+    <dimen name="medium_font">8.19sp</dimen>
+    <dimen name="extra_small_font">7.68sp</dimen>
+    <dimen name="small_font">7.16sp</dimen>
+
+</resources>

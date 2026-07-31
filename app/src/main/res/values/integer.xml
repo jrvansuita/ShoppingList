@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The default integers. See the note in font_dimens.xml.
+
+  These names live in values-sw320dp and the larger buckets. Nothing reads them
+  today, but a reference with no default crashes the layout on a screen with a
+  smallest width below 320dp. The values match values-sw320dp.
+-->
+
+<resources>
+
+    <integer name="two_hundred">102</integer>
+    <integer name="one_hundred_sixty">82</integer>
+
+</resources>
