@@ -73,7 +73,7 @@
     <string name="about_android_version">Versão do Android :</string>
     <string name="about">Sobre</string>
     <string name="about_app_contact_me">Contato : </string>
-    <string name="about_app_description">Este é um aplicativo experimental desenvolvido por Júnior Vansuita. Não pague por este aplicativo.</string>
+    <string name="about_app_description">Este é um aplicativo experimental desenvolvido por Júnior Vansuita.</string>
 
     <string-array name="ordenation_checked_style_list_array">
         <item>Ordem natural</item>

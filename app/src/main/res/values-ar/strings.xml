@@ -74,7 +74,7 @@
     <string name="schedule_notification">حدد موعد للتنبية :</string>
     <string name="about">من نحن</string>
     <string name="about_app_contact_me">اتصل بنا : </string>
-    <string name="about_app_description">هذا التطبيق تجريبي ليس مخصص للبيع </string>
+    <string name="about_app_description">هذا تطبيق تجريبي طوره Júnior Vansuita.</string>
 
     <string-array name="ordenation_checked_style_list_array">
         <item>الترتيب الاساسي</item>

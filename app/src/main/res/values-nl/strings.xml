@@ -73,7 +73,7 @@
     <string name="schedule_notification">Plan een melding voor:</string>
     <string name="about">Over</string>
     <string name="about_app_contact_me">Neem contact met mij op:</string>
-    <string name="about_app_description">Dit is een experimentele app ontwikkeld door Júnior Vansuita. Betaal niet voor deze app.</string>
+    <string name="about_app_description">Dit is een experimentele app ontwikkeld door Júnior Vansuita.</string>
     <string name="search">Zoeken</string>
     <string name="search_hint">Zoek items...</string>
     <string-array name="ordenation_checked_style_list_array">

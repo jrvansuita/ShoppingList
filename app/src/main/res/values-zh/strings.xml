@@ -73,7 +73,7 @@
     <string name="schedule_notification">计划通知时间：</string>
     <string name="about">关于</string>
     <string name="about_app_contact_me">联系我：</string>
-    <string name="about_app_description">这是由Júnior Vansuita开发的实验性应用程序。请勿为此应用付费。</string>
+    <string name="about_app_description">这是由Júnior Vansuita开发的实验性应用程序。</string>
     <string name="search">搜索</string>
     <string name="search_hint">搜索物品...</string>
     <string-array name="ordenation_checked_style_list_array">

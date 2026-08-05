@@ -73,7 +73,7 @@
     <string name="schedule_notification">सूचना अनुसूची:</string>
     <string name="about">के बारे में</string>
     <string name="about_app_contact_me">मुझसे संपर्क करें:</string>
-    <string name="about_app_description">यह Júnior Vansuita द्वारा विकसित एक प्रयोगात्मक ऐप है। कृपया इस ऐप के लिए भुगतान न करें।</string>
+    <string name="about_app_description">यह Júnior Vansuita द्वारा विकसित एक प्रयोगात्मक ऐप है।</string>
     <string name="search">खोजें</string>
     <string name="search_hint">आइटम खोजें...</string>
     <string-array name="ordenation_checked_style_list_array">

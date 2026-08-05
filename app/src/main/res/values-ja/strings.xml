@@ -73,7 +73,7 @@
     <string name="schedule_notification">通知をスケジュール：</string>
     <string name="about">アプリについて</string>
     <string name="about_app_contact_me">連絡先：</string>
-    <string name="about_app_description">これはJúnior Vansuitaによって開発された実験的なアプリです。このアプリに料金を支払わないでください。</string>
+    <string name="about_app_description">これはJúnior Vansuitaによって開発された実験的なアプリです。</string>
     <string name="search">検索</string>
     <string name="search_hint">アイテムを検索...</string>
     <string-array name="ordenation_checked_style_list_array">

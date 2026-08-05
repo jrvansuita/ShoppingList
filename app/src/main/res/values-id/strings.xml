@@ -73,7 +73,7 @@
     <string name="schedule_notification">Jadwalkan pemberitahuan untuk:</string>
     <string name="about">Tentang</string>
     <string name="about_app_contact_me">Hubungi saya:</string>
-    <string name="about_app_description">Ini adalah aplikasi eksperimental yang dikembangkan oleh Júnior Vansuita. Jangan membayar untuk aplikasi ini.</string>
+    <string name="about_app_description">Ini adalah aplikasi eksperimental yang dikembangkan oleh Júnior Vansuita.</string>
     <string name="search">Cari</string>
     <string name="search_hint">Cari item...</string>
     <string-array name="ordenation_checked_style_list_array">

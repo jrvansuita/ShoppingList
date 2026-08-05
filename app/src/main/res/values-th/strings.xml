@@ -73,7 +73,7 @@
     <string name="schedule_notification">กำหนดการแจ้งเตือนสำหรับ:</string>
     <string name="about">เกี่ยวกับ</string>
     <string name="about_app_contact_me">ติดต่อฉัน:</string>
-    <string name="about_app_description">นี่คือแอปทดลองที่พัฒนาโดย Júnior Vansuita อย่าจ่ายเงินสำหรับแอปนี้</string>
+    <string name="about_app_description">นี่คือแอปทดลองที่พัฒนาโดย Júnior Vansuita</string>
     <string name="search">ค้นหา</string>
     <string name="search_hint">ค้นหารายการ...</string>
     <string-array name="ordenation_checked_style_list_array">
