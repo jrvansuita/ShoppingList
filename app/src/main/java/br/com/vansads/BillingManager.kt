@@ -147,6 +147,15 @@ object BillingManager {
         }
     }
 
+    /**
+     * Asks Play for the purchases again. A purchase made on another device,
+     * or a connection that failed at startup, resolves here without a restart.
+     */
+    fun refresh(context: Context) {
+        val app = context.applicationContext
+        connect { queryPurchases(app) }
+    }
+
     private fun connect(onReady: () -> Unit) {
         val billingClient = client ?: return
         if (billingClient.isReady) {

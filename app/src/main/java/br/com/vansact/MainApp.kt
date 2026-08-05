@@ -24,6 +24,7 @@ import br.com.bean.ShoppingList
 import br.com.dao.ShoppingListDAO
 import br.com.vansadapt.ShoppingListCursorAdapter
 import br.com.vansads.AdsManager
+import br.com.vansads.BillingManager
 import br.com.vansanalytics.AnalyticsManager
 import br.com.vansdialog.CustomDialogShoppingListOptions
 import br.com.vansexception.VansException
@@ -92,6 +93,10 @@ class MainApp : Activity(), AdapterView.OnItemClickListener,
         lvShoppingList.onItemClickListener = this
         lvShoppingList.onItemLongClickListener = this
         refreshListView()
+
+        // Play is the source of truth, so ask again on every return.
+        BillingManager.refresh(this)
+        AdsManager.refreshAdBanner(findViewById(R.id.ads_holder))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
