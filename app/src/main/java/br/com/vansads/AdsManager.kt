@@ -3,8 +3,10 @@ package br.com.vansads
 import android.app.Activity
 import android.app.Application
 import android.content.Context
+import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.view.accessibility.AccessibilityNodeInfo
 import br.com.activity.BuildConfig
 import br.com.vansanalytics.AnalyticsManager
@@ -153,9 +155,10 @@ object AdsManager {
             // The house banner needs an Activity to start the purchase. Fall back.
         }
 
-        // The house banner stretches the container, so give the width back.
+        // The slot takes the full width, and the ad centers inside it. Both
+        // banners then share the same geometry on every screen.
         adContainer.layoutParams = adContainer.layoutParams?.apply {
-            width = ViewGroup.LayoutParams.WRAP_CONTENT
+            width = ViewGroup.LayoutParams.MATCH_PARENT
         }
 
         // The ad runs in a WebView. When that WebView holds the window focus and
@@ -185,7 +188,14 @@ object AdsManager {
         adView.setAdSize(bannerAdSize(adContainer.context))
 
         adContainer.removeAllViews()
-        adContainer.addView(adView)
+        adContainer.addView(
+            adView,
+            FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                Gravity.CENTER_HORIZONTAL
+            )
+        )
 
         val adRequest = AdRequest.Builder().build()
         adView.adListener = object : AdListener() {
@@ -200,6 +210,17 @@ object AdsManager {
             }
         }
         adView.loadAd(adRequest)
+    }
+
+    /**
+     * Empties the banner slot when the ads went off after the screen loaded
+     * its banner. A purchase on one screen then clears the banner on the
+     * screens behind it, as soon as each one comes back.
+     *
+     * Call this from onResume of every screen that shows a banner.
+     */
+    fun refreshAdBanner(adContainer: ViewGroup) {
+        if (!adsEnabled()) releaseAdBanner(adContainer)
     }
 
     /**

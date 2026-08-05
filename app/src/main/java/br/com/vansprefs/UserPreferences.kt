@@ -26,6 +26,7 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
     OnPreferenceClickListener {
     private var listOrdenationCheckedStyle: ListPreference? = null
     private var listOrdenationAlphabeticalStyle: ListPreference? = null
+    private var adContainer: android.view.ViewGroup? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         fistPrefs
@@ -54,15 +55,16 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
 
     private fun addBannerAd() {
         val root = listView.parent as android.view.ViewGroup
-        val adContainer = android.widget.FrameLayout(this).apply {
+        val container = android.widget.FrameLayout(this).apply {
             layoutParams = android.widget.FrameLayout.LayoutParams(
                 android.view.ViewGroup.LayoutParams.MATCH_PARENT,
                 android.view.ViewGroup.LayoutParams.WRAP_CONTENT
             )
         }
 
-        root.addView(adContainer)
-        AdsManager.loadAdBanner(adContainer)
+        root.addView(container)
+        adContainer = container
+        AdsManager.loadAdBanner(container)
     }
 
     /** A user who paid to remove the ads does not see the Pro promotion. */
@@ -106,6 +108,14 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
         super.onResume()
         preferenceScreen.sharedPreferences.registerOnSharedPreferenceChangeListener(this)
         setSummaries()
+        adContainer?.let { AdsManager.refreshAdBanner(it) }
+    }
+
+    override fun onDestroy() {
+        // Release the banner before the window goes away, or a detached ad
+        // view can crash the next draw pass.
+        adContainer?.let { AdsManager.releaseAdBanner(it) }
+        super.onDestroy()
     }
 
     override fun onPause() {
