@@ -76,6 +76,13 @@ class UserPreferences : PreferenceActivity(), OnSharedPreferenceChangeListener,
         val proEntry = findPreference(getString(R.string.user_preference_pro_app))
 
         if (category != null && proEntry != null) category.removePreference(proEntry)
+
+        // The purchase offer turns into a confirmation row. The click on it
+        // still opens the confirmation dialog.
+        findPreference(getString(R.string.user_preference_remove_ads))?.apply {
+            setTitle(R.string.ads_removed_title)
+            setSummary(R.string.ads_removed_message)
+        }
     }
 
     private val fistPrefs: Unit
