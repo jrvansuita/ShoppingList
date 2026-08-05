@@ -73,7 +73,7 @@
     <string name="schedule_notification">Értesítés ütemezése erre:</string>
     <string name="about">Névjegy</string>
     <string name="about_app_contact_me">Kapcsolatfelvétel velem:</string>
-    <string name="about_app_description">Ez egy kísérleti alkalmazás, amelyet Júnior Vansuita fejlesztett. Ne fizessen ezért az alkalmazásért.</string>
+    <string name="about_app_description">Ez egy kísérleti alkalmazás, amelyet Júnior Vansuita fejlesztett.</string>
     <string name="search">Keresés</string>
     <string name="search_hint">Elemek keresése...</string>
     <string-array name="ordenation_checked_style_list_array">

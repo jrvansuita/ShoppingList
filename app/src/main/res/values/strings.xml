@@ -75,7 +75,7 @@
     <string name="schedule_notification">Schedule a notification for:</string>
     <string name="about">About</string>
     <string name="about_app_contact_me">Contact me : </string>
-    <string name="about_app_description">This is an experimental app developed by Júnior Vansuita. Do not pay for this app.</string>
+    <string name="about_app_description">This is an experimental app developed by Júnior Vansuita.</string>
 
     <!-- The product name stays in English in every locale. -->
     <string name="pref_pro_category" translatable="false">Shopping List Pro</string>

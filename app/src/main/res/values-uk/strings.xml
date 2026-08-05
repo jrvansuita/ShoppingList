@@ -73,7 +73,7 @@
     <string name="schedule_notification">Запланувати сповіщення на:</string>
     <string name="about">Про</string>
     <string name="about_app_contact_me">Зв\'яжіться зі мною:</string>
-    <string name="about_app_description">Це експериментальний додаток, розроблений Júnior Vansuita. Не платіть за цей додаток.</string>
+    <string name="about_app_description">Це експериментальний додаток, розроблений Júnior Vansuita.</string>
     <string name="search">Пошук</string>
     <string name="search_hint">Шукати елементи...</string>
     <string-array name="ordenation_checked_style_list_array">

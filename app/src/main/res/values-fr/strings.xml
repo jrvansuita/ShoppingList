@@ -75,7 +75,7 @@
     <string name="schedule_notification">Planifier une notification pour :</string>
     <string name="about">À propos</string>
     <string name="about_app_contact_me">Contactez-moi : </string>
-    <string name="about_app_description">Ceci est une application expérimentale développée par Júnior Vansuita. Ne payez pas pour cette application.</string>
+    <string name="about_app_description">Ceci est une application expérimentale développée par Júnior Vansuita.</string>
 
     <string name="search">Recherche</string>
     <string name="search_hint">Rechercher des articles...</string>

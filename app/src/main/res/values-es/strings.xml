@@ -73,7 +73,7 @@
     <string name="schedule_notification">Programar una notificación para:</string>
     <string name="about">Acerca de</string>
     <string name="about_app_contact_me">Contáctame:</string>
-    <string name="about_app_description">Esta es una aplicación experimental desarrollada por Júnior Vansuita. No pagues por esta aplicación.</string>
+    <string name="about_app_description">Esta es una aplicación experimental desarrollada por Júnior Vansuita.</string>
     <string name="search">Buscar</string>
     <string name="search_hint">Buscar artículos...</string>
     <string-array name="ordenation_checked_style_list_array">

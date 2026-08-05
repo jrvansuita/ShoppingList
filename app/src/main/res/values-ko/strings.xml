@@ -73,7 +73,7 @@
     <string name="schedule_notification">알림 예약:</string>
     <string name="about">정보</string>
     <string name="about_app_contact_me">저에게 연락하세요:</string>
-    <string name="about_app_description">이 앱은 Júnior Vansuita가 개발한 실험용 앱입니다. 이 앱에 대해 비용을 지불하지 마세요.</string>
+    <string name="about_app_description">이 앱은 Júnior Vansuita가 개발한 실험용 앱입니다.</string>
     <string name="search">검색</string>
     <string name="search_hint">항목 검색...</string>
     <string-array name="ordenation_checked_style_list_array">

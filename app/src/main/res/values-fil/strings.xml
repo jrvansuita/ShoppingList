@@ -73,7 +73,7 @@
     <string name="schedule_notification">Iskedyul ng abiso para sa:</string>
     <string name="about">Tungkol sa</string>
     <string name="about_app_contact_me">Makipag-ugnayan sa akin:</string>
-    <string name="about_app_description">Ito ay isang eksperimentong app na binuo ni Júnior Vansuita. Huwag magbayad para sa app na ito.</string>
+    <string name="about_app_description">Ito ay isang eksperimentong app na binuo ni Júnior Vansuita.</string>
     <string name="search">Maghanap</string>
     <string name="search_hint">Maghanap ng mga item...</string>
     <string-array name="ordenation_checked_style_list_array">

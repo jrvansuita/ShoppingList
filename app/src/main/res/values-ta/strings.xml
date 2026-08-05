@@ -73,7 +73,7 @@
     <string name="schedule_notification">அறிவிப்பை திட்டமிடவும்:</string>
     <string name="about">பற்றி</string>
     <string name="about_app_contact_me">என்னை தொடர்பு கொள்ளவும்:</string>
-    <string name="about_app_description">இது Júnior Vansuita உருவாக்கிய ஒரு பரிசோதனை பயன்பாடு. இந்த பயன்பாட்டிற்காக பணம் செலுத்த வேண்டாம்.</string>
+    <string name="about_app_description">இது Júnior Vansuita உருவாக்கிய ஒரு பரிசோதனை பயன்பாடு.</string>
     <string name="search">தேடு</string>
     <string name="search_hint">உருப்படிகளைத் தேடு...</string>
     <string-array name="ordenation_checked_style_list_array">

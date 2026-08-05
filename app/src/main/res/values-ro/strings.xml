@@ -73,7 +73,7 @@
     <string name="schedule_notification">Programează o notificare pentru:</string>
     <string name="about">Despre</string>
     <string name="about_app_contact_me">Contactează-mă:</string>
-    <string name="about_app_description">Aceasta este o aplicație experimentală dezvoltată de Júnior Vansuita. Nu plătiți pentru această aplicație.</string>
+    <string name="about_app_description">Aceasta este o aplicație experimentală dezvoltată de Júnior Vansuita.</string>
     <string name="search">Caută</string>
     <string name="search_hint">Caută articole...</string>
     <string-array name="ordenation_checked_style_list_array">

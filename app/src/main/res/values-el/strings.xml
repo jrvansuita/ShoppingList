@@ -73,7 +73,7 @@
     <string name="schedule_notification">Προγραμματισμός ειδοποίησης για:</string>
     <string name="about">Σχετικά</string>
     <string name="about_app_contact_me">Επικοινωνήστε μαζί μου:</string>
-    <string name="about_app_description">Αυτή είναι μια πειραματική εφαρμογή που αναπτύχθηκε από τον Júnior Vansuita. Μην πληρώσετε για αυτήν την εφαρμογή.</string>
+    <string name="about_app_description">Αυτή είναι μια πειραματική εφαρμογή που αναπτύχθηκε από τον Júnior Vansuita.</string>
     <string name="search">Αναζήτηση</string>
     <string name="search_hint">Αναζήτηση αντικειμένων...</string>
     <string-array name="ordenation_checked_style_list_array">
